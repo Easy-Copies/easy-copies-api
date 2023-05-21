@@ -35,6 +35,15 @@
 			{
 				"endOfLine": "auto"
 			}
-		]
-	}
+		],
+		"@typescript-eslint/no-namespace": "off"
+	},
+	"overrides": [
+		{
+			"files": ["src/**/controllers/*.type.ts"],
+			"rules": {
+				"@typescript-eslint/no-explicit-any": "off"
+			}
+		}
+	]
 }

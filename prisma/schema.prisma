@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model forgot_password {
+  id         Int      @id @default(autoincrement())
+  user       users    @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  user_id    Int      @unique
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model users {
+  id              Int              @id @default(autoincrement())
+  name            String           @db.VarChar(255)
+  email           String           @db.VarChar(255)
+  password        String           @db.VarChar(255)
+  created_at      DateTime         @default(now())
+  updated_at      DateTime         @updatedAt
+  forgot_password forgot_password?
+}
