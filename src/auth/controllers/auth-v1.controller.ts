@@ -5,7 +5,9 @@ import { IAuthControllerV1 } from './auth-v1.controller.type'
 // Services
 import { AppCommonService } from '@/app/services/app-common.service'
 import { AppJwtService } from '@/app/services/app-jwt.service'
+import { AppNodemailerService } from '@/app/services/app-nodemailer.service'
 import { UserV1Service } from '@/user/services/user-v1.service'
+import { appNodeMailerWrapper } from '@/app/services/app-nodemailer-wrapper.service'
 
 // Express
 import { Request, Response } from 'express'
@@ -149,7 +151,22 @@ export class AuthControllerV1
 	forgotPassword = {
 		validateInput: [body('email').isEmail().withMessage('Email must be valid')],
 		config: async (req: Request, res: Response) => {
-			const { code, ...restResponse } = SuccessOk()
+			const { email } = req.body
+
+			// Check if user exists
+			const user = await userService.show({ where: { email } })
+			if (!user) throw new ErrorBadRequest('Invalid credentials')
+
+			// Send email to user
+			await new AppNodemailerService(appNodeMailerWrapper.transporter).sendMail(
+				{
+					to: user.email,
+					subject: 'Easy Copies - Forgot Password',
+					text: 'Your forgot password OTP is: '
+				}
+			)
+
+			const { code, ...restResponse } = SuccessOk({ result: user })
 			return res.status(code).json(restResponse)
 		}
 	}
