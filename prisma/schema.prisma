@@ -11,19 +11,23 @@ datasource db {
 }
 
 model forgot_password {
-  id         Int      @id @default(autoincrement())
-  user       users    @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
-  user_id    Int      @unique
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  id        String   @id @default(uuid())
+  user      users    @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  userId    String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("forgot_password")
 }
 
 model users {
-  id              Int              @id @default(autoincrement())
+  id              String           @id @default(uuid())
   name            String           @db.VarChar(255)
-  email           String           @db.VarChar(255)
+  email           String           @unique @db.VarChar(255)
   password        String           @db.VarChar(255)
-  created_at      DateTime         @default(now())
-  updated_at      DateTime         @updatedAt
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
   forgot_password forgot_password?
+
+  @@map("users")
 }

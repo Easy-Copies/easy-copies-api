@@ -1,9 +1,9 @@
 // Middlewares
 import { appAuthMiddleware } from '@/app/middlewares/app-auth.middleware'
-import { appValidationMiddleware } from '../middlewares/app-validation.middleware'
+import { appValidationMiddleware } from '@/app/middlewares/app-validation.middleware'
 
 // Express
-import { Request, Response } from 'express'
+import { NextFunction, Request, Response } from 'express'
 
 // Express Validator
 import { ValidationChain } from 'express-validator'
@@ -17,5 +17,5 @@ export interface IAppController {
 
 export type IAppControllerConfigReturn = {
 	validateInput: ValidationChain[]
-	config: (req: Request, res: Response) => any
+	config: (req: Request, res: Response, next?: NextFunction) => any
 }

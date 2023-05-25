@@ -13,6 +13,8 @@ const prisma = new PrismaClient()
 const start = async () => {
 	try {
 		if (!process.env.JWT_KEY) throw new Error('JWT_KEY is not defined!')
+		if (!process.env.JWT_REFRESH_KEY)
+			throw new Error('JWT_REFRESH_KEY is not defined!')
 		if (!process.env.DATABASE_URL)
 			throw new Error('DATABASE_URL is not defined!')
 
