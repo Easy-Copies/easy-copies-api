@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model forgot_password {
+model ForgotPassword {
   id        String   @id @default(uuid())
   user      users    @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
   userId    String   @unique
@@ -21,13 +21,14 @@ model forgot_password {
 }
 
 model users {
-  id              String           @id @default(uuid())
-  name            String           @db.VarChar(255)
-  email           String           @unique @db.VarChar(255)
-  password        String           @db.VarChar(255)
-  createdAt       DateTime         @default(now())
-  updatedAt       DateTime         @updatedAt
-  forgot_password forgot_password?
+  id              String          @id @default(uuid())
+  name            String          @db.VarChar(255)
+  email           String          @unique @db.VarChar(255)
+  isUserVerified  Boolean         @default(false) @db.Boolean
+  password        String          @db.VarChar(255)
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  forgot_password ForgotPassword?
 
   @@map("users")
 }

@@ -34,5 +34,11 @@ router.post(
 )
 router.get('/me', authControllerV1.middleware.auth, authControllerV1.me)
 router.post('/logout', authControllerV1.middleware.auth, authControllerV1.me)
+router.post(
+	'/verify/:token',
+	authControllerV1.verify.validateInput,
+	authControllerV1.middleware.validate,
+	authControllerV1.verify.config
+)
 
 export { router as authRoutes }

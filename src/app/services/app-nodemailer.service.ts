@@ -41,6 +41,9 @@ export class AppNodemailerService implements TAppNodemailer {
 				},
 				(err, success) => {
 					if (err) {
+						console.log(
+							`App Nodemailer Service: Something went wrong when sending email ${err.message}`
+						)
 						reject(err)
 					} else {
 						console.log('App Nodemailer Service: Successfully send email!')
