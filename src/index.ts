@@ -27,17 +27,17 @@ const start = async () => {
 
 		// Check prisma connection
 		await prisma.$connect()
-		console.log('Prisma ORM: Prisma ORM connected!')
+		console.log('===app.ts===: Prisma ORM connected!'.green)
 
 		// Run nodemailer
-		await appNodeMailerWrapper.connect()
+		appNodeMailerWrapper.connect()
 
 		// Run the app
 		app.listen(PORT, () => {
-			console.log(`Easy Copies API started at port ${PORT}`)
+			console.log(`===app.ts===: Easy Copies API started at port ${PORT}`.green)
 		})
 	} catch (err) {
-		console.error(err)
+		console.log(`${err}`.red)
 		await prisma.$disconnect()
 	}
 }

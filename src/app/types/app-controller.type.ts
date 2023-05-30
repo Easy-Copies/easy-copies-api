@@ -8,11 +8,15 @@ import { NextFunction, Request, Response } from 'express'
 // Express Validator
 import { ValidationChain } from 'express-validator'
 
+// Prisma
+import type { PrismaClient } from '@prisma/client'
+
 export interface IAppController {
 	middleware: {
 		auth: typeof appAuthMiddleware
 		validate: typeof appValidationMiddleware
 	}
+	prisma: PrismaClient
 }
 
 export type IAppControllerConfigReturn = {

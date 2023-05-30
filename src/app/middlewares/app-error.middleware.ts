@@ -17,7 +17,7 @@ const appErrorMiddleware = (
 	// eslint-disable-next-line
 	next: NextFunction
 ) => {
-	console.error('--appErrorMiddleware--', err)
+	console.log(`===app-error.middleware.ts===: ${err}`)
 
 	// Common Error
 	if (err instanceof ErrorBase) {
@@ -40,7 +40,9 @@ const appErrorMiddleware = (
 	if (err instanceof Prisma.PrismaClientUnknownRequestError) {
 		return res.status(500).json({
 			errors: [
-				{ message: `Prisma.PrismaClientUnknownRequestError: ${err.message}` }
+				{
+					message: `Prisma.PrismaClientUnknownRequestError: ${err.message}`
+				}
 			]
 		})
 	}
@@ -52,7 +54,9 @@ const appErrorMiddleware = (
 	if (err instanceof Prisma.PrismaClientInitializationError) {
 		return res.status(500).json({
 			errors: [
-				{ message: `Prisma.PrismaClientInitializationError: ${err.message}` }
+				{
+					message: `Prisma.PrismaClientInitializationError: ${err.message}`
+				}
 			]
 		})
 	}

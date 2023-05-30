@@ -1,11 +1,13 @@
 // Prisma Client
-import { Prisma } from '@prisma/client'
-import type { users } from '@prisma/client'
+import { Prisma, PrismaPromise } from '@prisma/client'
+import type { User } from '@prisma/client'
 
 export interface IUserV1Service {
-	index: (args?: Prisma.usersFindManyArgs) => Promise<users[]>
-	store: (args: Prisma.usersCreateArgs) => Promise<users>
-	show: (args: Prisma.usersFindFirstArgs) => Promise<users | null>
-	update: (args: Prisma.usersUpdateArgs) => Promise<users>
-	destroy: (args: Prisma.usersDeleteArgs) => Promise<users>
+	index: (args?: Prisma.UserFindManyArgs) => PrismaPromise<User[]>
+	store: (args: Prisma.UserCreateArgs) => Prisma.Prisma__UserClient<User>
+	show: (args: Prisma.UserFindFirstArgs) => PrismaPromise<User | null>
+	update: (
+		args: Prisma.UserUpdateArgs
+	) => Prisma.Prisma__UserClient<User | null>
+	destroy: (args: Prisma.UserDeleteArgs) => Prisma.Prisma__UserClient<User>
 }

@@ -9,6 +9,7 @@ import { AppJwtService } from '@/app/services/app-jwt.service'
 import { AppNodemailerService } from '@/app/services/app-nodemailer.service'
 import { UserV1Service } from '@/user/services/user-v1.service'
 import { appNodeMailerWrapper } from '@/app/services/app-nodemailer-wrapper.service'
+import { TokenV1Service } from '@/token/services/token-v1.service'
 
 // Express
 import { Request, Response } from 'express'
@@ -23,16 +24,23 @@ import { SuccessOk, SuccessCreated } from '@/app/success/success'
 import bcrypt from 'bcryptjs'
 
 // Errors
-import { ErrorBadRequest } from '@/app/errors'
+import { ErrorBadRequest, ErrorNotFound, ErrorValidation } from '@/app/errors'
 
 // Lodash
 import omit from 'lodash.omit'
 
 // Prisma
-import type { users } from '@prisma/client'
+import { User, Token, PrismaClient } from '@prisma/client'
 
-const userService = new UserV1Service()
+// Moment
+import moment from 'moment'
+
+// Init Prisma
+const prisma = new PrismaClient()
+
+const userV1Service = new UserV1Service(prisma)
 const appJwtService = new AppJwtService()
+const tokenV1Service = new TokenV1Service(prisma)
 
 export class AuthControllerV1
 	extends AppCommonService
@@ -42,14 +50,14 @@ export class AuthControllerV1
 	 * @description Generate email with verification code
 	 *
 	 * @param {EAppJwtServiceSignType} signType
-	 * @param {Prisma.users} user
+	 * @param {Prisma.User} user
 	 *
-	 * @return {Promise<void>} Promise<void>
+	 * @return {Promise<Token>} Promise<Token>
 	 */
 	_generateEmailWithVerificationCode = async (
 		signType: EAppJwtServiceSignType,
-		user: users
-	): Promise<void> => {
+		user: User
+	): Promise<Token> => {
 		let subject = `Easy Copies - `
 		let text: string
 
@@ -70,10 +78,28 @@ export class AuthControllerV1
 				text = `Ignore this email, this is just a test!`
 		}
 
-		return new AppNodemailerService(appNodeMailerWrapper.transporter).sendMail({
+		// Send mail to specific user
+		await new AppNodemailerService(appNodeMailerWrapper.transporter).sendMail({
 			to: user.email,
 			subject,
 			text
+		})
+
+		// Get any tokens with specific signType
+		const tokenFromDatabase = await tokenV1Service.index({
+			where: { type: signType }
+		})
+
+		// If theres any token before, just remove the token!
+		if (tokenFromDatabase.length > 0)
+			await tokenV1Service.destroyMany({
+				where: { id: { in: tokenFromDatabase.map(token => token.id) } }
+			})
+
+		// Return promise from prisma
+		// And also Save token to DB, for (white/black)listing
+		return tokenV1Service.store({
+			data: { userId: user.id, token, type: signType }
 		})
 	}
 
@@ -93,7 +119,7 @@ export class AuthControllerV1
 			const { name, email, password } = req.body
 
 			// Check if user exists before
-			const existedUser = await userService.show({ where: { email } })
+			const existedUser = await userV1Service.show({ where: { email } })
 			if (existedUser) throw new ErrorBadRequest('Email currently in used')
 
 			// Hash password
@@ -101,7 +127,7 @@ export class AuthControllerV1
 			const hashedPassword = await bcrypt.hash(password, salt)
 
 			// Create new user
-			const user = await userService.store({
+			const user = await userV1Service.store({
 				data: { name, email, password: hashedPassword }
 			})
 
@@ -112,6 +138,8 @@ export class AuthControllerV1
 			)
 
 			const { code, ...restResponse } = SuccessCreated({
+				message:
+					'You successfully registered, please check email for verify your account',
 				result: omit(user, ['password'])
 			})
 			return res.status(code).json(restResponse)
@@ -131,12 +159,21 @@ export class AuthControllerV1
 			const { email, password } = req.body
 
 			// Find correct user
-			const user = await userService.show({ where: { email } })
+			const user = await userV1Service.show({ where: { email } })
 			if (!user) throw new ErrorBadRequest('Invalid credentials')
 
 			// Verify user password
 			const isPasswordCorrect = await bcrypt.compare(password, user.password)
 			if (!isPasswordCorrect) throw new ErrorBadRequest('Invalid credentials')
+
+			// Check if user not verified yet
+			// If user not verified, send an email for verification!
+			if (!user.isUserVerified) {
+				await this._generateEmailWithVerificationCode(
+					EAppJwtServiceSignType.VERIFY_USER,
+					user
+				)
+			}
 
 			// Generate JWT token
 			const jwtPayload = { id: user.id, email: user.email }
@@ -213,7 +250,7 @@ export class AuthControllerV1
 			const { email } = req.body
 
 			// Check if user exists
-			const user = await userService.show({ where: { email } })
+			const user = await userV1Service.show({ where: { email } })
 			if (!user) throw new ErrorBadRequest('Invalid credentials')
 
 			// Send email to user
@@ -222,7 +259,9 @@ export class AuthControllerV1
 				user
 			)
 
-			const { code, ...restResponse } = SuccessOk({ result: user })
+			const { code, ...restResponse } = SuccessOk({
+				message: 'Forgot password token successfully sent to your email'
+			})
 			return res.status(code).json(restResponse)
 		}
 	}
@@ -236,7 +275,7 @@ export class AuthControllerV1
 	 */
 	me = async (req: Request, res: Response) => {
 		// Find current user
-		const user = await userService.show({
+		const user = await userV1Service.show({
 			where: { id: req.currentUser?.id as string }
 		})
 
@@ -273,16 +312,85 @@ export class AuthControllerV1
 		],
 		config: async (req: Request, res: Response) => {
 			const { token } = req.params
-			const { signType } = req.body
+			const { signType, password } = req.body
+
+			// Common State
+			const transactions = []
+			let message = ''
+
+			// Check if token exists inside database
+			// Check if token not used!
+			const tokenFromDatabase = await tokenV1Service.show({
+				where: { token, usedAt: null }
+			})
+			if (!tokenFromDatabase) throw new ErrorNotFound('Token not found!')
 
 			// Verify token
-			const userId = (await appJwtService.verify(
+			const user = (await appJwtService.verify(
 				token,
 				signType as EAppJwtServiceSignType
 			)) as { id: string }
 
+			// Check if user exists in database
+			const userFromDatabase = await userV1Service.show({
+				where: { id: user.id }
+			})
+			if (!userFromDatabase) throw new ErrorNotFound('User not found!')
+
+			// Update token, that token is already used
+			const updateDatabaseToken = tokenV1Service.update({
+				where: { id: tokenFromDatabase.id },
+				data: { usedAt: moment().toISOString() }
+			})
+			transactions.push(updateDatabaseToken)
+
+			// if signType is "EAppJwtServiceSignType.VerifyUser" then update user
+			if (signType === EAppJwtServiceSignType.VERIFY_USER) {
+				// Update user verified identifier
+				const updateUser = userV1Service.update({
+					where: { id: userFromDatabase.id },
+					data: { isUserVerified: true }
+				})
+
+				// Set message
+				message = `Your account activation success`
+
+				transactions.push(updateUser)
+			}
+
+			// if signType is "EAppJwtServiceSignType.ForgotPassword"
+			if (signType === EAppJwtServiceSignType.FORGOT_PASSWORD) {
+				// Check if theres any password pass in
+				if (!password || password.length < 8)
+					throw new ErrorValidation([
+						{
+							msg: 'Password minimal length must 8',
+							param: 'password',
+							location: 'body',
+							value: ''
+						}
+					])
+
+				// Change user password
+				const hashedPassword = await bcrypt.hash(
+					password,
+					await bcrypt.genSalt(10)
+				)
+				const updateUser = userV1Service.update({
+					where: { id: userFromDatabase.id },
+					data: { password: hashedPassword }
+				})
+
+				message = 'You successfully change your password'
+
+				transactions.push(updateUser)
+			}
+
+			// Run transaction
+			await prisma.$transaction(transactions)
+
 			const { code, ...restResponse } = SuccessOk({
-				result: { validated: Boolean(userId) }
+				message
 			})
 			return res.status(code).json(restResponse)
 		}

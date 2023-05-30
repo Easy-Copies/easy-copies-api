@@ -6,6 +6,7 @@
 	"dependencies": {
 		"@prisma/client": "^4.14.1",
 		"bcryptjs": "^2.4.3",
+		"colors": "^1.4.0",
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
@@ -14,6 +15,7 @@
 		"express-validator": "6.14.0",
 		"jsonwebtoken": "^9.0.0",
 		"lodash.omit": "^4.5.0",
+		"moment": "^2.29.4",
 		"nodemailer": "^6.9.2"
 	},
 	"devDependencies": {
@@ -48,6 +50,9 @@
 		"lint": "eslint './src/**/*.{js,jsx,ts,tsx,json}'",
 		"lint:fix": "eslint --fix './src/**/*.{js,jsx,ts,tsx,json}'",
 		"lint:format": "prettier --write './src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+	},
+	"prisma": {
+		"seed": "ts-node-dev prisma/seed.ts"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [

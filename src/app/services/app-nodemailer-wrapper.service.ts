@@ -32,10 +32,12 @@ export class AppNodeMailerWrapper {
 		return new Promise((resolve, reject) => {
 			this.transporter.verify(error => {
 				if (error) {
-					console.error(`App Nodemailer Wrapper Service: ${error}`)
+					console.log(`===app-nodemailer-wrapper.service.ts===: ${error}`.red)
 					reject(error)
 				} else {
-					console.log('App Nodemailer Wrapper Service: Ready to send mail!')
+					console.log(
+						'===app-nodemailer-wrapper.service.ts===: Ready to send mail!'.green
+					)
 					resolve()
 				}
 			})

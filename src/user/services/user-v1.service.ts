@@ -1,66 +1,65 @@
-// Services
-import { AppBaseService } from '@/app/services/app-base.service'
-
 // Types
 import { IUserV1Service } from './user-v1.service.type'
 
 // Prisma
 import { Prisma } from '@prisma/client'
-import type { users } from '@prisma/client'
+import type { PrismaClient } from '@prisma/client'
 
-export class UserV1Service extends AppBaseService implements IUserV1Service {
+export class UserV1Service implements IUserV1Service {
+	constructor(private db: PrismaClient) {}
+
 	/**
 	 * @description Get list of users
 	 *
-	 * @param {Prisma.usersFindManyArgs} args
+	 * @param {Prisma.UserFindManyArgs} args
 	 *
-	 * @return {Promise<users>} Promise<users>
+	 * @return {Promise<User>} Promise<User>
 	 */
-	index = (args?: Prisma.usersFindManyArgs): Promise<users[]> => {
-		return this.db.users.findMany(args)
+	index = (args?: Prisma.UserFindManyArgs) => {
+		return this.db.user.findMany(args)
 	}
 
 	/**
 	 * @description store user
 	 *
-	 * @param {Prisma.usersCreateArgs} args
+	 * @param {Prisma.UserCreateArgs} args
 	 *
-	 * @return {Promise<users>} Promise<users>
+	 * @return {Promise<User>} Promise<User>
 	 */
-	store = (args: Prisma.usersCreateArgs): Promise<users> => {
-		return this.db.users.create(args)
+	store = (args: Prisma.UserCreateArgs) => {
+		return this.db.user.create(args)
 	}
 
 	/**
 	 * @description Get single user
 	 *
-	 * @param {Prisma.usersFindFirstArgs} args
+	 * @param {Prisma.UserFindFirstArgs} args
 	 *
-	 * @return {Promise<users>} Promise<users>
+	 * @return {Promise<User>} Promise<User>
 	 */
-	show = (args: Prisma.usersFindFirstArgs): Promise<users | null> => {
-		return this.db.users.findFirst(args)
+	show = (args: Prisma.UserFindFirstArgs) => {
+		return this.db.user.findFirst(args)
 	}
 
 	/**
 	 * @description Update single user
 	 *
-	 * @param {Prisma.usersUpdateArgs} args
+	 * @param {Prisma.UserUpdateArgs} args
 	 *
-	 * @return {Promise<users>} Promise<users>
+	 * @return {Promise<User>} Promise<User>
 	 */
-	update = (args: Prisma.usersUpdateArgs): Promise<users> => {
-		return this.db.users.update(args)
+	update = (args: Prisma.UserUpdateArgs) => {
+		return this.db.user.update(args)
 	}
 
 	/**
 	 * @description Destroy single user
 	 *
-	 * @param {Prisma.usersDeleteArgs} args
+	 * @param {Prisma.UserDeleteArgs} args
 	 *
-	 * @return {Promise<users>} Promise<users>
+	 * @return {Promise<User>} Promise<User>
 	 */
-	destroy = (args: Prisma.usersDeleteArgs): Promise<users> => {
-		return this.db.users.delete(args)
+	destroy = (args: Prisma.UserDeleteArgs) => {
+		return this.db.user.delete(args)
 	}
 }

@@ -10,8 +10,6 @@ class ErrorValidation extends ErrorBase {
 	constructor(private errors: ExpressErrorValidation[]) {
 		super()
 
-		console.log(this.errors)
-
 		Object.setPrototypeOf(this, ErrorValidation.prototype)
 	}
 
