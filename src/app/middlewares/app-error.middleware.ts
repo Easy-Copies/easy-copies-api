@@ -1,16 +1,27 @@
 // Express
-import { Request, Response } from 'express'
-
-// Error
-import { BaseResponse } from '@/app/responses'
+import { NextFunction, Request, Response } from 'express'
 
 // JWT
 import { JsonWebTokenError } from 'jsonwebtoken'
 
-const appErrorMiddleware = (err: Error, req: Request, res: Response) => {
+// Errors
+import { ErrorBase } from '@/app/errors'
+
+// Prisma
+import { Prisma } from '@prisma/client'
+
+const appErrorMiddleware = (
+	err: Error,
+	req: Request,
+	res: Response,
+	// eslint-disable-next-line
+	next: NextFunction
+) => {
+	console.log(`===app-error.middleware.ts===: ${err}`)
+
 	// Common Error
-	if (err instanceof BaseResponse) {
-		return res.status(err.statusCode).json({ errors: err.serializeResponse() })
+	if (err instanceof ErrorBase) {
+		return res.status(err.statusCode).json({ errors: err.serializeErrors() })
 	}
 
 	// JWT Error
@@ -18,7 +29,49 @@ const appErrorMiddleware = (err: Error, req: Request, res: Response) => {
 		return res.status(400).json({ errors: [{ message: err.message }] })
 	}
 
-	res.status(500).json({ errors: [{ message: 'Something went wrong' }] })
+	// ==== Prisma Error
+	if (err instanceof Prisma.PrismaClientKnownRequestError) {
+		return res.status(500).json({
+			errors: [
+				{ message: `Prisma.PrismaClientKnownRequestError: ${err.message}` }
+			]
+		})
+	}
+	if (err instanceof Prisma.PrismaClientUnknownRequestError) {
+		return res.status(500).json({
+			errors: [
+				{
+					message: `Prisma.PrismaClientUnknownRequestError: ${err.message}`
+				}
+			]
+		})
+	}
+	if (err instanceof Prisma.PrismaClientRustPanicError) {
+		return res.status(500).json({
+			errors: [{ message: `Prisma.PrismaClientRustPanicError: ${err.message}` }]
+		})
+	}
+	if (err instanceof Prisma.PrismaClientInitializationError) {
+		return res.status(500).json({
+			errors: [
+				{
+					message: `Prisma.PrismaClientInitializationError: ${err.message}`
+				}
+			]
+		})
+	}
+	if (err instanceof Prisma.PrismaClientValidationError) {
+		return res.status(500).json({
+			errors: [
+				{ message: `Prisma.PrismaClientValidationError: ${err.message}` }
+			]
+		})
+	}
+	// ==== End Prisma Error
+
+	res
+		.status(500)
+		.json({ errors: [{ message: 'Something went wrong in server' }] })
 }
 
 export { appErrorMiddleware }

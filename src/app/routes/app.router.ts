@@ -5,7 +5,7 @@ import { Express } from 'express'
 import { authRoutes } from '@/auth/routes/auth.router'
 
 // Responses
-import { NotFoundResponse } from '@/app/responses'
+import { ErrorNotFound } from '@/app/errors'
 
 /**
  * @description Generate routes for the application
@@ -19,6 +19,6 @@ export const routesInit = (app: Express): void => {
 
 	// Catch any error
 	app.all('*', () => {
-		throw new NotFoundResponse()
+		throw new ErrorNotFound()
 	})
 }

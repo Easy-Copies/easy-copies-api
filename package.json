@@ -5,20 +5,28 @@
 	"license": "MIT",
 	"dependencies": {
 		"@prisma/client": "^4.14.1",
-		"bcrypt": "^5.1.0",
+		"bcryptjs": "^2.4.3",
+		"colors": "^1.4.0",
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
 		"express-async-errors": "^3.1.1",
-		"express-validator": "^7.0.1",
-		"jsonwebtoken": "^9.0.0"
+		"express-async-handler": "^1.2.0",
+		"express-validator": "6.14.0",
+		"jsonwebtoken": "^9.0.0",
+		"lodash.omit": "^4.5.0",
+		"moment": "^2.29.4",
+		"nodemailer": "^6.9.2"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.6.3",
 		"@commitlint/config-conventional": "^17.6.3",
+		"@types/bcryptjs": "^2.4.2",
 		"@types/express": "^4.17.17",
 		"@types/jsonwebtoken": "^9.0.2",
+		"@types/lodash.omit": "^4.5.7",
 		"@types/node": "^20.2.1",
+		"@types/nodemailer": "^6.4.8",
 		"@typescript-eslint/eslint-plugin": "^5.59.6",
 		"@typescript-eslint/parser": "^5.59.6",
 		"eslint": "^8.41.0",
@@ -34,7 +42,7 @@
 		"typescript": "^5.0.4"
 	},
 	"scripts": {
-		"dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register src/index.ts",
+		"dev": "NODE_ENV=development ts-node-dev --respawn --exit-child -r tsconfig-paths/register src/index.ts",
 		"prepare": "husky install",
 		"version:patch": "yarn version --patch && yarn config set version-git-message \"chore(version): patch %s\"",
 		"version:minor": "yarn version --minor && yarn config set version-git-message \"chore(version): minor %s\"",
@@ -42,6 +50,9 @@
 		"lint": "eslint './src/**/*.{js,jsx,ts,tsx,json}'",
 		"lint:fix": "eslint --fix './src/**/*.{js,jsx,ts,tsx,json}'",
 		"lint:format": "prettier --write './src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+	},
+	"prisma": {
+		"seed": "ts-node-dev prisma/seed.ts"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [

@@ -4,8 +4,8 @@ import { Request, Response, NextFunction } from 'express'
 // Express Validator
 import { validationResult } from 'express-validator'
 
-// Error
-import { ValidationResponse } from '@/app/responses'
+// Utils
+import { ErrorValidation } from '@/app/errors'
 
 const appValidationMiddleware = (
 	req: Request,
@@ -13,7 +13,7 @@ const appValidationMiddleware = (
 	next: NextFunction
 ) => {
 	const errors = validationResult(req)
-	if (!errors.isEmpty()) throw new ValidationResponse(errors.array())
+	if (!errors.isEmpty()) throw new ErrorValidation(errors.array())
 
 	next()
 }

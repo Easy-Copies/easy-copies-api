@@ -4,18 +4,16 @@ import { Request, Response, NextFunction } from 'express'
 // JWT
 import jwt from 'jsonwebtoken'
 
-// Responses
-import { BadRequestResponse, UnauthorizedResponse } from '@/app/responses'
+// Utils
+import { ErrorBadRequest, ErrorUnauthorized } from '@/app/errors'
 
-interface IUserPayload {
-	id: string
-	email: string
-}
+// Types
+import { TUserJwtPayload } from '@/auth/types/auth.type'
 
 declare global {
 	namespace Express {
 		interface Request {
-			currentUser?: IUserPayload
+			currentUser?: TUserJwtPayload
 		}
 	}
 }
@@ -30,11 +28,11 @@ const appAuthMiddleware = async (
 		const authorizationHeader = req.headers?.authorization
 
 		if (!authorizationHeader) {
-			throw new BadRequestResponse('Authorization header should be exists')
+			throw new ErrorBadRequest('Authorization header should be exists')
 		}
 		const token = authorizationHeader.split(' ')?.[1]
 		if ([false, null, 'null'].includes(token)) {
-			throw new BadRequestResponse(
+			throw new ErrorBadRequest(
 				'Authorization header should have token, or maybe your token is null'
 			)
 		}
@@ -42,7 +40,7 @@ const appAuthMiddleware = async (
 		const user = (await jwt.verify(
 			token,
 			process.env.JWT_KEY as string
-		)) as IUserPayload
+		)) as TUserJwtPayload
 
 		req.currentUser = user
 	} finally {
@@ -51,7 +49,7 @@ const appAuthMiddleware = async (
 
 	// Check if there is no current user exists
 	if (!req.currentUser) {
-		throw new UnauthorizedResponse()
+		throw new ErrorUnauthorized()
 	}
 
 	return next()

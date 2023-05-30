@@ -40,7 +40,7 @@
 	},
 	"overrides": [
 		{
-			"files": ["src/**/controllers/*.type.ts"],
+			"files": ["src/**/*.type.ts"],
 			"rules": {
 				"@typescript-eslint/no-explicit-any": "off"
 			}
