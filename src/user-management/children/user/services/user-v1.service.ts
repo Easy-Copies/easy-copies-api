@@ -11,9 +11,6 @@ export class UserV1Service implements IUserV1Service {
 	/**
 	 * @description Get list of users
 	 *
-	 * @param {Prisma.UserFindManyArgs} args
-	 *
-	 * @return {Promise<User>} Promise<User>
 	 */
 	index = (args?: Prisma.UserFindManyArgs) => {
 		return this.db.user.findMany(args)
@@ -22,9 +19,6 @@ export class UserV1Service implements IUserV1Service {
 	/**
 	 * @description store user
 	 *
-	 * @param {Prisma.UserCreateArgs} args
-	 *
-	 * @return {Promise<User>} Promise<User>
 	 */
 	store = (args: Prisma.UserCreateArgs) => {
 		return this.db.user.create(args)
@@ -33,9 +27,6 @@ export class UserV1Service implements IUserV1Service {
 	/**
 	 * @description Get single user
 	 *
-	 * @param {Prisma.UserFindFirstArgs} args
-	 *
-	 * @return {Promise<User>} Promise<User>
 	 */
 	show = (args: Prisma.UserFindFirstArgs) => {
 		return this.db.user.findFirst(args)
@@ -44,9 +35,6 @@ export class UserV1Service implements IUserV1Service {
 	/**
 	 * @description Update single user
 	 *
-	 * @param {Prisma.UserUpdateArgs} args
-	 *
-	 * @return {Promise<User>} Promise<User>
 	 */
 	update = (args: Prisma.UserUpdateArgs) => {
 		return this.db.user.update(args)
@@ -55,11 +43,16 @@ export class UserV1Service implements IUserV1Service {
 	/**
 	 * @description Destroy single user
 	 *
-	 * @param {Prisma.UserDeleteArgs} args
-	 *
-	 * @return {Promise<User>} Promise<User>
 	 */
 	destroy = (args: Prisma.UserDeleteArgs) => {
 		return this.db.user.delete(args)
+	}
+
+	/**
+	 * @description Destroy multiple user
+	 *
+	 */
+	destroyMany = (args: Prisma.UserDeleteManyArgs) => {
+		return this.db.user.deleteMany(args)
 	}
 }

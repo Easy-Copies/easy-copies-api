@@ -17,7 +17,7 @@ const appErrorMiddleware = (
 	// eslint-disable-next-line
 	next: NextFunction
 ) => {
-	console.log(`===app-error.middleware.ts===: ${err}`)
+	console.log(`===app-error.middleware.ts===: ${err.message}`.red)
 
 	// Common Error
 	if (err instanceof ErrorBase) {

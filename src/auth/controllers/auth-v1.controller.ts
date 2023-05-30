@@ -4,10 +4,9 @@ import { IAuthControllerV1 } from './auth-v1.controller.type'
 import { EAppJwtServiceSignType } from '@/app/services/app-jwt.service.type'
 
 // Services
-import { AppCommonService } from '@/app/services/app-common.service'
 import { AppJwtService } from '@/app/services/app-jwt.service'
 import { AppNodemailerService } from '@/app/services/app-nodemailer.service'
-import { UserV1Service } from '@/user/services/user-v1.service'
+import { UserV1Service } from '@/user-management/children/user/services/user-v1.service'
 import { appNodeMailerWrapper } from '@/app/services/app-nodemailer-wrapper.service'
 import { TokenV1Service } from '@/token/services/token-v1.service'
 
@@ -42,10 +41,7 @@ const userV1Service = new UserV1Service(prisma)
 const appJwtService = new AppJwtService()
 const tokenV1Service = new TokenV1Service(prisma)
 
-export class AuthControllerV1
-	extends AppCommonService
-	implements IAuthControllerV1
-{
+export class AuthControllerV1 implements IAuthControllerV1 {
 	/**
 	 * @description Generate email with verification code
 	 *

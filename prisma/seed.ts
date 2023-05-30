@@ -7,6 +7,10 @@ import bcrypt from 'bcryptjs'
 // Init Prisma
 const prisma = new PrismaClient()
 
+/**
+ * @description Seed user
+ *
+ */
 const userSeeder = async () => {
 	const salt = await bcrypt.genSalt(10)
 	const password = await bcrypt.hash('password', salt)
@@ -23,7 +27,28 @@ const userSeeder = async () => {
 				create: {
 					name,
 					email,
-					password
+					password,
+					isUserVerified: true
+				}
+			})
+		)
+	)
+}
+
+/**
+ * @description Seed roles
+ *
+ */
+const roleSeeder = async () => {
+	const roles = [{ name: 'Admin' }, { name: 'Store' }, { name: 'Basic User' }]
+
+	await prisma.$transaction(
+		roles.map(({ name }) =>
+			prisma.role.upsert({
+				where: { name },
+				update: {},
+				create: {
+					name
 				}
 			})
 		)
@@ -31,14 +56,14 @@ const userSeeder = async () => {
 }
 
 async function main() {
-	await userSeeder()
+	await Promise.all([userSeeder(), roleSeeder()])
 }
 main()
 	.then(async () => {
 		await prisma.$disconnect()
 	})
 	.catch(async e => {
-		console.error(e)
+		console.log(`===prisma/seed.ts===: ${e}`.red)
 		await prisma.$disconnect()
 		process.exit(1)
 	})
