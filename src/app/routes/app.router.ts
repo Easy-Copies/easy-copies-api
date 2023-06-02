@@ -1,5 +1,5 @@
 // Express
-import { Express } from 'express'
+import { Express, Request, Response } from 'express'
 
 // Routes
 import { authV1Routes } from '@/auth/routes/auth-v1.router'
@@ -16,6 +16,10 @@ import { ErrorNotFound } from '@/app/errors'
  * @return {void}
  */
 export const routesInit = (app: Express): void => {
+	app.get('/', (req: Request, res: Response) => {
+		res.status(200).json({ message: 'Welcome to Easy Copies!' })
+	})
+
 	app.use('/api/v1/auth', authV1Routes)
 	app.use('/api/v1/user-management', roleV1Routes)
 

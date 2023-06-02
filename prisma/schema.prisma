@@ -42,11 +42,12 @@ enum TokenType {
 }
 
 model Role {
-  id        String     @id @default(uuid())
-  name      String     @unique @db.VarChar(255)
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-  users     RoleUser[]
+  id          String           @id @default(uuid())
+  name        String           @unique @db.VarChar(255)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  users       RoleUser[]
+  permissions PermissionRole[]
 
   @@map("roles")
 }
@@ -56,9 +57,30 @@ model RoleUser {
   userId    String
   role      Role     @relation(fields: [roleId], references: [id])
   roleId    String
+  isActive  Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@id([userId, roleId])
   @@map("role_users")
+}
+
+model Permission {
+  code  String           @unique
+  roles PermissionRole[]
+
+  @@map("permissions")
+}
+
+model PermissionRole {
+  permission     Permission @relation(fields: [permissionCode], references: [code])
+  permissionCode String
+  role           Role       @relation(fields: [roleId], references: [id])
+  roleId         String
+  actions        Json       @default("{\"create\": false, \"read\": false, \"update\": false, \"delete\": false}")
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+
+  @@id([permissionCode, roleId])
+  @@map("permission_roles")
 }
