@@ -1,3 +1,7 @@
+// Colors
+import colors from 'colors'
+colors.enable()
+
 // Prisma
 import { PrismaClient } from '@prisma/client'
 
@@ -7,6 +11,9 @@ import bcrypt from 'bcryptjs'
 // Init Prisma
 const prisma = new PrismaClient()
 
+const users = [{ name: 'Huda Prasetyo', email: 'test.hudaprasetyo@gmail.com' }]
+const roles = [{ name: 'Admin' }, { name: 'Store' }, { name: 'Basic User' }]
+
 /**
  * @description Seed user
  *
@@ -15,13 +22,9 @@ const userSeeder = async () => {
 	const salt = await bcrypt.genSalt(10)
 	const password = await bcrypt.hash('password', salt)
 
-	const users = [
-		{ name: 'Huda Prasetyo', email: 'test.hudaprasetyo@gmail.com' }
-	]
-
 	await prisma.$transaction(
-		users.map(({ email, name }) =>
-			prisma.user.upsert({
+		users.map(({ email, name }) => {
+			return prisma.user.upsert({
 				where: { email: email },
 				update: {},
 				create: {
@@ -31,7 +34,7 @@ const userSeeder = async () => {
 					isUserVerified: true
 				}
 			})
-		)
+		})
 	)
 }
 
@@ -40,8 +43,6 @@ const userSeeder = async () => {
  *
  */
 const roleSeeder = async () => {
-	const roles = [{ name: 'Admin' }, { name: 'Store' }, { name: 'Basic User' }]
-
 	await prisma.$transaction(
 		roles.map(({ name }) =>
 			prisma.role.upsert({
@@ -55,8 +56,40 @@ const roleSeeder = async () => {
 	)
 }
 
+/**
+ * @description Assign role to users
+ *
+ */
+const assignRoleToUserSeeder = async () => {
+	const adminRole = await prisma.role.findFirst({ where: { name: 'Admin' } })
+	const hudaUser = await prisma.user.findFirst({
+		where: { email: 'test.hudaprasetyo@gmail.com' }
+	})
+
+	await prisma.$transaction([
+		prisma.user.update({
+			where: { id: hudaUser?.id },
+			data: {
+				roles: {
+					create: [
+						{
+							role: {
+								connect: {
+									id: adminRole?.id
+								}
+							}
+						}
+					]
+				}
+			}
+		})
+	])
+}
+
 async function main() {
-	await Promise.all([userSeeder(), roleSeeder()])
+	await roleSeeder()
+	await userSeeder()
+	await assignRoleToUserSeeder()
 }
 main()
 	.then(async () => {
