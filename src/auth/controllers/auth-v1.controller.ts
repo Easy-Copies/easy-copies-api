@@ -112,10 +112,15 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 				.withMessage('Password minimal length must 8')
 		],
 		config: async (req: Request, res: Response) => {
-			const { name, email, password } = req.body
+			const { name, password } = req.body
+			let { email } = req.body
+
+			email = email.replace(/\s+/, '').trim().toLowerCase()
 
 			// Check if user exists before
-			const existedUser = await userV1Service.show({ where: { email } })
+			const existedUser = await userV1Service.show({
+				where: { email }
+			})
 			if (existedUser) throw new ErrorBadRequest('Email currently in used')
 
 			// Hash password

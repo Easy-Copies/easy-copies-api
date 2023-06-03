@@ -2,7 +2,11 @@
 import { Prisma } from '@prisma/client'
 import type { User, PrismaPromise } from '@prisma/client'
 
+// Models
+import { TUserModel } from '@/user-management/children/user/models/user.model.type'
+
 export interface IUserV1Service {
+	model: TUserModel
 	index: (args?: Prisma.UserFindManyArgs) => PrismaPromise<User[]>
 	store: (args: Prisma.UserCreateArgs) => Prisma.Prisma__UserClient<User>
 	show: (args: Prisma.UserFindFirstArgs) => PrismaPromise<User | null>

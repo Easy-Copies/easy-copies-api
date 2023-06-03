@@ -8,6 +8,8 @@ import type { PrismaClient } from '@prisma/client'
 export class UserV1Service implements IUserV1Service {
 	constructor(private db: PrismaClient) {}
 
+	model = this.db.user
+
 	/**
 	 * @description Get list of users
 	 *

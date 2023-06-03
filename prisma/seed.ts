@@ -86,10 +86,24 @@ const assignRoleToUserSeeder = async () => {
 	])
 }
 
+/**
+ * @description Seed permissions
+ *
+ *
+ */
+const permissionSeeder = async () => {
+	await prisma.$transaction([
+		prisma.permission.createMany({
+			data: [{ code: 'User Management' }, { code: 'Role Management' }]
+		})
+	])
+}
+
 async function main() {
 	await roleSeeder()
 	await userSeeder()
 	await assignRoleToUserSeeder()
+	await permissionSeeder()
 }
 main()
 	.then(async () => {

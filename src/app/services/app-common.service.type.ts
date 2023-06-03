@@ -4,10 +4,6 @@ import type { Prisma } from '@prisma/client'
 // Express
 import { Request } from 'express'
 
-export type TPrismaPaginateModel = Prisma.RoleDelegate<
-	Prisma.RejectOnNotFound | Prisma.RejectPerOperation | undefined
->
-
 export type TPrismaPaginateArgs = Prisma.RoleFindManyArgs & {
 	page?: number | undefined
 	limit?: number | undefined
@@ -27,7 +23,8 @@ export type TPrismaPaginateResponse<T = unknown> = {
 export type TAppCommonService = {
 	parsePaginationArgs: (query: Request['query']) => TPrismaPaginateArgs
 	paginate: <T>(
-		model: TPrismaPaginateModel,
+		model: any,
 		args?: TPrismaPaginateArgs
 	) => Promise<TPrismaPaginateResponse<T>>
+	hashPassword: (password: string) => Promise<string>
 }

@@ -2,7 +2,6 @@
 import {
 	TAppCommonService,
 	TPrismaPaginateArgs,
-	TPrismaPaginateModel,
 	TPrismaPaginateResponse
 } from './app-common.service.type'
 
@@ -11,6 +10,9 @@ import omit from 'lodash.omit'
 
 // Express
 import { Request } from 'express'
+
+// Bcrypt
+import bcrypt from 'bcryptjs'
 
 export class AppCommonService implements TAppCommonService {
 	/**
@@ -29,11 +31,25 @@ export class AppCommonService implements TAppCommonService {
 	}
 
 	/**
+	 * @description Hash password
+	 *
+	 *
+	 */
+	hashPassword = async (password: string) => {
+		// Hash password
+		const salt = await bcrypt.genSalt(10)
+		const hashedPassword = await bcrypt.hash(password, salt)
+
+		return hashedPassword
+	}
+
+	/**
 	 * @description Paginate prisma
 	 *
 	 */
 	paginate = async <T = unknown>(
-		model: TPrismaPaginateModel,
+		// eslint-disable-next-line
+		model: any,
 		args?: TPrismaPaginateArgs
 	): Promise<TPrismaPaginateResponse<T>> => {
 		const currentPage = args?.page || 0
@@ -56,7 +72,16 @@ export class AppCommonService implements TAppCommonService {
 			totalPages,
 			totalRows,
 			page: page + 1,
-			rows,
+			rows: rows.map(
+				// eslint-disable-next-line
+				(row: any) => {
+					if (row?.password) {
+						return omit(row, ['password'])
+					} else {
+						return row
+					}
+				}
+			),
 			sort: 'desc'
 		} as TPrismaPaginateResponse<T>
 

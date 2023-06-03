@@ -53,9 +53,9 @@ model Role {
 }
 
 model RoleUser {
-  user      User     @relation(fields: [userId], references: [id])
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId    String
-  role      Role     @relation(fields: [roleId], references: [id])
+  role      Role     @relation(fields: [roleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   roleId    String
   isActive  Boolean  @default(false)
   createdAt DateTime @default(now())
@@ -73,9 +73,9 @@ model Permission {
 }
 
 model PermissionRole {
-  permission     Permission @relation(fields: [permissionCode], references: [code])
+  permission     Permission @relation(fields: [permissionCode], references: [code], onDelete: Cascade, onUpdate: Cascade)
   permissionCode String
-  role           Role       @relation(fields: [roleId], references: [id])
+  role           Role       @relation(fields: [roleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   roleId         String
   actions        Json       @default("{\"create\": false, \"read\": false, \"update\": false, \"delete\": false}")
   createdAt      DateTime   @default(now())
