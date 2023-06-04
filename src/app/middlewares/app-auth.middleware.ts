@@ -59,8 +59,6 @@ const appAuthMiddleware =
 
 			// Check if user want to check by permission
 			if (options?.permissionCode && options?.permissionActions) {
-				console.log('A')
-
 				// Check if user have roles
 				const userRoles = await prisma.roleUser.findMany({
 					where: { userId: user.id }
