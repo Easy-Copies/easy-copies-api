@@ -14,26 +14,30 @@ const roleControllerV1 = new RoleControllerV1()
 const { index, store, show, update, destroy, assignPermission } =
 	roleControllerV1
 
-router.get('/', appAuthMiddleware, index)
+router.get('/', appAuthMiddleware({ ...index.permission }), index.config)
 router.post(
 	'/',
-	appAuthMiddleware,
+	appAuthMiddleware({ ...store.permission }),
 	store.validateInput,
 	appValidationMiddleware,
 	store.config
 )
-router.get('/:id', appAuthMiddleware, show)
+router.get('/:id', appAuthMiddleware({ ...store.permission }), show.config)
 router.put(
 	'/:id',
-	appAuthMiddleware,
+	appAuthMiddleware({ ...update.permission }),
 	update.validateInput,
 	appValidationMiddleware,
 	update.config
 )
-router.delete('/:id', appAuthMiddleware, destroy)
+router.delete(
+	'/:id',
+	appAuthMiddleware({ ...destroy.permission }),
+	destroy.config
+)
 router.put(
 	'/permissions/assign/:id',
-	appAuthMiddleware,
+	appAuthMiddleware({ ...assignPermission.permission }),
 	assignPermission.validateInput,
 	appValidationMiddleware,
 	assignPermission.config

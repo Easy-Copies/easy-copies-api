@@ -46,8 +46,8 @@ router.post(
 	appValidationMiddleware,
 	refreshToken.config
 )
-router.get('/me', appAuthMiddleware, me)
-router.post('/logout', appAuthMiddleware, logout)
+router.get('/me', appAuthMiddleware(), me)
+router.post('/logout', appAuthMiddleware(), logout)
 router.post(
 	'/verify/:token',
 	verify.validateInput,
@@ -56,7 +56,7 @@ router.post(
 )
 router.put(
 	'/roles/change-active',
-	appAuthMiddleware,
+	appAuthMiddleware(),
 	changeActiveRole.validateInput,
 	appValidationMiddleware,
 	changeActiveRole.config

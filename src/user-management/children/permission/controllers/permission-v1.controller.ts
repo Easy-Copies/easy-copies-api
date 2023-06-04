@@ -28,37 +28,43 @@ export class PermissionControllerV1 implements IPermissionControllerV1 {
 	 * @description Get list of roles
 	 *
 	 */
-	index = async (req: Request, res: Response) => {
-		const result = await appCommonService.paginate<Permission>(
-			prisma.permission,
-			appCommonService.parsePaginationArgs(req.query)
-		)
+	index = {
+		validateInput: [],
+		config: async (req: Request, res: Response) => {
+			const result = await appCommonService.paginate<Permission>(
+				prisma.permission,
+				appCommonService.parsePaginationArgs(req.query)
+			)
 
-		const { code, ...restResponse } = SuccessOk({
-			result
-		})
-		return res.status(code).json(restResponse)
+			const { code, ...restResponse } = SuccessOk({
+				result
+			})
+			return res.status(code).json(restResponse)
+		}
 	}
 
 	/**
 	 * @description Get single permission
 	 *
 	 */
-	show = async (req: Request, res: Response) => {
-		const { code: permissionCode } = req.params
+	show = {
+		validateInput: [],
+		config: async (req: Request, res: Response) => {
+			const { code: permissionCode } = req.params
 
-		// Check if permission in database exists
-		const permission = await prisma.permission.findFirst({
-			where: { code: permissionCode },
-			include: {
-				roles: true
-			}
-		})
-		if (!permission) throw new ErrorNotFound('Permission not found')
+			// Check if permission in database exists
+			const permission = await prisma.permission.findFirst({
+				where: { code: permissionCode },
+				include: {
+					roles: true
+				}
+			})
+			if (!permission) throw new ErrorNotFound('Permission not found')
 
-		const { code, ...restResponse } = SuccessOk({
-			result: permission
-		})
-		return res.status(code).json(restResponse)
+			const { code, ...restResponse } = SuccessOk({
+				result: permission
+			})
+			return res.status(code).json(restResponse)
+		}
 	}
 }

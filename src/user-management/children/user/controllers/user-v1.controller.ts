@@ -23,6 +23,10 @@ import type { User } from '@prisma/client'
 // Lodash
 import omit from 'lodash.omit'
 import uniq from 'lodash.uniq'
+import {
+	EAppPermission,
+	EAppPermissionActions
+} from '@/app/types/app-permission.type'
 
 // Init Prisma
 const prisma = new PrismaClient()
@@ -77,16 +81,23 @@ export class UserControllerV1 implements IUserControllerV1 {
 	 * @description Get list of users
 	 *
 	 */
-	index = async (req: Request, res: Response) => {
-		const result = await appCommonService.paginate<User>(
-			prisma.user,
-			appCommonService.parsePaginationArgs(req.query)
-		)
+	index = {
+		validateInput: [],
+		permission: {
+			permissionCode: EAppPermission.USER_MANAGEMENT,
+			permissionActions: EAppPermissionActions.READ
+		},
+		config: async (req: Request, res: Response) => {
+			const result = await appCommonService.paginate<User>(
+				prisma.user,
+				appCommonService.parsePaginationArgs(req.query)
+			)
 
-		const { code, ...restResponse } = SuccessOk({
-			result
-		})
-		return res.status(code).json(restResponse)
+			const { code, ...restResponse } = SuccessOk({
+				result
+			})
+			return res.status(code).json(restResponse)
+		}
 	}
 
 	/**
@@ -110,6 +121,10 @@ export class UserControllerV1 implements IUserControllerV1 {
 					return true
 				})
 		],
+		permission: {
+			permissionCode: EAppPermission.USER_MANAGEMENT,
+			permissionActions: EAppPermissionActions.CREATE
+		},
 		config: async (req: Request, res: Response) => {
 			const { name, password, roles } = req.body
 			let { email } = req.body
@@ -154,17 +169,24 @@ export class UserControllerV1 implements IUserControllerV1 {
 	 * @description Get single user
 	 *
 	 */
-	show = async (req: Request, res: Response) => {
-		const { id } = req.params
+	show = {
+		validateInput: [],
+		permission: {
+			permissionCode: EAppPermission.USER_MANAGEMENT,
+			permissionActions: EAppPermissionActions.READ
+		},
+		config: async (req: Request, res: Response) => {
+			const { id } = req.params
 
-		// Check if user in database exists
-		const user = await this._getUserWithRoles(id).query
-		if (!user) throw new ErrorNotFound('User not found')
+			// Check if user in database exists
+			const user = await this._getUserWithRoles(id).query
+			if (!user) throw new ErrorNotFound('User not found')
 
-		const { code, ...restResponse } = SuccessOk({
-			result: omit(user, ['password'])
-		})
-		return res.status(code).json(restResponse)
+			const { code, ...restResponse } = SuccessOk({
+				result: omit(user, ['password'])
+			})
+			return res.status(code).json(restResponse)
+		}
 	}
 
 	/**
@@ -186,6 +208,10 @@ export class UserControllerV1 implements IUserControllerV1 {
 					return true
 				})
 		],
+		permission: {
+			permissionCode: EAppPermission.USER_MANAGEMENT,
+			permissionActions: EAppPermissionActions.UPDATE
+		},
 		config: async (req: Request, res: Response) => {
 			const { id } = req.params
 			const { name, roles } = req.body
@@ -280,19 +306,38 @@ export class UserControllerV1 implements IUserControllerV1 {
 	 * @description Destroy single user
 	 *
 	 */
-	destroy = async (req: Request, res: Response) => {
-		const { id } = req.params
+	destroy = {
+		validateInput: [
+			body('name').not().isEmpty().withMessage('Name is required'),
+			body('email').isEmail().withMessage('Must be valid email'),
+			body('roles')
+				.isArray()
+				.withMessage('Roles must be an array')
+				.custom(roles => {
+					if (roles?.every((role: string) => typeof role === 'number'))
+						throw new Error('Role must be an string of ID')
 
-		// Check if user in database exists
-		const user = await this._getUserWithRoles(id).query
-		if (!user) throw new ErrorNotFound('User not found')
+					return true
+				})
+		],
+		permission: {
+			permissionCode: EAppPermission.USER_MANAGEMENT,
+			permissionActions: EAppPermissionActions.UPDATE
+		},
+		config: async (req: Request, res: Response) => {
+			const { id } = req.params
 
-		// Delete user
-		await prisma.user.delete({ where: { id: user.id } })
+			// Check if user in database exists
+			const user = await this._getUserWithRoles(id).query
+			if (!user) throw new ErrorNotFound('User not found')
 
-		const { code, ...restResponse } = SuccessOk({
-			result: this._mapUser(user)
-		})
-		return res.status(code).json(restResponse)
+			// Delete user
+			await prisma.user.delete({ where: { id: user.id } })
+
+			const { code, ...restResponse } = SuccessOk({
+				result: this._mapUser(user)
+			})
+			return res.status(code).json(restResponse)
+		}
 	}
 }

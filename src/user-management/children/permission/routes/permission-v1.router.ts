@@ -12,7 +12,7 @@ const router = Router()
 const permissionControllerV1 = new PermissionControllerV1()
 const { index, show } = permissionControllerV1
 
-router.get('/', appAuthMiddleware, index)
-router.get('/:code', appAuthMiddleware, show)
+router.get('/', appAuthMiddleware(), index.config)
+router.get('/:code', appAuthMiddleware(), show.config)
 
 export { router as permissionV1Routes }
