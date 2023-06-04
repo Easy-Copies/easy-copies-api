@@ -11,7 +11,13 @@ import { appValidationMiddleware } from '@/app/middlewares/app-validation.middle
 // Initialize anything
 const router = Router()
 const userControllerV1 = new UserControllerV1()
-const { index, store, show, update, destroy } = userControllerV1
+const { index, store, show, update, destroy, roleList } = userControllerV1
+
+router.get(
+	'/roles',
+	appAuthMiddleware({ ...roleList.permission }),
+	roleList.config
+)
 
 router.get('/', appAuthMiddleware({ ...index.permission }), index.config)
 router.post(
