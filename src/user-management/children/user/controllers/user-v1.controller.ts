@@ -67,10 +67,19 @@ export class UserControllerV1 implements IUserControllerV1 {
 			body('email').isEmail().withMessage('Must be valid email'),
 			body('password')
 				.isLength({ min: 8 })
-				.withMessage('Password minimal length must 8')
+				.withMessage('Password minimal length must 8'),
+			body('roles')
+				.isArray()
+				.withMessage('Roles must be an array')
+				.custom(roles => {
+					if (roles?.every((role: string) => typeof role === 'number'))
+						throw new Error('Role must be an string of ID')
+
+					return true
+				})
 		],
 		config: async (req: Request, res: Response) => {
-			const { name, password } = req.body
+			const { name, password, roles } = req.body
 			let { email } = req.body
 
 			// Map Email
@@ -89,7 +98,16 @@ export class UserControllerV1 implements IUserControllerV1 {
 
 			// Create new user
 			const createdUser = await userV1Service.store({
-				data: { name: name.trim(), email, password: hashedPassword }
+				data: {
+					name: name.trim(),
+					email,
+					password: hashedPassword,
+					roles: {
+						create: roles.map((roleId: number) => ({
+							role: { connect: { id: roleId } }
+						}))
+					}
+				}
 			})
 
 			const { code, ...restResponse } = SuccessCreated({
