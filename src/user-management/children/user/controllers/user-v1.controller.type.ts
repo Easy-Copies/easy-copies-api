@@ -7,4 +7,5 @@ export interface IUserControllerV1 {
 	show: IAppControllerConfigRestrictionReturn
 	update: IAppControllerConfigRestrictionReturn
 	destroy: IAppControllerConfigRestrictionReturn
+	roleList: IAppControllerConfigRestrictionReturn
 }

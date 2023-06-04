@@ -340,4 +340,28 @@ export class UserControllerV1 implements IUserControllerV1 {
 			return res.status(code).json(restResponse)
 		}
 	}
+
+	/**
+	 * @description Get role list
+	 *
+	 *
+	 */
+	roleList = {
+		validateInput: [],
+		permission: {
+			permissionCode: EAppPermission.USER_MANAGEMENT,
+			permissionActions: EAppPermissionActions.READ
+		},
+		config: async (req: Request, res: Response) => {
+			const roles = await prisma.role.findMany({
+				select: { id: true, name: true },
+				orderBy: { name: 'asc' }
+			})
+
+			const { code, ...restResponse } = SuccessOk({
+				result: roles
+			})
+			return res.status(code).json(restResponse)
+		}
+	}
 }
