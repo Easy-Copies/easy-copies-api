@@ -187,6 +187,50 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 	}
 
 	/**
+	 * @description Permission list
+	 *
+	 */
+	permissionList = {
+		validateInput: [],
+		permission: {
+			permissionCode: EAppPermission.ROLE_MANAGEMENT,
+			permissionActions: EAppPermissionActions.UPDATE
+		},
+		config: async (req: Request, res: Response) => {
+			const { roleId } = req.params
+
+			// Get all permissions
+			const permissions = await prisma.permission.findMany({
+				orderBy: { code: 'asc' }
+			})
+
+			// Get permission action by specific role
+			const permissionActions = await prisma.permissionRole.findMany({
+				where: { roleId }
+			})
+
+			// Map permission according permission action by specific role
+			const mapPermissions = permissions.map(permission => ({
+				...permission,
+				actions: permissionActions.find(
+					permissionAction =>
+						permissionAction.permissionCode === permission.code
+				)?.actions || {
+					create: false,
+					read: false,
+					update: false,
+					delete: false
+				}
+			}))
+
+			const { code, ...restResponse } = SuccessOk({
+				result: mapPermissions
+			})
+			return res.status(code).json(restResponse)
+		}
+	}
+
+	/**
 	 * @description Assign permission to specific role
 	 *
 	 */
@@ -218,12 +262,12 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 			permissionActions: EAppPermissionActions.UPDATE
 		},
 		config: async (req: Request, res: Response) => {
-			const { id } = req.params
+			const { roleId: id } = req.params
 			const { permissionCode, actions } = req.body
 
 			// Find role
 			const role = await prisma.role.findFirst({ where: { id } })
-			if (!role) throw new ErrorNotFound('Role not found!')
+			if (!role) throw new ErrorNotFound('Role not found')
 
 			// Find permission
 			const permission = await prisma.permission.findFirst({

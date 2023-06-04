@@ -11,8 +11,28 @@ import { appValidationMiddleware } from '@/app/middlewares/app-validation.middle
 // Initialize anything
 const router = Router()
 const roleControllerV1 = new RoleControllerV1()
-const { index, store, show, update, destroy, assignPermission } =
-	roleControllerV1
+const {
+	index,
+	store,
+	show,
+	update,
+	destroy,
+	permissionList,
+	assignPermission
+} = roleControllerV1
+
+router.get(
+	'/permissions/:roleId',
+	appAuthMiddleware({ ...permissionList.permission }),
+	permissionList.config
+)
+router.put(
+	'/permissions/assign/:roleId',
+	appAuthMiddleware({ ...assignPermission.permission }),
+	assignPermission.validateInput,
+	appValidationMiddleware,
+	assignPermission.config
+)
 
 router.get('/', appAuthMiddleware({ ...index.permission }), index.config)
 router.post(
@@ -34,13 +54,6 @@ router.delete(
 	'/:id',
 	appAuthMiddleware({ ...destroy.permission }),
 	destroy.config
-)
-router.put(
-	'/permissions/assign/:id',
-	appAuthMiddleware({ ...assignPermission.permission }),
-	assignPermission.validateInput,
-	appValidationMiddleware,
-	assignPermission.config
 )
 
 export { router as roleV1Routes }

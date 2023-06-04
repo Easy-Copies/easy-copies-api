@@ -7,5 +7,6 @@ export interface IRoleControllerV1 {
 	show: IAppControllerConfigRestrictionReturn
 	update: IAppControllerConfigRestrictionReturn
 	destroy: IAppControllerConfigRestrictionReturn
+	permissionList: IAppControllerConfigRestrictionReturn
 	assignPermission: IAppControllerConfigRestrictionReturn
 }

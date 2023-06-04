@@ -64,21 +64,21 @@ const appAuthMiddleware =
 					where: { userId: user.id }
 				})
 				if (userRoles.length === 0)
-					throw new ErrorForbidden('User did not have any roles')
+					throw new ErrorForbidden('You have no roles')
 
 				// Check if user have active role
 				const userActiveRole = await prisma.roleUser.findFirst({
 					where: { userId: user.id, isActive: true }
 				})
 				if (!userActiveRole)
-					throw new ErrorForbidden('User did not have active role')
+					throw new ErrorForbidden('You did not have active role')
 
 				// Get permissions of active role
 				const activeRolePermissions = await prisma.permissionRole.findMany({
 					where: { roleId: userActiveRole.roleId }
 				})
 				if (activeRolePermissions.length === 0)
-					throw new ErrorForbidden('Role did not have any permissions')
+					throw new ErrorForbidden('Your role did not have any permissions')
 
 				// Check role have permissions by desired permission code
 				const rolePermission = await prisma.permissionRole.findFirst({
@@ -87,7 +87,7 @@ const appAuthMiddleware =
 						permissionCode: options.permissionCode
 					}
 				})
-				if (!rolePermission) throw new ErrorForbidden('Permission not found')
+				if (!rolePermission) throw new ErrorForbidden('You have no permission')
 				if (rolePermission) {
 					const actions = rolePermission.actions as {
 						create: boolean
