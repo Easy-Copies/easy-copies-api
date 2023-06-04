@@ -11,8 +11,16 @@ import { appValidationMiddleware } from '@/app/middlewares/app-validation.middle
 // Initialize anything
 const router = Router()
 const authControllerV1 = new AuthControllerV1()
-const { register, login, forgotPassword, refreshToken, me, logout, verify } =
-	authControllerV1
+const {
+	register,
+	login,
+	forgotPassword,
+	refreshToken,
+	me,
+	logout,
+	verify,
+	changeActiveRole
+} = authControllerV1
 
 router.post(
 	'/register',
@@ -45,6 +53,13 @@ router.post(
 	verify.validateInput,
 	appValidationMiddleware,
 	verify.config
+)
+router.put(
+	'/roles/change-active',
+	appAuthMiddleware,
+	changeActiveRole.validateInput,
+	appValidationMiddleware,
+	changeActiveRole.config
 )
 
 export { router as authV1Routes }

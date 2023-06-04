@@ -272,14 +272,11 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			where: { id: req.currentUser?.id as string }
 		})
 
-		// Check if user exists
-		if (!user) throw new ErrorNotFound('User not found!')
-
 		// Find current user roles
 		const userRoles = await prisma.roleUser.findMany({
 			where: { userId: user?.id },
 			include: { role: true },
-			orderBy: { createdAt: 'desc' }
+			orderBy: { role: { name: 'asc' } }
 		})
 
 		// Find current user role permissions
@@ -287,7 +284,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			where: {
 				roleId: { in: userRoles.map(userRole => userRole.roleId) }
 			},
-			orderBy: { createdAt: 'desc' }
+			orderBy: { permission: { code: 'asc' } }
 		})
 
 		const { code, ...restResponse } = SuccessOk({
@@ -297,6 +294,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 					roles: userRoles.map(userRole => ({
 						...omit(userRole, ['userId', 'roleId', 'role']),
 						roleName: userRole.role.name,
+						id: userRole.roleId,
 						permissions: userRolePermissions.map(userRolePermission =>
 							omit(userRolePermission, ['roleId'])
 						)
@@ -411,6 +409,55 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 
 			const { code, ...restResponse } = SuccessOk({
 				message
+			})
+			return res.status(code).json(restResponse)
+		}
+	}
+
+	/**
+	 * @description Change active role of active user
+	 *
+	 *
+	 */
+	changeActiveRole = {
+		validateInput: [
+			body('roleId').not().isEmpty().withMessage('Role ID is required')
+		],
+		config: async (req: Request, res: Response) => {
+			const { roleId } = req.body
+
+			// Check if role exists
+			const role = await prisma.role.findFirst({ where: { id: roleId } })
+			if (!role) throw new ErrorNotFound('Role not found')
+
+			// Check if user have selected role
+			const attachedUserRole = await prisma.roleUser.findFirst({
+				where: { userId: req.currentUser?.id as string, roleId }
+			})
+			if (!attachedUserRole)
+				throw new ErrorBadRequest(
+					'You have no permission to change to that role'
+				)
+
+			// Transact
+			await prisma.$transaction([
+				// Inactive previous roles if user have
+				prisma.roleUser.updateMany({
+					where: { userId: req.currentUser?.id as string, NOT: { roleId } },
+					data: { isActive: false }
+				}),
+
+				// Make selected role active
+				prisma.roleUser.update({
+					where: {
+						userId_roleId: { userId: req.currentUser?.id as string, roleId }
+					},
+					data: { isActive: true }
+				})
+			])
+
+			const { code, ...restResponse } = SuccessOk({
+				message: `Role ${role.name} successfully activated`
 			})
 			return res.status(code).json(restResponse)
 		}

@@ -32,7 +32,7 @@ router.put(
 )
 router.delete('/:id', appAuthMiddleware, destroy)
 router.put(
-	'/permission/assign/:id',
+	'/permissions/assign/:id',
 	appAuthMiddleware,
 	assignPermission.validateInput,
 	appValidationMiddleware,
