@@ -6,7 +6,6 @@ import { EAppJwtServiceSignType } from '@/app/services/app-jwt.service.type'
 // Services
 import { AppJwtService } from '@/app/services/app-jwt.service'
 import { AppNodemailerService } from '@/app/services/app-nodemailer.service'
-import { UserV1Service } from '@/user-management/children/user/services/user-v1.service'
 import { appNodeMailerWrapper } from '@/app/services/app-nodemailer-wrapper.service'
 import { TokenV1Service } from '@/token/services/token-v1.service'
 
@@ -37,7 +36,6 @@ import moment from 'moment'
 // Init Prisma
 const prisma = new PrismaClient()
 
-const userV1Service = new UserV1Service(prisma)
 const appJwtService = new AppJwtService()
 const tokenV1Service = new TokenV1Service(prisma)
 
@@ -112,10 +110,15 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 				.withMessage('Password minimal length must 8')
 		],
 		config: async (req: Request, res: Response) => {
-			const { name, email, password } = req.body
+			const { name, password } = req.body
+			let { email } = req.body
+
+			email = email.replace(/\s+/, '').trim().toLowerCase()
 
 			// Check if user exists before
-			const existedUser = await userV1Service.show({ where: { email } })
+			const existedUser = await prisma.user.findFirst({
+				where: { email }
+			})
 			if (existedUser) throw new ErrorBadRequest('Email currently in used')
 
 			// Hash password
@@ -123,7 +126,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			const hashedPassword = await bcrypt.hash(password, salt)
 
 			// Create new user
-			const user = await userV1Service.store({
+			const user = await prisma.user.create({
 				data: { name, email, password: hashedPassword }
 			})
 
@@ -155,7 +158,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			const { email, password } = req.body
 
 			// Find correct user
-			const user = await userV1Service.show({ where: { email } })
+			const user = await prisma.user.findFirst({ where: { email } })
 			if (!user) throw new ErrorBadRequest('Invalid credentials')
 
 			// Verify user password
@@ -195,9 +198,6 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 	/**
 	 * @description Refresh token
 	 *
-	 * @param {Request} req
-	 * @param {Response} res
-	 *
 	 */
 	refreshToken = {
 		validateInput: [
@@ -236,9 +236,6 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 	/**
 	 * @description Forgot password
 	 *
-	 * @param {Request} req
-	 * @param {Response} res
-	 *
 	 */
 	forgotPassword = {
 		validateInput: [body('email').isEmail().withMessage('Email must be valid')],
@@ -246,7 +243,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			const { email } = req.body
 
 			// Check if user exists
-			const user = await userV1Service.show({ where: { email } })
+			const user = await prisma.user.findFirst({ where: { email } })
 			if (!user) throw new ErrorBadRequest('Invalid credentials')
 
 			// Send email to user
@@ -271,12 +268,40 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 	 */
 	me = async (req: Request, res: Response) => {
 		// Find current user
-		const user = await userV1Service.show({
+		const user = await prisma.user.findFirst({
 			where: { id: req.currentUser?.id as string }
 		})
 
+		// Find current user roles
+		const userRoles = await prisma.roleUser.findMany({
+			where: { userId: user?.id },
+			include: { role: true },
+			orderBy: { role: { name: 'asc' } }
+		})
+
+		// Find current user role permissions
+		const userRolePermissions = await prisma.permissionRole.findMany({
+			where: {
+				roleId: { in: userRoles.map(userRole => userRole.roleId) }
+			},
+			orderBy: { permission: { code: 'asc' } }
+		})
+
 		const { code, ...restResponse } = SuccessOk({
-			result: omit(user, ['password'])
+			result: omit(
+				{
+					...user,
+					roles: userRoles.map(userRole => ({
+						...omit(userRole, ['userId', 'roleId', 'role']),
+						roleName: userRole.role.name,
+						id: userRole.roleId,
+						permissions: userRolePermissions.map(userRolePermission =>
+							omit(userRolePermission, ['roleId'])
+						)
+					}))
+				},
+				['password']
+			)
 		})
 		return res.status(code).json(restResponse)
 	}
@@ -297,9 +322,6 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 
 	/**
 	 * @description Verify any token with specific sign type
-	 *
-	 * @param {Request} req
-	 * @param {Response} res
 	 *
 	 */
 	verify = {
@@ -328,7 +350,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			)) as { id: string }
 
 			// Check if user exists in database
-			const userFromDatabase = await userV1Service.show({
+			const userFromDatabase = await prisma.user.findFirst({
 				where: { id: user.id }
 			})
 			if (!userFromDatabase) throw new ErrorNotFound('User not found!')
@@ -343,7 +365,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			// if signType is "EAppJwtServiceSignType.VerifyUser" then update user
 			if (signType === EAppJwtServiceSignType.VERIFY_USER) {
 				// Update user verified identifier
-				const updateUser = userV1Service.update({
+				const updateUser = prisma.user.update({
 					where: { id: userFromDatabase.id },
 					data: { isUserVerified: true }
 				})
@@ -372,7 +394,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 					password,
 					await bcrypt.genSalt(10)
 				)
-				const updateUser = userV1Service.update({
+				const updateUser = prisma.user.update({
 					where: { id: userFromDatabase.id },
 					data: { password: hashedPassword }
 				})
@@ -387,6 +409,55 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 
 			const { code, ...restResponse } = SuccessOk({
 				message
+			})
+			return res.status(code).json(restResponse)
+		}
+	}
+
+	/**
+	 * @description Change active role of active user
+	 *
+	 *
+	 */
+	changeActiveRole = {
+		validateInput: [
+			body('roleId').not().isEmpty().withMessage('Role ID is required')
+		],
+		config: async (req: Request, res: Response) => {
+			const { roleId } = req.body
+
+			// Check if role exists
+			const role = await prisma.role.findFirst({ where: { id: roleId } })
+			if (!role) throw new ErrorNotFound('Role not found')
+
+			// Check if user have selected role
+			const attachedUserRole = await prisma.roleUser.findFirst({
+				where: { userId: req.currentUser?.id as string, roleId }
+			})
+			if (!attachedUserRole)
+				throw new ErrorBadRequest(
+					'You have no permission to change to that role'
+				)
+
+			// Transact
+			await prisma.$transaction([
+				// Inactive previous roles if user have
+				prisma.roleUser.updateMany({
+					where: { userId: req.currentUser?.id as string, NOT: { roleId } },
+					data: { isActive: false }
+				}),
+
+				// Make selected role active
+				prisma.roleUser.update({
+					where: {
+						userId_roleId: { userId: req.currentUser?.id as string, roleId }
+					},
+					data: { isActive: true }
+				})
+			])
+
+			const { code, ...restResponse } = SuccessOk({
+				message: `Role ${role.name} successfully activated`
 			})
 			return res.status(code).json(restResponse)
 		}

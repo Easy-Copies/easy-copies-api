@@ -2,7 +2,7 @@
 import { Router } from 'express'
 
 // Controller
-import { RoleControllerV1 } from '@/user-management/children/role/controllers/role-v1.controller'
+import { UserControllerV1 } from '@/user-management/children/user/controllers/user-v1.controller'
 
 // Middlewares
 import { appAuthMiddleware } from '@/app/middlewares/app-auth.middleware'
@@ -10,29 +10,8 @@ import { appValidationMiddleware } from '@/app/middlewares/app-validation.middle
 
 // Initialize anything
 const router = Router()
-const roleControllerV1 = new RoleControllerV1()
-const {
-	index,
-	store,
-	show,
-	update,
-	destroy,
-	permissionList,
-	assignPermission
-} = roleControllerV1
-
-router.get(
-	'/permissions/:roleId',
-	appAuthMiddleware({ ...permissionList.permission }),
-	permissionList.config
-)
-router.put(
-	'/permissions/assign/:roleId',
-	appAuthMiddleware({ ...assignPermission.permission }),
-	assignPermission.validateInput,
-	appValidationMiddleware,
-	assignPermission.config
-)
+const userControllerV1 = new UserControllerV1()
+const { index, store, show, update, destroy } = userControllerV1
 
 router.get('/', appAuthMiddleware({ ...index.permission }), index.config)
 router.post(
@@ -42,7 +21,7 @@ router.post(
 	appValidationMiddleware,
 	store.config
 )
-router.get('/:id', appAuthMiddleware({ ...store.permission }), show.config)
+router.get('/:id', appAuthMiddleware({ ...show.permission }), show.config)
 router.put(
 	'/:id',
 	appAuthMiddleware({ ...update.permission }),
@@ -56,4 +35,4 @@ router.delete(
 	destroy.config
 )
 
-export { router as roleV1Routes }
+export { router as userV1Routes }

@@ -1,3 +1,7 @@
+// Colors
+import colors from 'colors'
+colors.enable()
+
 // Prisma
 import { PrismaClient } from '@prisma/client'
 
@@ -7,6 +11,10 @@ import bcrypt from 'bcryptjs'
 // Init Prisma
 const prisma = new PrismaClient()
 
+const users = [{ name: 'Huda Prasetyo', email: 'test.hudaprasetyo@gmail.com' }]
+const roles = [{ name: 'Admin' }, { name: 'Store' }, { name: 'Basic User' }]
+const permissions = [{ code: 'User Management' }, { code: 'Role Management' }]
+
 /**
  * @description Seed user
  *
@@ -15,14 +23,10 @@ const userSeeder = async () => {
 	const salt = await bcrypt.genSalt(10)
 	const password = await bcrypt.hash('password', salt)
 
-	const users = [
-		{ name: 'Huda Prasetyo', email: 'test.hudaprasetyo@gmail.com' }
-	]
-
 	await prisma.$transaction(
-		users.map(({ email, name }) =>
-			prisma.user.upsert({
-				where: { email: email },
+		users.map(({ email, name }) => {
+			return prisma.user.upsert({
+				where: { email },
 				update: {},
 				create: {
 					name,
@@ -31,7 +35,7 @@ const userSeeder = async () => {
 					isUserVerified: true
 				}
 			})
-		)
+		})
 	)
 }
 
@@ -40,8 +44,6 @@ const userSeeder = async () => {
  *
  */
 const roleSeeder = async () => {
-	const roles = [{ name: 'Admin' }, { name: 'Store' }, { name: 'Basic User' }]
-
 	await prisma.$transaction(
 		roles.map(({ name }) =>
 			prisma.role.upsert({
@@ -55,8 +57,87 @@ const roleSeeder = async () => {
 	)
 }
 
+/**
+ * @description Assign role to users
+ *
+ */
+const assignRoleToUserSeeder = async () => {
+	const adminRole = await prisma.role.findFirst({ where: { name: 'Admin' } })
+	const hudaUser = await prisma.user.findFirst({
+		where: { email: 'test.hudaprasetyo@gmail.com' }
+	})
+
+	await prisma.$transaction([
+		prisma.user.update({
+			where: { id: hudaUser?.id },
+			data: {
+				roles: {
+					create: [
+						{
+							role: {
+								connect: {
+									id: adminRole?.id
+								}
+							}
+						}
+					]
+				}
+			}
+		})
+	])
+}
+
+/**
+ * @description Seed permissions
+ *
+ *
+ */
+const permissionSeeder = async () => {
+	await prisma.$transaction([
+		prisma.permission.createMany({
+			data: permissions
+		})
+	])
+}
+
+/**
+ * @description Assign permission to roles
+ *
+ *
+ */
+const assignRoleToPermissions = async () => {
+	const adminRole = await prisma.role.findFirst({ where: { name: 'Admin' } })
+
+	await prisma.$transaction(
+		permissions.map(({ code }) =>
+			prisma.role.update({
+				where: { id: adminRole?.id },
+				data: {
+					permissions: {
+						create: {
+							permission: {
+								connect: { code }
+							},
+							actions: {
+								create: true,
+								read: true,
+								update: true,
+								delete: true
+							}
+						}
+					}
+				}
+			})
+		)
+	)
+}
+
 async function main() {
-	await Promise.all([userSeeder(), roleSeeder()])
+	await roleSeeder()
+	await userSeeder()
+	await assignRoleToUserSeeder()
+	await permissionSeeder()
+	await assignRoleToPermissions()
 }
 main()
 	.then(async () => {

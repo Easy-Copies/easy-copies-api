@@ -2,7 +2,6 @@
 import {
 	TAppCommonService,
 	TPrismaPaginateArgs,
-	TPrismaPaginateModel,
 	TPrismaPaginateResponse
 } from './app-common.service.type'
 
@@ -11,6 +10,9 @@ import omit from 'lodash.omit'
 
 // Express
 import { Request } from 'express'
+
+// Bcrypt
+import bcrypt from 'bcryptjs'
 
 export class AppCommonService implements TAppCommonService {
 	/**
@@ -29,23 +31,38 @@ export class AppCommonService implements TAppCommonService {
 	}
 
 	/**
+	 * @description Hash password
+	 *
+	 *
+	 */
+	hashPassword = async (password: string) => {
+		// Hash password
+		const salt = await bcrypt.genSalt(10)
+		const hashedPassword = await bcrypt.hash(password, salt)
+
+		return hashedPassword
+	}
+
+	/**
 	 * @description Paginate prisma
 	 *
 	 */
 	paginate = async <T = unknown>(
-		model: TPrismaPaginateModel,
+		// eslint-disable-next-line
+		model: any,
 		args?: TPrismaPaginateArgs
 	): Promise<TPrismaPaginateResponse<T>> => {
 		const currentPage = args?.page || 0
 		const page = currentPage < 1 || currentPage === 1 ? 0 : currentPage - 1
 		const take = args?.limit || 10
 		const skip = take * page
+		const sort = args?.sort || 'desc'
 		const rows = await model.findMany({
 			...omit(args, ['page', 'limit', 'sort', 'column']),
 			take,
 			skip,
 			orderBy: {
-				[args?.column || 'createdAt']: args?.sort || 'desc'
+				[args?.column || 'createdAt']: sort
 			}
 		})
 		const totalRows = await model.count()
@@ -56,8 +73,17 @@ export class AppCommonService implements TAppCommonService {
 			totalPages,
 			totalRows,
 			page: page + 1,
-			rows,
-			sort: 'desc'
+			rows: rows.map(
+				// eslint-disable-next-line
+				(row: any) => {
+					if (row?.password) {
+						return omit(row, ['password'])
+					} else {
+						return row
+					}
+				}
+			),
+			sort
 		} as TPrismaPaginateResponse<T>
 
 		return Promise.resolve(paginateResponse)
