@@ -6,7 +6,6 @@ import { EAppJwtServiceSignType } from '@/app/services/app-jwt.service.type'
 // Services
 import { AppJwtService } from '@/app/services/app-jwt.service'
 import { AppNodemailerService } from '@/app/services/app-nodemailer.service'
-import { UserV1Service } from '@/user-management/children/user/services/user-v1.service'
 import { appNodeMailerWrapper } from '@/app/services/app-nodemailer-wrapper.service'
 import { TokenV1Service } from '@/token/services/token-v1.service'
 
@@ -37,7 +36,6 @@ import moment from 'moment'
 // Init Prisma
 const prisma = new PrismaClient()
 
-const userV1Service = new UserV1Service(prisma)
 const appJwtService = new AppJwtService()
 const tokenV1Service = new TokenV1Service(prisma)
 
@@ -118,7 +116,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			email = email.replace(/\s+/, '').trim().toLowerCase()
 
 			// Check if user exists before
-			const existedUser = await userV1Service.show({
+			const existedUser = await prisma.user.findFirst({
 				where: { email }
 			})
 			if (existedUser) throw new ErrorBadRequest('Email currently in used')
@@ -128,7 +126,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			const hashedPassword = await bcrypt.hash(password, salt)
 
 			// Create new user
-			const user = await userV1Service.store({
+			const user = await prisma.user.create({
 				data: { name, email, password: hashedPassword }
 			})
 
@@ -160,7 +158,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			const { email, password } = req.body
 
 			// Find correct user
-			const user = await userV1Service.show({ where: { email } })
+			const user = await prisma.user.findFirst({ where: { email } })
 			if (!user) throw new ErrorBadRequest('Invalid credentials')
 
 			// Verify user password
@@ -251,7 +249,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			const { email } = req.body
 
 			// Check if user exists
-			const user = await userV1Service.show({ where: { email } })
+			const user = await prisma.user.findFirst({ where: { email } })
 			if (!user) throw new ErrorBadRequest('Invalid credentials')
 
 			// Send email to user
@@ -276,8 +274,22 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 	 */
 	me = async (req: Request, res: Response) => {
 		// Find current user
-		const user = await userV1Service.show({
-			where: { id: req.currentUser?.id as string }
+		const user = await prisma.user.findFirst({
+			where: { id: req.currentUser?.id as string },
+			include: {
+				roles: {
+					select: {
+						role: {
+							select: {
+								name: true
+							}
+						},
+						isActive: true,
+						createdAt: true,
+						updatedAt: true
+					}
+				}
+			}
 		})
 
 		const { code, ...restResponse } = SuccessOk({
@@ -333,7 +345,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			)) as { id: string }
 
 			// Check if user exists in database
-			const userFromDatabase = await userV1Service.show({
+			const userFromDatabase = await prisma.user.findFirst({
 				where: { id: user.id }
 			})
 			if (!userFromDatabase) throw new ErrorNotFound('User not found!')
@@ -348,7 +360,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			// if signType is "EAppJwtServiceSignType.VerifyUser" then update user
 			if (signType === EAppJwtServiceSignType.VERIFY_USER) {
 				// Update user verified identifier
-				const updateUser = userV1Service.update({
+				const updateUser = prisma.user.update({
 					where: { id: userFromDatabase.id },
 					data: { isUserVerified: true }
 				})
@@ -377,7 +389,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 					password,
 					await bcrypt.genSalt(10)
 				)
-				const updateUser = userV1Service.update({
+				const updateUser = prisma.user.update({
 					where: { id: userFromDatabase.id },
 					data: { password: hashedPassword }
 				})

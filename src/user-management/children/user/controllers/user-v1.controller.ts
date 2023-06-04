@@ -2,7 +2,6 @@
 import { IUserControllerV1 } from './user-v1.controller.type'
 
 // Services
-import { UserV1Service } from '@/user-management/children/user/services/user-v1.service'
 import { AppCommonService } from '@/app/services/app-common.service'
 
 // Express
@@ -18,18 +17,18 @@ import { SuccessOk, SuccessCreated } from '@/app/success/success'
 import { ErrorBadRequest, ErrorNotFound } from '@/app/errors'
 
 // Prisma
-import { PrismaClient } from '@prisma/client'
+import { Prisma, PrismaClient } from '@prisma/client'
 import type { User } from '@prisma/client'
 
 // Lodash
 import omit from 'lodash.omit'
+import uniq from 'lodash.uniq'
 
 // Init Prisma
 const prisma = new PrismaClient()
 
 // Services
 const appCommonService = new AppCommonService()
-const userV1Service = new UserV1Service(prisma)
 
 export class UserControllerV1 implements IUserControllerV1 {
 	/**
@@ -42,12 +41,45 @@ export class UserControllerV1 implements IUserControllerV1 {
 	}
 
 	/**
+	 * @description Get user with roles
+	 *
+	 * @param {string} id
+	 *
+	 */
+	_getUserWithRoles = (id?: string) => {
+		const userInclude: Prisma.UserInclude = {
+			roles: {
+				orderBy: { createdAt: 'desc' },
+				select: {
+					role: {
+						select: {
+							name: true
+						}
+					},
+					isActive: true,
+					createdAt: true,
+					updatedAt: true
+				}
+			}
+		}
+
+		const query = prisma.user.findFirst({
+			where: {
+				id
+			},
+			include: userInclude
+		})
+
+		return { query, userInclude }
+	}
+
+	/**
 	 * @description Get list of users
 	 *
 	 */
 	index = async (req: Request, res: Response) => {
 		const result = await appCommonService.paginate<User>(
-			userV1Service.model,
+			prisma.user,
 			appCommonService.parsePaginationArgs(req.query)
 		)
 
@@ -86,7 +118,7 @@ export class UserControllerV1 implements IUserControllerV1 {
 			email = email.replace(/\s+/, '').trim().toLowerCase()
 
 			// Check if user in database exists
-			const user = await userV1Service.show({
+			const user = await prisma.user.findFirst({
 				where: {
 					email: { contains: email, mode: 'insensitive' }
 				}
@@ -97,7 +129,7 @@ export class UserControllerV1 implements IUserControllerV1 {
 			const hashedPassword = await appCommonService.hashPassword(password)
 
 			// Create new user
-			const createdUser = await userV1Service.store({
+			const createdUser = await prisma.user.create({
 				data: {
 					name: name.trim(),
 					email,
@@ -107,7 +139,8 @@ export class UserControllerV1 implements IUserControllerV1 {
 							role: { connect: { id: roleId } }
 						}))
 					}
-				}
+				},
+				include: this._getUserWithRoles().userInclude
 			})
 
 			const { code, ...restResponse } = SuccessCreated({
@@ -125,9 +158,7 @@ export class UserControllerV1 implements IUserControllerV1 {
 		const { id } = req.params
 
 		// Check if user in database exists
-		const user = await userV1Service.show({
-			where: { id }
-		})
+		const user = await this._getUserWithRoles(id).query
 		if (!user) throw new ErrorNotFound('User not found')
 
 		const { code, ...restResponse } = SuccessCreated({
@@ -139,32 +170,38 @@ export class UserControllerV1 implements IUserControllerV1 {
 	/**
 	 * @description Update single user
 	 *
-	 * @param {Prisma.UserUpdateArgs} args
 	 *
 	 */
 	update = {
 		validateInput: [
 			body('name').not().isEmpty().withMessage('Name is required'),
-			body('email').isEmail().withMessage('Must be valid email')
+			body('email').isEmail().withMessage('Must be valid email'),
+			body('roles')
+				.isArray()
+				.withMessage('Roles must be an array')
+				.custom(roles => {
+					if (roles?.every((role: string) => typeof role === 'number'))
+						throw new Error('Role must be an string of ID')
+
+					return true
+				})
 		],
 		config: async (req: Request, res: Response) => {
 			const { id } = req.params
-			const { name } = req.body
+			const { name, roles } = req.body
 			let { email } = req.body
+			const transactions = []
 
 			// Map Email
 			email = email.replace(/\s+/, '').trim().toLowerCase()
 
-			const currentUser = await userV1Service.show({
-				where: {
-					id
-				}
-			})
+			// Check if user exists
+			const currentUser = await this._getUserWithRoles(id).query
 			if (!currentUser) throw new ErrorNotFound('User not found')
 
 			// Check if user in database exists
 			// But ignore the selected one
-			const user = await userV1Service.show({
+			const user = await prisma.user.findFirst({
 				where: {
 					NOT: { id },
 					email: { contains: email, mode: 'insensitive' }
@@ -175,14 +212,65 @@ export class UserControllerV1 implements IUserControllerV1 {
 					`User with email '${user.email}' already exists`
 				)
 
-			// Update selected user
-			const updatedUser = await userV1Service.update({
-				data: { name: name.trim(), email },
-				where: { id }
+			// Get attached roles
+			const attachedUserRoles = await prisma.user.findFirst({
+				where: { id },
+				include: { roles: { where: { roleId: { in: roles } } } }
 			})
 
+			// Get unattached user roles
+			const unattachedUserRoles = await prisma.user.findFirst({
+				where: { id },
+				include: { roles: { where: { NOT: { roleId: { in: roles } } } } }
+			})
+
+			// Remove unattached roles
+			if (unattachedUserRoles?.roles && unattachedUserRoles.roles?.length > 0) {
+				const removeUnattachedUserRoles = prisma.user.update({
+					where: { id },
+					data: {
+						roles: {
+							delete: unattachedUserRoles.roles.map(role => ({
+								userId_roleId: { roleId: role.roleId, userId: id }
+							}))
+						}
+					},
+					select: { roles: true }
+				})
+
+				transactions.push(removeUnattachedUserRoles)
+			}
+
+			// Update selected user by removing unattached roles
+			const newOrExistingRoleIds = uniq([
+				...roles,
+				...(attachedUserRoles?.roles?.map(role => role.roleId) || [])
+			])
+			const updateUserWithRoles = prisma.user.update({
+				where: { id },
+				include: { roles: true },
+				data: {
+					name: name.trim(),
+					email,
+					roles: {
+						upsert: newOrExistingRoleIds.map(roleId => ({
+							where: { userId_roleId: { roleId, userId: id } },
+							create: { role: { connect: { id: roleId } } },
+							update: { roleId }
+						}))
+					}
+				}
+			})
+			transactions.push(updateUserWithRoles)
+
+			// Transact
+			await prisma.$transaction(transactions)
+
+			// Re-fetch user
+			const updatedUser = await this._getUserWithRoles(id).query
+
 			const { code, ...restResponse } = SuccessOk({
-				result: this._mapUser(updatedUser)
+				result: omit(updatedUser, ['password'])
 			})
 			return res.status(code).json(restResponse)
 		}
@@ -196,13 +284,11 @@ export class UserControllerV1 implements IUserControllerV1 {
 		const { id } = req.params
 
 		// Check if user in database exists
-		const user = await userV1Service.show({
-			where: { id }
-		})
+		const user = await this._getUserWithRoles(id).query
 		if (!user) throw new ErrorNotFound('User not found')
 
 		// Delete user
-		await userV1Service.destroy({ where: { id: user.id } })
+		await prisma.user.delete({ where: { id: user.id } })
 
 		const { code, ...restResponse } = SuccessOk({
 			result: this._mapUser(user)

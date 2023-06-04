@@ -2,7 +2,6 @@
 import { IRoleControllerV1 } from './role-v1.controller.type'
 
 // Services
-import { RoleV1Service } from '@/user-management/children/role/services/role-v1.service'
 import { AppCommonService } from '@/app/services/app-common.service'
 
 // Express
@@ -26,7 +25,6 @@ const prisma = new PrismaClient()
 
 // Services
 const appCommonService = new AppCommonService()
-const roleV1Service = new RoleV1Service(prisma)
 
 export class RoleControllerV1 implements IRoleControllerV1 {
 	/**
@@ -35,7 +33,7 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 	 */
 	index = async (req: Request, res: Response) => {
 		const result = await appCommonService.paginate<Role>(
-			roleV1Service.model,
+			prisma.role,
 			appCommonService.parsePaginationArgs(req.query)
 		)
 
@@ -57,7 +55,7 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 			const { name } = req.body
 
 			// Check if role in database exists
-			const role = await roleV1Service.show({
+			const role = await prisma.role.findFirst({
 				where: { name: { contains: name.trim(), mode: 'insensitive' } }
 			})
 			if (role)
@@ -66,7 +64,7 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 				)
 
 			// Create new role
-			const newRole = await roleV1Service.store({ data: { name: name.trim() } })
+			const newRole = await prisma.role.create({ data: { name: name.trim() } })
 
 			const { code, ...restResponse } = SuccessCreated({
 				result: newRole
@@ -83,7 +81,7 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 		const { id } = req.params
 
 		// Check if role in database exists
-		const role = await roleV1Service.show({
+		const role = await prisma.role.findFirst({
 			where: { id }
 		})
 		if (!role) throw new ErrorNotFound('Role not found')
@@ -97,7 +95,6 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 	/**
 	 * @description Update single role
 	 *
-	 * @param {Prisma.RoleUpdateArgs} args
 	 *
 	 */
 	update = {
@@ -109,7 +106,7 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 			const { name } = req.body
 
 			// Check if role in database exists
-			const role = await roleV1Service.show({
+			const role = await prisma.role.findFirst({
 				where: {
 					NOT: { id },
 					name: { contains: name.trim(), mode: 'insensitive' }
@@ -121,7 +118,7 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 				)
 
 			// Update selected role
-			const newRole = await roleV1Service.update({
+			const newRole = await prisma.role.update({
 				data: { name: name.trim() },
 				where: { id }
 			})
@@ -141,13 +138,13 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 		const { id } = req.params
 
 		// Check if role in database exists
-		const role = await roleV1Service.show({
+		const role = await prisma.role.findFirst({
 			where: { id }
 		})
 		if (!role) throw new ErrorNotFound('Role not found')
 
 		// Delete role
-		await roleV1Service.destroy({ where: { id: role.id } })
+		await prisma.role.delete({ where: { id: role.id } })
 
 		const { code, ...restResponse } = SuccessOk({
 			result: role

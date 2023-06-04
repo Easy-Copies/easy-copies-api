@@ -25,7 +25,7 @@ const userSeeder = async () => {
 	await prisma.$transaction(
 		users.map(({ email, name }) => {
 			return prisma.user.upsert({
-				where: { email: email },
+				where: { email },
 				update: {},
 				create: {
 					name,

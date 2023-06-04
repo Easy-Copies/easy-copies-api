@@ -1,3 +1,7 @@
+// Colors
+import colors from 'colors'
+colors.enable()
+
 // Express
 import { NextFunction, Request, Response } from 'express'
 
