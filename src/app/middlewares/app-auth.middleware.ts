@@ -5,7 +5,11 @@ import { Request, Response, NextFunction } from 'express'
 import jwt from 'jsonwebtoken'
 
 // Utils
-import { ErrorBadRequest, ErrorForbidden } from '@/app/errors'
+import {
+	ErrorBadRequest,
+	ErrorForbidden,
+	ErrorUnauthorized
+} from '@/app/errors'
 
 // Types
 import { TUserJwtPayload } from '@/auth/types/auth.type'
@@ -34,6 +38,7 @@ const appAuthMiddleware =
 	(options?: {
 		permissionCode?: EAppPermission
 		permissionActions?: EAppPermissionActions
+		isGetCurrentUser?: boolean
 	}) =>
 	async (req: Request, res: Response, next: NextFunction) => {
 		try {
@@ -56,6 +61,22 @@ const appAuthMiddleware =
 			)) as TUserJwtPayload
 
 			req.currentUser = user
+
+			// Check current user
+			const currentUser = await prisma.user.findFirst({
+				where: { id: user.id }
+			})
+			if (!currentUser) {
+				req.currentUser = undefined
+				throw new ErrorUnauthorized('Your account not registered in our system')
+			}
+
+			// Check if user not active yet
+			// But, deny if user want to hit /auth/me endpoint
+			if (!currentUser.isUserVerified && !options?.isGetCurrentUser)
+				throw new ErrorForbidden(
+					'Your account is not active yet, please check your email or re-login to get verification email'
+				)
 
 			// Check if user want to check by permission
 			if (options?.permissionCode && options?.permissionActions) {
