@@ -13,22 +13,22 @@ const router = Router()
 const userControllerV1 = new UserControllerV1()
 const { index, store, show, update, destroy } = userControllerV1
 
-router.get('/users', appAuthMiddleware, index)
+router.get('/', appAuthMiddleware, index)
 router.post(
-	'/users',
+	'/',
 	appAuthMiddleware,
 	store.validateInput,
 	appValidationMiddleware,
 	store.config
 )
-router.get('/users/:id', appAuthMiddleware, show)
+router.get('/:id', appAuthMiddleware, show)
 router.put(
-	'/users/:id',
+	'/:id',
 	appAuthMiddleware,
 	update.validateInput,
 	appValidationMiddleware,
 	update.config
 )
-router.delete('/users/:id', appAuthMiddleware, destroy)
+router.delete('/:id', appAuthMiddleware, destroy)
 
 export { router as userV1Routes }

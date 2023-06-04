@@ -5,6 +5,7 @@ import { Express, Request, Response } from 'express'
 import { authV1Routes } from '@/auth/routes/auth-v1.router'
 import { roleV1Routes } from '@/user-management/children/role/routes/role-v1.router'
 import { userV1Routes } from '@/user-management/children/user/routes/user-v1.router'
+import { permissionV1Routes } from '@/user-management/children/permission/routes/permission-v1.router'
 
 // Responses
 import { ErrorNotFound } from '@/app/errors'
@@ -22,8 +23,9 @@ export const routesInit = (app: Express): void => {
 	})
 
 	app.use('/api/v1/auth', authV1Routes)
-	app.use('/api/v1/user-management', roleV1Routes)
-	app.use('/api/v1/user-management', userV1Routes)
+	app.use('/api/v1/user-management/roles', roleV1Routes)
+	app.use('/api/v1/user-management/users', userV1Routes)
+	app.use('/api/v1/user-management/permissions', permissionV1Routes)
 
 	// Catch any error
 	app.all('*', () => {

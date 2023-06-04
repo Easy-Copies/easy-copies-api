@@ -56,12 +56,13 @@ export class AppCommonService implements TAppCommonService {
 		const page = currentPage < 1 || currentPage === 1 ? 0 : currentPage - 1
 		const take = args?.limit || 10
 		const skip = take * page
+		const sort = args?.sort || 'desc'
 		const rows = await model.findMany({
 			...omit(args, ['page', 'limit', 'sort', 'column']),
 			take,
 			skip,
 			orderBy: {
-				[args?.column || 'createdAt']: args?.sort || 'desc'
+				[args?.column || 'createdAt']: sort
 			}
 		})
 		const totalRows = await model.count()
@@ -82,7 +83,7 @@ export class AppCommonService implements TAppCommonService {
 					}
 				}
 			),
-			sort: 'desc'
+			sort
 		} as TPrismaPaginateResponse<T>
 
 		return Promise.resolve(paginateResponse)

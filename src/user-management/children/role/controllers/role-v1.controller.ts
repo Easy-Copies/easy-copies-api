@@ -86,7 +86,7 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 		})
 		if (!role) throw new ErrorNotFound('Role not found')
 
-		const { code, ...restResponse } = SuccessCreated({
+		const { code, ...restResponse } = SuccessOk({
 			result: role
 		})
 		return res.status(code).json(restResponse)
@@ -150,5 +150,86 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 			result: role
 		})
 		return res.status(code).json(restResponse)
+	}
+
+	/**
+	 * @description Assign permission to specific role
+	 *
+	 */
+	assignPermission = {
+		validateInput: [
+			body('permissionCode')
+				.not()
+				.isEmpty()
+				.withMessage('Permission Code is required'),
+			body('actions')
+				.not()
+				.isEmpty()
+				.withMessage('Actions is required')
+				.custom(actions => {
+					if (typeof actions?.create !== 'boolean')
+						throw new Error('actions.create should be boolean')
+					if (typeof actions?.read !== 'boolean')
+						throw new Error('actions.read should be boolean')
+					if (typeof actions?.update !== 'boolean')
+						throw new Error('actions.update should be boolean')
+					if (typeof actions?.delete !== 'boolean')
+						throw new Error('actions.delete should be boolean')
+
+					return true
+				})
+		],
+		config: async (req: Request, res: Response) => {
+			const { id } = req.params
+			const { permissionCode, actions } = req.body
+
+			// Find role
+			const role = await prisma.role.findFirst({ where: { id } })
+			if (!role) throw new ErrorNotFound('Role not found!')
+
+			// Find permission
+			const permission = await prisma.permission.findFirst({
+				where: { code: permissionCode }
+			})
+			if (!permission) throw new ErrorNotFound('Permission not found!')
+
+			// Update permissions
+			const updatedRoleWithPermission = await prisma.role.update({
+				where: { id },
+				data: {
+					permissions: {
+						upsert: {
+							where: { permissionCode_roleId: { permissionCode, roleId: id } },
+							update: { actions, permissionCode },
+							create: {
+								permission: {
+									connect: { code: permissionCode }
+								},
+								actions
+							}
+						}
+					}
+				},
+				include: {
+					permissions: {
+						select: {
+							permission: {
+								select: {
+									code: true
+								}
+							},
+							actions: true,
+							createdAt: true,
+							updatedAt: true
+						}
+					}
+				}
+			})
+
+			const { code, ...restResponse } = SuccessOk({
+				result: updatedRoleWithPermission
+			})
+			return res.status(code).json(restResponse)
+		}
 	}
 }

@@ -198,9 +198,6 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 	/**
 	 * @description Refresh token
 	 *
-	 * @param {Request} req
-	 * @param {Response} res
-	 *
 	 */
 	refreshToken = {
 		validateInput: [
@@ -239,9 +236,6 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 	/**
 	 * @description Forgot password
 	 *
-	 * @param {Request} req
-	 * @param {Response} res
-	 *
 	 */
 	forgotPassword = {
 		validateInput: [body('email').isEmail().withMessage('Email must be valid')],
@@ -275,25 +269,41 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 	me = async (req: Request, res: Response) => {
 		// Find current user
 		const user = await prisma.user.findFirst({
-			where: { id: req.currentUser?.id as string },
-			include: {
-				roles: {
-					select: {
-						role: {
-							select: {
-								name: true
-							}
-						},
-						isActive: true,
-						createdAt: true,
-						updatedAt: true
-					}
-				}
-			}
+			where: { id: req.currentUser?.id as string }
+		})
+
+		// Check if user exists
+		if (!user) throw new ErrorNotFound('User not found!')
+
+		// Find current user roles
+		const userRoles = await prisma.roleUser.findMany({
+			where: { userId: user?.id },
+			include: { role: true },
+			orderBy: { createdAt: 'desc' }
+		})
+
+		// Find current user role permissions
+		const userRolePermissions = await prisma.permissionRole.findMany({
+			where: {
+				roleId: { in: userRoles.map(userRole => userRole.roleId) }
+			},
+			orderBy: { createdAt: 'desc' }
 		})
 
 		const { code, ...restResponse } = SuccessOk({
-			result: omit(user, ['password'])
+			result: omit(
+				{
+					...user,
+					roles: userRoles.map(userRole => ({
+						...omit(userRole, ['userId', 'roleId', 'role']),
+						roleName: userRole.role.name,
+						permissions: userRolePermissions.map(userRolePermission =>
+							omit(userRolePermission, ['roleId'])
+						)
+					}))
+				},
+				['password']
+			)
 		})
 		return res.status(code).json(restResponse)
 	}
@@ -314,9 +324,6 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 
 	/**
 	 * @description Verify any token with specific sign type
-	 *
-	 * @param {Request} req
-	 * @param {Response} res
 	 *
 	 */
 	verify = {

@@ -161,7 +161,7 @@ export class UserControllerV1 implements IUserControllerV1 {
 		const user = await this._getUserWithRoles(id).query
 		if (!user) throw new ErrorNotFound('User not found')
 
-		const { code, ...restResponse } = SuccessCreated({
+		const { code, ...restResponse } = SuccessOk({
 			result: omit(user, ['password'])
 		})
 		return res.status(code).json(restResponse)

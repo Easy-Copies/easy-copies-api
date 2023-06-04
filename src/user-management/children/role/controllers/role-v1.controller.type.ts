@@ -7,4 +7,5 @@ export interface IRoleControllerV1 {
 	show: IAppControllerConfigReturn['config']
 	update: IAppControllerConfigReturn
 	destroy: IAppControllerConfigReturn['config']
+	assignPermission: IAppControllerConfigReturn
 }
