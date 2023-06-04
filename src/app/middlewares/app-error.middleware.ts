@@ -1,3 +1,7 @@
+// Colors
+import colors from 'colors'
+colors.enable()
+
 // Express
 import { NextFunction, Request, Response } from 'express'
 
@@ -17,7 +21,11 @@ const appErrorMiddleware = (
 	// eslint-disable-next-line
 	next: NextFunction
 ) => {
-	console.log(`===app-error.middleware.ts===: ${err}`)
+	console.log(
+		`===app-error.middleware.ts===: ${
+			JSON.stringify(err?.message) || JSON.stringify(err)
+		}`.red
+	)
 
 	// Common Error
 	if (err instanceof ErrorBase) {

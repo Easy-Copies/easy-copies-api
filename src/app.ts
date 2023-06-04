@@ -16,8 +16,14 @@ import { routesInit } from './app/routes/app.router'
 // Middlewares
 import { appErrorMiddleware } from './app/middlewares/app-error.middleware'
 
+// Cors
+import cors from 'cors'
+
 // App Init
 const app = express()
+
+// Init Cors
+app.use(cors())
 
 // Accept JSON request from user
 app.use(express.json())
