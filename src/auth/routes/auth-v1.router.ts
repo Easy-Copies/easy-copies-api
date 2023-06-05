@@ -46,7 +46,7 @@ router.post(
 	appValidationMiddleware,
 	refreshToken.config
 )
-router.get('/me', appAuthMiddleware(), me)
+router.get('/me', appAuthMiddleware({ isGetCurrentUser: true }), me)
 router.post('/logout', appAuthMiddleware(), logout)
 router.post(
 	'/verify/:token',
