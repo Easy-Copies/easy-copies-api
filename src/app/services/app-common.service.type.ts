@@ -22,6 +22,7 @@ export type TPrismaPaginateResponse<T = unknown> = {
 
 export type TAppCommonService = {
 	parsePaginationArgs: (query: Request['query']) => TPrismaPaginateArgs
+	generateOtp: () => string
 	paginate: <T>(
 		model: any,
 		args?: TPrismaPaginateArgs
