@@ -26,6 +26,7 @@ import { ErrorBadRequest, ErrorNotFound, ErrorValidation } from '@/app/errors'
 
 // Lodash
 import omit from 'lodash.omit'
+import pick from 'lodash.pick'
 
 // Prisma
 import { User, Token, PrismaClient } from '@prisma/client'
@@ -184,9 +185,6 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 				jwtPayload,
 				EAppJwtServiceSignType.REFRESH_TOKEN
 			)
-
-			// Make user inside req
-			req.currentUser = jwtPayload
 
 			const { code, ...restResponse } = SuccessOk({
 				result: { token, refreshToken }
@@ -409,6 +407,28 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 
 			const { code, ...restResponse } = SuccessOk({
 				message
+			})
+			return res.status(code).json(restResponse)
+		}
+	}
+
+	/**
+	 * @description Get current user role list
+	 *
+	 */
+	roleList = {
+		validateInput: [],
+		config: async (req: Request, res: Response) => {
+			const roles = await prisma.roleUser.findMany({
+				where: { userId: req.currentUser?.id as string },
+				include: { role: true }
+			})
+
+			const { code, ...restResponse } = SuccessOk({
+				result: roles.map(role => ({
+					...pick(role.role, ['id', 'name']),
+					isActive: role.isActive
+				}))
 			})
 			return res.status(code).json(restResponse)
 		}

@@ -17,5 +17,6 @@ export interface IAuthControllerV1 {
 	refreshToken: IAppControllerConfigReturn
 	logout: IAppControllerConfigReturn['config']
 	verify: IAppControllerConfigReturn
+	roleList: IAppControllerConfigReturn
 	changeActiveRole: IAppControllerConfigReturn
 }
