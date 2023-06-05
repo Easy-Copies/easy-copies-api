@@ -11,7 +11,11 @@ import bcrypt from 'bcryptjs'
 // Init Prisma
 const prisma = new PrismaClient()
 
-const users = [{ name: 'Huda Prasetyo', email: 'test.hudaprasetyo@gmail.com' }]
+const users = [
+	{ name: 'Huda Prasetyo', email: 'test.hudaprasetyo@gmail.com' },
+	{ name: 'Anisa Indriani', email: 'anisaindriani15@gmail.com' },
+	{ name: 'Steven', email: 'stevengerrad57@gmail.com' }
+]
 const roles = [{ name: 'Admin' }, { name: 'Store' }, { name: 'Basic User' }]
 const permissions = [{ code: 'User Management' }, { code: 'Role Management' }]
 
@@ -63,28 +67,34 @@ const roleSeeder = async () => {
  */
 const assignRoleToUserSeeder = async () => {
 	const adminRole = await prisma.role.findFirst({ where: { name: 'Admin' } })
-	const hudaUser = await prisma.user.findFirst({
-		where: { email: 'test.hudaprasetyo@gmail.com' }
+	const selectedUsers = await prisma.user.findMany({
+		where: {
+			email: {
+				in: users.map(user => user.email)
+			}
+		}
 	})
 
-	await prisma.$transaction([
-		prisma.user.update({
-			where: { id: hudaUser?.id },
-			data: {
-				roles: {
-					create: [
-						{
-							role: {
-								connect: {
-									id: adminRole?.id
+	await prisma.$transaction(
+		selectedUsers.map(user =>
+			prisma.user.update({
+				where: { id: user.id },
+				data: {
+					roles: {
+						create: [
+							{
+								role: {
+									connect: {
+										id: adminRole?.id
+									}
 								}
 							}
-						}
-					]
+						]
+					}
 				}
-			}
-		})
-	])
+			})
+		)
+	)
 }
 
 /**
