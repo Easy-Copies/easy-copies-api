@@ -1,13 +1,17 @@
 // Types
 import { TUserJwtPayload } from '@/auth/types/auth.type'
 import { IAuthControllerV1 } from './auth-v1.controller.type'
-import { EAppJwtServiceSignType } from '@/app/services/app-jwt.service.type'
+import {
+	EAppJwtServiceSignType,
+	TAppJwtServiceDecode
+} from '@/app/services/app-jwt.service.type'
 
 // Services
 import { AppJwtService } from '@/app/services/app-jwt.service'
 import { AppNodemailerService } from '@/app/services/app-nodemailer.service'
 import { appNodeMailerWrapper } from '@/app/services/app-nodemailer-wrapper.service'
 import { TokenV1Service } from '@/token/services/token-v1.service'
+import { AppCommonService } from '@/app/services/app-common.service'
 
 // Express
 import { Request, Response } from 'express'
@@ -37,6 +41,8 @@ import moment from 'moment'
 // Init Prisma
 const prisma = new PrismaClient()
 
+// Services
+const appCommonService = new AppCommonService()
 const appJwtService = new AppJwtService()
 const tokenV1Service = new TokenV1Service(prisma)
 
@@ -46,27 +52,54 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 	 *
 	 * @param {EAppJwtServiceSignType} signType
 	 * @param {Prisma.User} user
+	 * @param {object} options
 	 *
 	 * @return {Promise<Token>} Promise<Token>
 	 */
 	_generateEmailWithVerificationCode = async (
 		signType: EAppJwtServiceSignType,
-		user: User
+		user: User,
+		options?: { isMobile?: boolean }
 	): Promise<Token> => {
 		let subject = `Easy Copies - `
 		let text: string
+		let mappedToken: string
+		const isMobile = options?.isMobile
+		let payload: TAppJwtServiceDecode = { id: user.id }
+
+		// Check if coming from mobile
+		// Generate extra payload
+		if (isMobile) {
+			payload = {
+				...payload,
+				otp: appCommonService.generateOtp(),
+				isMobile
+			}
+		}
 
 		// Generate jwt token according sign type
-		const token = appJwtService.generateToken({ id: user.id }, signType)
+		const token = appJwtService.generateToken(payload, signType)
+
+		// Check if coming from mobile
+		// Decode the token
+		if (isMobile) {
+			mappedToken = appJwtService.decode(token).otp as string
+		} else {
+			mappedToken = token
+		}
 
 		switch (signType) {
 			case EAppJwtServiceSignType.VERIFY_USER:
 				subject = `${subject} Verify Account ${user.name}`
-				text = `Your verify user token is: ${token}`
+				text = `Your verify user ${
+					isMobile ? 'otp' : 'token'
+				} is: ${mappedToken}`
 				break
 			case EAppJwtServiceSignType.FORGOT_PASSWORD:
 				subject = `${subject} Forgot Password ${user.name}`
-				text = `Your forgot password token is: ${token}`
+				text = `Your forgot password ${
+					isMobile ? 'otp' : 'token'
+				} is: ${mappedToken}`
 				break
 			default:
 				subject = `${subject} - IGNORE THIS EMAIL!`
@@ -82,7 +115,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 
 		// Get any tokens with specific signType
 		const tokenFromDatabase = await tokenV1Service.index({
-			where: { type: signType }
+			where: { type: signType, userId: user.id, usedAt: null }
 		})
 
 		// If theres any token before, just remove the token!
@@ -111,6 +144,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 				.withMessage('Password minimal length must 8')
 		],
 		config: async (req: Request, res: Response) => {
+			const isMobile = req.headers?.['x-is-mobile'] === '1'
 			const { name, password } = req.body
 			let { email } = req.body
 
@@ -134,7 +168,8 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			// Send email to user
 			await this._generateEmailWithVerificationCode(
 				EAppJwtServiceSignType.VERIFY_USER,
-				user
+				user,
+				{ isMobile }
 			)
 
 			const { code, ...restResponse } = SuccessCreated({
@@ -156,6 +191,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			body('password').not().isEmpty().withMessage('Password is required')
 		],
 		config: async (req: Request, res: Response) => {
+			const isMobile = req.headers?.['x-is-mobile'] === '1'
 			const { email, password } = req.body
 
 			// Find correct user
@@ -171,7 +207,8 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			if (!user.isUserVerified) {
 				await this._generateEmailWithVerificationCode(
 					EAppJwtServiceSignType.VERIFY_USER,
-					user
+					user,
+					{ isMobile }
 				)
 			}
 
@@ -238,6 +275,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 	forgotPassword = {
 		validateInput: [body('email').isEmail().withMessage('Email must be valid')],
 		config: async (req: Request, res: Response) => {
+			const isMobile = req.headers?.['x-is-mobile'] === '1'
 			const { email } = req.body
 
 			// Check if user exists
@@ -247,7 +285,8 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			// Send email to user
 			await this._generateEmailWithVerificationCode(
 				EAppJwtServiceSignType.FORGOT_PASSWORD,
-				user
+				user,
+				{ isMobile }
 			)
 
 			const { code, ...restResponse } = SuccessOk({
@@ -327,12 +366,38 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			body('signType').not().isEmpty().withMessage('Sign Type is required')
 		],
 		config: async (req: Request, res: Response) => {
-			const { token } = req.params
-			const { signType, password } = req.body
+			const isMobile = req.headers?.['x-is-mobile'] === '1'
+			let { token } = req.params
+			const { signType, userId, password } = req.body
 
 			// Common State
 			const transactions = []
 			let message = ''
+
+			// Check if token is coming from mobile
+			// Note, token from mobile is OTP not pure JWT
+			// Note, token from web is pure JWT
+			// Note, find token that isn't used
+			if (isMobile) {
+				const tokenBySignType = await tokenV1Service.show({
+					where: { type: signType, userId, usedAt: null }
+				})
+				if (!tokenBySignType)
+					throw new ErrorNotFound(
+						'OTP not registered in our system or already expired'
+					)
+
+				const decodeOtpTokenBySignType = appJwtService.decode(
+					tokenBySignType.token
+				).otp as string
+
+				// Check if otp is the same as decoded jwt token
+				if (token === decodeOtpTokenBySignType) {
+					token = tokenBySignType.token
+				} else {
+					throw new ErrorBadRequest('Invalid OTP')
+				}
+			}
 
 			// Check if token exists inside database
 			// Check if token not used!
