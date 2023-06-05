@@ -290,7 +290,8 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			)
 
 			const { code, ...restResponse } = SuccessOk({
-				message: 'Forgot password token successfully sent to your email'
+				message: 'Forgot password token successfully sent to your email',
+				result: omit(user, ['password'])
 			})
 			return res.status(code).json(restResponse)
 		}
