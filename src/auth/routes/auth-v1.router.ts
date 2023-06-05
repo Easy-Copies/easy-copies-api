@@ -19,6 +19,7 @@ const {
 	me,
 	logout,
 	verify,
+	roleList,
 	changeActiveRole
 } = authControllerV1
 
@@ -54,6 +55,7 @@ router.post(
 	appValidationMiddleware,
 	verify.config
 )
+router.get('/roles', appAuthMiddleware(), roleList.config)
 router.put(
 	'/roles/change-active',
 	appAuthMiddleware(),

@@ -1,8 +1,8 @@
 Arguments: 
-  /Users/hudaboss/.nvm/versions/node/v18.16.0/bin/node /Users/hudaboss/.nvm/versions/node/v18.16.0/bin/yarn add lodash.uniqBy
+  /Users/hudaboss/.nvm/versions/node/v18.16.0/bin/node /Users/hudaboss/.nvm/versions/node/v18.16.0/bin/yarn add -D @types/pick
 
 PATH: 
-  /Applications/MAMP/bin/php/php8.2.0/bin:/Users/hudaboss/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/hudaboss/.rvm/gems/ruby-2.7.6/bin:/Users/hudaboss/.rvm/gems/ruby-2.7.6@global/bin:/Users/hudaboss/.rvm/rubies/ruby-2.7.6/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/hudaboss/.rvm/bin:/Users/hudaboss/.rvm/bin:/Users/hudaboss/Library/Android/sdk/emulator:/Users/hudaboss/Library/Android/sdk/platform-tools
+  /Applications/MAMP/bin/php/php8.2.0/bin:/Users/hudaboss/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/hudaboss/.rvm/gems/ruby-2.7.6/bin:/Users/hudaboss/.rvm/gems/ruby-2.7.6@global/bin:/Users/hudaboss/.rvm/rubies/ruby-2.7.6/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Applications/MAMP/bin/php/php8.2.0/bin:/Users/hudaboss/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/hudaboss/.rvm/gems/ruby-2.7.6/bin:/Users/hudaboss/.rvm/gems/ruby-2.7.6@global/bin:/Users/hudaboss/.rvm/rubies/ruby-2.7.6/bin:/Users/hudaboss/.rvm/bin:/Users/hudaboss/Library/Android/sdk/emulator:/Users/hudaboss/Library/Android/sdk/platform-tools:/Users/hudaboss/.rvm/bin:/Users/hudaboss/.rvm/bin:/Users/hudaboss/Library/Android/sdk/emulator:/Users/hudaboss/Library/Android/sdk/platform-tools
 
 Yarn version: 
   1.22.19
@@ -14,7 +14,7 @@ Platform:
   darwin arm64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/lodash.uniqBy: Not found
+  Error: https://registry.yarnpkg.com/@types%2fpick: Not found
       at params.callback [as _callback] (/Users/hudaboss/.nvm/versions/node/v18.16.0/lib/node_modules/yarn/lib/cli.js:66145:18)
       at self.callback (/Users/hudaboss/.nvm/versions/node/v18.16.0/lib/node_modules/yarn/lib/cli.js:140890:22)
       at Request.emit (node:events:513:28)
@@ -44,7 +44,9 @@ npm manifest:
   		"express-validator": "6.14.0",
   		"jsonwebtoken": "^9.0.0",
   		"lodash.omit": "^4.5.0",
+  		"lodash.pick": "^4.4.0",
   		"lodash.uniq": "^4.5.0",
+  		"lodash.uniqby": "^4.7.0",
   		"moment": "^2.29.4",
   		"nodemailer": "^6.9.2"
   	},
@@ -52,9 +54,12 @@ npm manifest:
   		"@commitlint/cli": "^17.6.3",
   		"@commitlint/config-conventional": "^17.6.3",
   		"@types/bcryptjs": "^2.4.2",
+  		"@types/cors": "^2.8.13",
   		"@types/express": "^4.17.17",
   		"@types/jsonwebtoken": "^9.0.2",
   		"@types/lodash.omit": "^4.5.7",
+  		"@types/lodash.uniq": "^4.5.7",
+  		"@types/lodash.uniqby": "^4.7.7",
   		"@types/node": "^20.2.1",
   		"@types/nodemailer": "^6.4.8",
   		"@typescript-eslint/eslint-plugin": "^5.59.6",
@@ -441,6 +446,13 @@ Lockfile:
     dependencies:
       "@types/node" "*"
   
+  "@types/cors@^2.8.13":
+    version "2.8.13"
+    resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.13.tgz#b8ade22ba455a1b8cb3b5d3f35910fd204f84f94"
+    integrity sha512-RG8AStHlUiV5ysZQKq97copd2UmVYw3/pRMLefISZ3S1hK104Cwm7iLQ3fTKx+lsUH2CE8FlLaYeEA2LSeqYUA==
+    dependencies:
+      "@types/node" "*"
+  
   "@types/express-serve-static-core@^4.17.33":
     version "4.17.35"
     resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.17.35.tgz#c95dd4424f0d32e525d23812aa8ab8e4d3906c4f"
@@ -477,6 +489,20 @@ Lockfile:
     version "4.5.7"
     resolved "https://registry.yarnpkg.com/@types/lodash.omit/-/lodash.omit-4.5.7.tgz#2357ed2412b4164344e8ee41f85bb0b2920304ba"
     integrity sha512-6q6cNg0tQ6oTWjSM+BcYMBhan54P/gLqBldG4AuXd3nKr0oeVekWNS4VrNEu3BhCSDXtGapi7zjhnna0s03KpA==
+    dependencies:
+      "@types/lodash" "*"
+  
+  "@types/lodash.uniq@^4.5.7":
+    version "4.5.7"
+    resolved "https://registry.yarnpkg.com/@types/lodash.uniq/-/lodash.uniq-4.5.7.tgz#0773960ec0148b29e6a54821a65b878a0ebb5c1a"
+    integrity sha512-qg7DeAbdZMi6DGvCxThlJycykLLhETrJrQZ6F2KaZ+o0sNK1qRHz46lgNA+nHHjwrmA2a91DyiZTp3ey3m1rEw==
+    dependencies:
+      "@types/lodash" "*"
+  
+  "@types/lodash.uniqby@^4.7.7":
+    version "4.7.7"
+    resolved "https://registry.yarnpkg.com/@types/lodash.uniqby/-/lodash.uniqby-4.7.7.tgz#48dbb652c41cc8fb30aa61a44174368081835ab5"
+    integrity sha512-sv2g6vkCIvEUsK5/Vq17haoZaisfj2EWW8mP7QWlnKi6dByoNmeuHDDXHR7sabuDqwO4gvU7ModIL22MmnOocg==
     dependencies:
       "@types/lodash" "*"
   
@@ -2049,6 +2075,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
     integrity sha512-XeqSp49hNGmlkj2EJlfrQFIzQ6lXdNro9sddtQzcJY8QaoC2GO0DT7xaIokHeyM+mIT0mPMlPvkYzg2xCuHdZg==
   
+  lodash.pick@^4.4.0:
+    version "4.4.0"
+    resolved "https://registry.yarnpkg.com/lodash.pick/-/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
+    integrity sha512-hXt6Ul/5yWjfklSGvLQl8vM//l3FtyHZeuelpzK6mm99pNvN9yTDruNZPEJZD1oWrqo+izBmB7oUfWgcCX7s4Q==
+  
   lodash.snakecase@^4.1.1:
     version "4.1.1"
     resolved "https://registry.yarnpkg.com/lodash.snakecase/-/lodash.snakecase-4.1.1.tgz#39d714a35357147837aefd64b5dcbb16becd8f8d"
@@ -2063,6 +2094,11 @@ Lockfile:
     version "4.5.0"
     resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
     integrity sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==
+  
+  lodash.uniqby@^4.7.0:
+    version "4.7.0"
+    resolved "https://registry.yarnpkg.com/lodash.uniqby/-/lodash.uniqby-4.7.0.tgz#d99c07a669e9e6d24e1362dfe266c67616af1302"
+    integrity sha512-e/zcLx6CSbmaEgFHCA7BnoQKyCtKMxnuWrJygbwPs/AIn+IMKl66L8/s+wBUn5LRw2pZx3bUHibiV1b6aTWIww==
   
   lodash.upperfirst@^4.3.1:
     version "4.3.1"
