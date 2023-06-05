@@ -2,6 +2,7 @@
 import {
 	EAppJwtServiceSignType,
 	TAppJwtService,
+	TAppJwtServiceDecode,
 	TAppJwtServiceGenerateJwtSignKey
 } from './app-jwt.service.type'
 
@@ -68,6 +69,17 @@ export class AppJwtService implements TAppJwtService {
 			expiresIn:
 				config?.expiresIn || this._generateJwtSignKey(signType).expiresIn
 		})
+	}
+
+	/**
+	 * @description Decode token
+	 *
+	 * @param {string} token
+	 *
+	 * @return {TAppJwtServiceDecode} decodedToken
+	 */
+	decode = (token: string): TAppJwtServiceDecode => {
+		return jwt.decode(token) as TAppJwtServiceDecode
 	}
 
 	/**

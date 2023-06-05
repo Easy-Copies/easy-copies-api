@@ -13,6 +13,12 @@ export type TAppJwtServiceGenerateJwtSignKey = {
 	expiresIn: number | string
 }
 
+export type TAppJwtServiceDecode = {
+	id: string
+	otp?: string
+	isMobile?: boolean
+}
+
 export type TAppJwtService = {
 	_generateJwtSignKey: (
 		signType: EAppJwtServiceSignType
@@ -22,5 +28,6 @@ export type TAppJwtService = {
 		signType: EAppJwtServiceSignType,
 		config?: jwt.SignOptions
 	) => string
+	decode: (token: string) => TAppJwtServiceDecode
 	verify: <T>(token: string, signType: EAppJwtServiceSignType) => Promise<T>
 }
