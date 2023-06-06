@@ -64,6 +64,26 @@ CREATE TABLE "permission_roles" (
     CONSTRAINT "permission_roles_pkey" PRIMARY KEY ("permissionCode","roleId")
 );
 
+-- CreateTable
+CREATE TABLE "provinces" (
+    "code" TEXT NOT NULL,
+    "name" TEXT NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "regencies" (
+    "code" TEXT NOT NULL,
+    "provinceCode" TEXT NOT NULL,
+    "name" TEXT NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "districts" (
+    "code" TEXT NOT NULL,
+    "regencyCode" TEXT NOT NULL,
+    "name" TEXT NOT NULL
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
 
@@ -72,6 +92,15 @@ CREATE UNIQUE INDEX "roles_name_key" ON "roles"("name");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "permissions_code_key" ON "permissions"("code");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "provinces_code_key" ON "provinces"("code");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "regencies_code_key" ON "regencies"("code");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "districts_code_key" ON "districts"("code");
 
 -- AddForeignKey
 ALTER TABLE "tokens" ADD CONSTRAINT "tokens_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
@@ -87,3 +116,9 @@ ALTER TABLE "permission_roles" ADD CONSTRAINT "permission_roles_permissionCode_f
 
 -- AddForeignKey
 ALTER TABLE "permission_roles" ADD CONSTRAINT "permission_roles_roleId_fkey" FOREIGN KEY ("roleId") REFERENCES "roles"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "regencies" ADD CONSTRAINT "regencies_provinceCode_fkey" FOREIGN KEY ("provinceCode") REFERENCES "provinces"("code") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "districts" ADD CONSTRAINT "districts_regencyCode_fkey" FOREIGN KEY ("regencyCode") REFERENCES "regencies"("code") ON DELETE CASCADE ON UPDATE CASCADE;
