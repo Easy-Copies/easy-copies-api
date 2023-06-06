@@ -8,6 +8,11 @@ import { PrismaClient } from '@prisma/client'
 // Bcrypt
 import bcrypt from 'bcryptjs'
 
+// Seeder Data
+import { provinces } from './seeders/seed-province'
+import { regencies } from './seeders/seed-regency'
+import { districts } from './seeders/seed-district'
+
 // Init Prisma
 const prisma = new PrismaClient()
 
@@ -143,12 +148,26 @@ const assignRoleToPermissions = async () => {
 	)
 }
 
+/**
+ * @description Seed indonesia regions
+ *
+ *
+ */
+const indonesiaRegionsSeeder = async () => {
+	await prisma.$transaction([
+		prisma.province.createMany({ data: provinces, skipDuplicates: true }),
+		prisma.regency.createMany({ data: regencies, skipDuplicates: true }),
+		prisma.district.createMany({ data: districts, skipDuplicates: true })
+	])
+}
+
 async function main() {
 	await roleSeeder()
 	await userSeeder()
 	await assignRoleToUserSeeder()
 	await permissionSeeder()
 	await assignRoleToPermissions()
+	await indonesiaRegionsSeeder()
 }
 main()
 	.then(async () => {

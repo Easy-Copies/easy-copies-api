@@ -84,3 +84,30 @@ model PermissionRole {
   @@id([permissionCode, roleId])
   @@map("permission_roles")
 }
+
+model Province {
+  code      String    @unique
+  name      String
+  regencies Regency[]
+
+  @@map("provinces")
+}
+
+model Regency {
+  code         String     @unique
+  province     Province   @relation(fields: [provinceCode], references: [code], onDelete: Cascade, onUpdate: Cascade)
+  provinceCode String
+  name         String
+  districts    District[]
+
+  @@map("regencies")
+}
+
+model District {
+  code        String  @unique
+  regency     Regency @relation(fields: [regencyCode], references: [code], onDelete: Cascade, onUpdate: Cascade)
+  regencyCode String
+  name        String
+
+  @@map("districts")
+}
