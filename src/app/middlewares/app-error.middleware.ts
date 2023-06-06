@@ -6,7 +6,7 @@ colors.enable()
 import { NextFunction, Request, Response } from 'express'
 
 // JWT
-import { JsonWebTokenError } from 'jsonwebtoken'
+import { JsonWebTokenError, TokenExpiredError } from 'jsonwebtoken'
 
 // Errors
 import { ErrorBase } from '@/app/errors'
@@ -30,6 +30,11 @@ const appErrorMiddleware = (
 	// Common Error
 	if (err instanceof ErrorBase) {
 		return res.status(err.statusCode).json({ errors: err.serializeErrors() })
+	}
+
+	// JWT Error Expired
+	if (err instanceof TokenExpiredError) {
+		return res.status(401).json({ errors: [{ message: err.message }] })
 	}
 
 	// JWT Error
