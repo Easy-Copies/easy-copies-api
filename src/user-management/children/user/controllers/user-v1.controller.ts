@@ -88,13 +88,16 @@ export class UserControllerV1 implements IUserControllerV1 {
 			permissionActions: EAppPermissionActions.READ
 		},
 		config: async (req: Request, res: Response) => {
-			const result = await appCommonService.paginate<User>(
-				prisma.user,
-				appCommonService.parsePaginationArgs(req.query)
+			const userList = await prisma.user.findMany(
+				appCommonService.paginateArgs<Prisma.UserFindManyArgs>(req.query)
+			)
+			const userListPaginated = appCommonService.paginate(
+				{ result: userList, total: await prisma.role.count() },
+				req.query
 			)
 
 			const { code, ...restResponse } = SuccessOk({
-				result
+				result: userListPaginated
 			})
 			return res.status(code).json(restResponse)
 		}

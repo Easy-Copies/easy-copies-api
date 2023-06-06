@@ -17,8 +17,7 @@ import { SuccessOk, SuccessCreated } from '@/app/success/success'
 import { ErrorBadRequest, ErrorNotFound } from '@/app/errors'
 
 // Prisma
-import { PrismaClient } from '@prisma/client'
-import type { Role } from '@prisma/client'
+import { Prisma, PrismaClient } from '@prisma/client'
 
 // Types
 import {
@@ -44,13 +43,16 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 			permissionActions: EAppPermissionActions.READ
 		},
 		config: async (req: Request, res: Response) => {
-			const result = await appCommonService.paginate<Role>(
-				prisma.role,
-				appCommonService.parsePaginationArgs(req.query)
+			const roleList = await prisma.role.findMany(
+				appCommonService.paginateArgs<Prisma.RoleFindManyArgs>(req.query)
+			)
+			const roleListPaginated = appCommonService.paginate(
+				{ result: roleList, total: await prisma.role.count() },
+				req.query
 			)
 
 			const { code, ...restResponse } = SuccessOk({
-				result
+				result: roleListPaginated
 			})
 			return res.status(code).json(restResponse)
 		}
