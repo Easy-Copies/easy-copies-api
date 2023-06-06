@@ -1,35 +1,18 @@
 // Types
 import {
 	TAppCommonService,
-	TPrismaPaginateArgs,
-	TPrismaPaginateResponse
+	TPagination,
+	TPaginationArgs,
+	TPaginationArgsPrisma
 } from './app-common.service.type'
 
 // Lodash
 import omit from 'lodash.omit'
 
-// Express
-import { Request } from 'express'
-
 // Bcrypt
 import bcrypt from 'bcryptjs'
 
 export class AppCommonService implements TAppCommonService {
-	/**
-	 * @description Parse pagination args
-	 *
-	 */
-	parsePaginationArgs = (query: Request['query']) => {
-		const { limit, page, sort, column } = query
-
-		return {
-			limit: Number(limit),
-			page: Number(page),
-			sort: sort ? (sort as string) : undefined,
-			column: column ? (column as string) : undefined
-		}
-	}
-
 	/**
 	 * @description Hash password
 	 *
@@ -62,48 +45,71 @@ export class AppCommonService implements TAppCommonService {
 	}
 
 	/**
-	 * @description Paginate prisma
+	 * @description Get pagination page
 	 *
+	 * @param {string} _page
+	 *
+	 * @return {number} number
 	 */
-	paginate = async <T = unknown>(
-		// eslint-disable-next-line
-		model: any,
-		args?: TPrismaPaginateArgs
-	): Promise<TPrismaPaginateResponse<T>> => {
-		const currentPage = args?.page || 0
+	private _paginationPage = (_page?: string): number => {
+		const currentPage = Number(_page || 0) as number
 		const page = currentPage < 1 || currentPage === 1 ? 0 : currentPage - 1
-		const take = args?.limit || 10
-		const skip = take * page
-		const sort = args?.sort || 'desc'
-		const rows = await model.findMany({
-			...omit(args, ['page', 'limit', 'sort', 'column']),
-			take,
-			skip,
-			orderBy: {
-				[args?.column || 'createdAt']: sort
-			}
-		})
-		const totalRows = await model.count()
-		const totalPages = Math.ceil(totalRows / take)
 
-		const paginateResponse = {
-			limit: take,
+		return page
+	}
+
+	/**
+	 * @description Pagination argument for prisma
+	 *
+	 * @param {TPaginationArgs<T>} TPaginationArgs<T>
+	 *
+	 * @return {T} T
+	 */
+	paginateArgs = <T extends TPaginationArgsPrisma>(
+		args: TPaginationArgs<T>
+	): T => {
+		const page = this._paginationPage(args?.page as string)
+		const take = Number(args?.limit || 10)
+		const skip = take * page
+
+		return {
+			...omit(args, ['page', 'limit', 'sort', 'column']),
+			take: args?.take || take,
+			skip: args?.skip || skip,
+			orderBy: args?.orderBy || {
+				[(args?.column as string) || 'createdAt']: args?.sort || 'desc'
+			}
+		} as T
+	}
+
+	/**
+	 * @description Paginate any result
+	 *
+	 * @param {object} options
+	 * @param {TPaginationArgs<TPaginationArgsPrisma>} args
+	 *
+	 * @return {TPagination<T>} TPagination<T>
+	 */
+	paginate = <T>(
+		{ result, total }: { result: T[]; total: number },
+		args: TPaginationArgs<TPaginationArgsPrisma>
+	): TPagination<T> => {
+		const page = this._paginationPage(args?.page)
+		const { take } =
+			this.paginateArgs<TPaginationArgs<TPaginationArgsPrisma>>(args)
+		const sort = args?.sort || 'desc'
+		const totalRows = total
+		const totalPages = Math.ceil(totalRows / (take as number))
+
+		const paginatedResponse = {
+			limit: take as number,
 			totalPages,
 			totalRows,
 			page: page + 1,
-			rows: rows.map(
-				// eslint-disable-next-line
-				(row: any) => {
-					if (row?.password) {
-						return omit(row, ['password'])
-					} else {
-						return row
-					}
-				}
-			),
+			rows: result as T[],
 			sort
-		} as TPrismaPaginateResponse<T>
+		}
 
-		return Promise.resolve(paginateResponse)
+		return paginatedResponse
 	}
 }
