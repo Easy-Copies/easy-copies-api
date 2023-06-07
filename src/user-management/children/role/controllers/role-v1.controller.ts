@@ -17,7 +17,7 @@ import { SuccessOk, SuccessCreated } from '@/app/success/success'
 import { ErrorBadRequest, ErrorNotFound } from '@/app/errors'
 
 // Prisma
-import { Prisma, PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@prisma/client'
 
 // Types
 import {
@@ -44,7 +44,7 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 		},
 		config: async (req: Request, res: Response) => {
 			const roleList = await prisma.role.findMany(
-				appCommonService.paginateArgs<Prisma.RoleFindManyArgs>(req.query)
+				appCommonService.paginateArgs(req.query)
 			)
 			const roleListPaginated = appCommonService.paginate(
 				{ result: roleList, total: await prisma.role.count() },

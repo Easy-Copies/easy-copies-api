@@ -1,6 +1,7 @@
 export enum EAppPermission {
 	USER_MANAGEMENT = 'User Management',
-	ROLE_MANAGEMENT = 'Role Management'
+	ROLE_MANAGEMENT = 'Role Management',
+	STORE_MANAGEMENT = 'Store Management'
 }
 
 export enum EAppPermissionActions {

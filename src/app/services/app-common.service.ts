@@ -2,15 +2,25 @@
 import {
 	TAppCommonService,
 	TPagination,
-	TPaginationArgs,
-	TPaginationArgsPrisma
+	TPaginationArgsReturn,
+	TGetAuthenticatedUserActiveRole
 } from './app-common.service.type'
-
-// Lodash
-import omit from 'lodash.omit'
 
 // Bcrypt
 import bcrypt from 'bcryptjs'
+
+// Prisma
+import { PrismaClient } from '@prisma/client'
+import type { User } from '@prisma/client'
+
+// Errors
+import { ErrorNotFound } from '@/app/errors'
+
+// Express
+import { Request } from 'express'
+
+// Init Prisma
+const prisma = new PrismaClient()
 
 export class AppCommonService implements TAppCommonService {
 	/**
@@ -61,43 +71,39 @@ export class AppCommonService implements TAppCommonService {
 	/**
 	 * @description Pagination argument for prisma
 	 *
-	 * @param {TPaginationArgs<T>} TPaginationArgs<T>
+	 * @param {Request['query']} Request['query']
 	 *
 	 * @return {T} T
 	 */
-	paginateArgs = <T extends TPaginationArgsPrisma>(
-		args: TPaginationArgs<T>
-	): T => {
+	paginateArgs = (args: Request['query']): TPaginationArgsReturn => {
 		const page = this._paginationPage(args?.page as string)
 		const take = Number(args?.limit || 10)
 		const skip = take * page
 
 		return {
-			...omit(args, ['page', 'limit', 'sort', 'column']),
-			take: args?.take || take,
-			skip: args?.skip || skip,
-			orderBy: args?.orderBy || {
-				[(args?.column as string) || 'createdAt']: args?.sort || 'desc'
+			take,
+			skip,
+			orderBy: {
+				createdAt: 'desc'
 			}
-		} as T
+		}
 	}
 
 	/**
 	 * @description Paginate any result
 	 *
 	 * @param {object} options
-	 * @param {TPaginationArgs<TPaginationArgsPrisma>} args
+	 * @param {TPaginationArgsReturn<TPaginationArgsPrisma>} args
 	 *
 	 * @return {TPagination<T>} TPagination<T>
 	 */
 	paginate = <T>(
 		{ result, total }: { result: T[]; total: number },
-		args: TPaginationArgs<TPaginationArgsPrisma>
+		args: Request['query']
 	): TPagination<T> => {
-		const page = this._paginationPage(args?.page)
-		const { take } =
-			this.paginateArgs<TPaginationArgs<TPaginationArgsPrisma>>(args)
-		const sort = args?.sort || 'desc'
+		const page = this._paginationPage(args?.page as string)
+		const { take } = this.paginateArgs(args)
+		const sort = (args?.sort || 'desc') as string
 		const totalRows = total
 		const totalPages = Math.ceil(totalRows / (take as number))
 
@@ -111,5 +117,58 @@ export class AppCommonService implements TAppCommonService {
 		}
 
 		return paginatedResponse
+	}
+
+	/**
+	 * @description Get authenticated user
+	 *
+	 * @param {string} userId
+	 *
+	 * @return {Prisma.Prisma__UserClient<User | null, null>} Prisma.Prisma__UserClient<User | null, null>
+	 */
+	getAuthenticatedUser = async (userId: string): Promise<User> => {
+		const user = await prisma.user.findFirst({ where: { id: userId } })
+
+		if (!user) throw new ErrorNotFound('User not found')
+
+		return user
+	}
+
+	/**
+	 * @description Get active role of user
+	 *
+	 * @param {string} userId
+	 *
+	 * @return {TGetAuthenticatedUserActiveRole} TGetAuthenticatedUserActiveRole
+	 */
+	getAuthenticatedUserActiveRole = async (
+		userId: string
+	): Promise<TGetAuthenticatedUserActiveRole> => {
+		const user = await prisma.roleUser.findFirst({
+			where: { userId, isActive: true },
+			select: { role: { select: { id: true, name: true } } }
+		})
+
+		if (!user) throw new ErrorNotFound('User not found')
+
+		return user.role
+	}
+
+	/**
+	 * @description Get active role is admin
+	 *
+	 * @param {string} userId
+	 *
+	 * @return {Promise<boolean>} Promise<boolean>
+	 */
+	isAuthenticatedUserAdmin = async (userId: string): Promise<boolean> => {
+		const user = await prisma.roleUser.findFirst({
+			where: { userId, isActive: true },
+			select: { role: { select: { id: true, name: true } } }
+		})
+
+		if (!user) throw new ErrorNotFound('User not found')
+
+		return user.role.name.toLowerCase() === 'admin'
 	}
 }
