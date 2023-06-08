@@ -447,9 +447,7 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 					throw new ErrorValidation([
 						{
 							msg: 'Password minimal length must 8',
-							param: 'password',
-							location: 'body',
-							value: ''
+							param: 'password'
 						}
 					])
 

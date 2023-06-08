@@ -11,8 +11,13 @@ import { appValidationMiddleware } from '@/app/middlewares/app-validation.middle
 // Initialize anything
 const router = Router()
 const storeControllerV1 = new StoreControllerV1()
-const { index, store, show, update, destroy } = storeControllerV1
+const { index, store, show, update, destroy, cancelStore } = storeControllerV1
 
+router.put(
+	'/cancel/:id',
+	appAuthMiddleware({ ...cancelStore.permission }),
+	cancelStore.config
+)
 router.get('/', appAuthMiddleware({ ...index.permission }), index.config)
 router.post(
 	'/',

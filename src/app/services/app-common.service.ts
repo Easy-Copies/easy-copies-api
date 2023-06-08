@@ -10,7 +10,7 @@ import {
 import bcrypt from 'bcryptjs'
 
 // Prisma
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, StoreApprovalStatus } from '@prisma/client'
 import type { User } from '@prisma/client'
 
 // Errors
@@ -170,5 +170,35 @@ export class AppCommonService implements TAppCommonService {
 		if (!user) throw new ErrorNotFound('User not found')
 
 		return user.role.name.toLowerCase() === 'admin'
+	}
+
+	/**
+	 * @description Generate store status approval description
+	 *
+	 * @param {StoreApprovalStatus} status
+	 *
+	 * @return {string} string
+	 */
+	generateStoreStatusApprovalDescription = (
+		status: StoreApprovalStatus
+	): string => {
+		switch (status) {
+			case StoreApprovalStatus.Pending:
+				return 'Store waiting to be reviewed by Admin'
+			case StoreApprovalStatus.Cancel:
+				return 'Store has been cancel to be reviewed'
+			case StoreApprovalStatus.OnReview:
+				return 'Store currently on review by Admin'
+			case StoreApprovalStatus.Rejected:
+				return 'Store has been rejected by Admin'
+			case StoreApprovalStatus.Revise:
+				return 'Store has been revised, you should update the store by correct criteria'
+			case StoreApprovalStatus.Revised:
+				return 'Store has been revised, waiting Admin to be review again'
+			case StoreApprovalStatus.Approved:
+				return 'Store has been approved, enjoy your transaction'
+			default:
+				return ''
+		}
 	}
 }

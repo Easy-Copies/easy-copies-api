@@ -150,16 +150,17 @@ model Store {
 }
 
 model StoreApprovalUser {
-  user          User                @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  userId        String
-  store         Store               @relation(fields: [storeId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  storeId       String
-  status        StoreApprovalStatus
-  reviseComment String?
-  rejectReason  String?
-  createdAt     DateTime            @default(now())
+  id                String              @id @default(uuid())
+  user              User                @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId            String
+  store             Store               @relation(fields: [storeId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  storeId           String
+  status            StoreApprovalStatus
+  statusDescription String              @db.Text
+  reviseComment     String?
+  rejectReason      String?
+  createdAt         DateTime            @default(now())
 
-  @@id([userId, storeId])
   @@map("store_approval_users")
 }
 
