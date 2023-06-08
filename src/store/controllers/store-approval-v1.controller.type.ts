@@ -3,5 +3,6 @@ import { IAppControllerConfigRestrictionReturn } from '@/app/types/app-controlle
 
 export interface IStoreApprovalControllerV1 {
 	handle: IAppControllerConfigRestrictionReturn
+	approvalStatusList: IAppControllerConfigRestrictionReturn
 	cancel: IAppControllerConfigRestrictionReturn
 }
