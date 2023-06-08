@@ -1,7 +1,3 @@
-// Colors
-import colors from 'colors'
-colors.enable()
-
 // Express
 import { NextFunction, Request, Response } from 'express'
 
@@ -14,6 +10,9 @@ import { ErrorBase } from '@/app/errors'
 // Prisma
 import { Prisma } from '@prisma/client'
 
+// Logger
+import { appLogger } from '@/app/logger/app-logger'
+
 const appErrorMiddleware = (
 	err: Error,
 	req: Request,
@@ -21,10 +20,10 @@ const appErrorMiddleware = (
 	// eslint-disable-next-line
 	next: NextFunction
 ) => {
-	console.log(
+	appLogger.error(
 		`===app-error.middleware.ts===: ${
 			JSON.stringify(err?.message) || JSON.stringify(err)
-		}`.red
+		}`
 	)
 
 	// Common Error

@@ -1,9 +1,8 @@
-// Colors
-import colors from 'colors'
-colors.enable()
-
 // Nodemailer
 import nodemailer, { Transporter } from 'nodemailer'
+
+// Logger
+import { appLogger } from '@/app/logger/app-logger'
 
 export class AppNodeMailerWrapper {
 	private _transporter?: Transporter
@@ -36,11 +35,11 @@ export class AppNodeMailerWrapper {
 		return new Promise((resolve, reject) => {
 			this.transporter.verify(error => {
 				if (error) {
-					console.log(`===app-nodemailer-wrapper.service.ts===: ${error}`.red)
+					appLogger.error(`===app-nodemailer-wrapper.service.ts===: ${error}`)
 					reject(error)
 				} else {
-					console.log(
-						'===app-nodemailer-wrapper.service.ts===: Ready to send mail!'.green
+					appLogger.info(
+						'===app-nodemailer-wrapper.service.ts===: Ready to send mail!'
 					)
 					resolve()
 				}

@@ -7,6 +7,9 @@ import { PrismaClient } from '@prisma/client'
 // Services
 import { appNodeMailerWrapper } from './app/services/app-nodemailer-wrapper.service'
 
+// Logger
+import { appLogger } from './app/logger/app-logger'
+
 // PORT
 const PORT = process.env.PORT || 5000
 
@@ -27,17 +30,17 @@ const start = async () => {
 
 		// Check prisma connection
 		await prisma.$connect()
-		console.log('===app.ts===: Prisma ORM connected!'.green)
+		appLogger.info('===app.ts===: Prisma ORM connected!')
 
 		// Run nodemailer
 		appNodeMailerWrapper.connect()
 
 		// Run the app
 		app.listen(PORT, () => {
-			console.log(`===app.ts===: Easy Copies API started at port ${PORT}`.green)
+			appLogger.info(`===app.ts===: Easy Copies API started at port ${PORT}`)
 		})
 	} catch (err) {
-		console.log(`${err}`.red)
+		appLogger.error(`===app.ts===: ${err}`)
 		await prisma.$disconnect()
 	}
 }

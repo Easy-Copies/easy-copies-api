@@ -1,7 +1,3 @@
-// Colors
-import colors from 'colors'
-colors.enable()
-
 // Declare ENV
 import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 dotenv.config()
@@ -15,6 +11,11 @@ import { routesInit } from './app/routes/app.router'
 
 // Middlewares
 import { appErrorMiddleware } from './app/middlewares/app-error.middleware'
+import { appLoggerMiddleware } from './app/middlewares/app-logger.middleware'
+import { appLoggerStream } from './app/logger/app-logger'
+
+// Morgan Body
+import morganBody from 'morgan-body'
 
 // Cors
 import cors from 'cors'
@@ -27,6 +28,12 @@ app.use(cors())
 
 // Accept JSON request from user
 app.use(express.json())
+
+// Init Logger
+app.use(appLoggerMiddleware)
+morganBody(app, {
+	stream: appLoggerStream
+})
 
 // Init Routes
 routesInit(app)

@@ -1,6 +1,9 @@
 // Types
 import { TAppNodemailer } from './app-nodemailer.service.type'
 
+// Logger
+import { appLogger } from '@/app/logger/app-logger'
+
 // Nodemailer
 import { Transporter, SendMailOptions } from 'nodemailer'
 
@@ -41,12 +44,12 @@ export class AppNodemailerService implements TAppNodemailer {
 				},
 				(err, success) => {
 					if (err) {
-						console.log(
+						appLogger.error(
 							`App Nodemailer Service: Something went wrong when sending email ${err.message}`
 						)
 						reject(err)
 					} else {
-						console.log('App Nodemailer Service: Successfully send email!')
+						appLogger.info('App Nodemailer Service: Successfully send email!')
 						resolve(success)
 					}
 				}
