@@ -7,5 +7,4 @@ export interface IStoreControllerV1 {
 	show: IAppControllerConfigRestrictionReturn
 	update: IAppControllerConfigRestrictionReturn
 	destroy: IAppControllerConfigRestrictionReturn
-	cancelStore: IAppControllerConfigRestrictionReturn
 }

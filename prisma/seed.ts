@@ -16,6 +16,9 @@ import { users } from './seeders/seed-user'
 import { roles } from './seeders/seed-role'
 import { permissions } from './seeders/seed-permission'
 
+// Types
+import { EAppPermission } from '../src/app/types/app-permission.type'
+
 // Init Prisma
 const prisma = new PrismaClient()
 
@@ -113,7 +116,8 @@ const assignRoleToUserSeeder = async () => {
 const permissionSeeder = async () => {
 	await prisma.$transaction([
 		prisma.permission.createMany({
-			data: permissions
+			data: permissions,
+			skipDuplicates: true
 		})
 	])
 }
@@ -139,7 +143,9 @@ const assignRoleToPermissions = async () => {
 								connect: { code }
 							},
 							actions: {
-								create: true,
+								create: ![EAppPermission.STORE_MANAGEMENT_APPROVAL].includes(
+									code as EAppPermission
+								),
 								read: true,
 								update: true,
 								delete: true
@@ -152,7 +158,12 @@ const assignRoleToPermissions = async () => {
 
 		// Assign to User Role
 		...permissions
-			.filter(permission => permission.code === 'Store Management')
+			.filter(permission =>
+				[
+					EAppPermission.STORE_MANAGEMENT,
+					EAppPermission.STORE_MANAGEMENT_APPROVAL
+				].includes(permission.code as EAppPermission)
+			)
 			.map(({ code }) =>
 				prisma.role.update({
 					where: { id: userRole?.id },
@@ -163,9 +174,15 @@ const assignRoleToPermissions = async () => {
 									connect: { code }
 								},
 								actions: {
-									create: true,
-									read: true,
-									update: true,
+									create: ![EAppPermission.STORE_MANAGEMENT_APPROVAL].includes(
+										code as EAppPermission
+									),
+									read: ![EAppPermission.STORE_MANAGEMENT_APPROVAL].includes(
+										code as EAppPermission
+									),
+									update: ![EAppPermission.STORE_MANAGEMENT_APPROVAL].includes(
+										code as EAppPermission
+									),
 									delete: true
 								}
 							}
