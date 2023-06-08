@@ -1,5 +1,5 @@
 // Prisma
-import type { StoreApprovalStatus, User } from '@prisma/client'
+import type { User } from '@prisma/client'
 
 // Express
 import { Request } from 'express'
@@ -41,7 +41,4 @@ export type TAppCommonService = {
 		userId: string
 	) => Promise<TGetAuthenticatedUserActiveRole>
 	isAuthenticatedUserAdmin: (userId: string) => Promise<boolean>
-	generateStoreStatusApprovalDescription: (
-		status: StoreApprovalStatus
-	) => string
 }

@@ -55,6 +55,7 @@ model Role {
 }
 
 model RoleUser {
+  id        String   @unique @default(uuid())
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId    String
   role      Role     @relation(fields: [roleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
@@ -68,13 +69,14 @@ model RoleUser {
 }
 
 model Permission {
-  code  String           @unique
+  code  String           @id
   roles PermissionRole[]
 
   @@map("permissions")
 }
 
 model PermissionRole {
+  id             String     @unique @default(uuid())
   permission     Permission @relation(fields: [permissionCode], references: [code], onDelete: Cascade, onUpdate: Cascade)
   permissionCode String
   role           Role       @relation(fields: [roleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
@@ -88,7 +90,7 @@ model PermissionRole {
 }
 
 model Province {
-  code      String    @unique
+  code      String    @id @unique
   name      String
   regencies Regency[]
   stores    Store[]
@@ -97,7 +99,7 @@ model Province {
 }
 
 model Regency {
-  code         String     @unique
+  code         String     @id @unique
   province     Province   @relation(fields: [provinceCode], references: [code])
   provinceCode String
   name         String
@@ -108,7 +110,7 @@ model Regency {
 }
 
 model District {
-  code        String  @unique
+  code        String  @id
   regency     Regency @relation(fields: [regencyCode], references: [code])
   regencyCode String
   name        String
@@ -118,32 +120,33 @@ model District {
 }
 
 model Store {
-  id             String              @id @default(uuid())
+  id             String               @id @default(uuid())
   name           String
-  description    String              @db.Text
+  description    String               @db.Text
   phoneNumber    String
   email          String
-  address        String              @db.Text
+  address        String               @db.Text
   addressNote    String?
-  province       Province            @relation(fields: [provinceCode], references: [code])
+  province       Province             @relation(fields: [provinceCode], references: [code])
   provinceCode   String
-  regency        Regency             @relation(fields: [regencyCode], references: [code])
+  regency        Regency              @relation(fields: [regencyCode], references: [code])
   regencyCode    String
-  district       District            @relation(fields: [districtCode], references: [code])
+  district       District             @relation(fields: [districtCode], references: [code])
   districtCode   String
   postalCode     String
   mapCoordinate  Json?
-  storeLogo      String?             @db.Text
-  storePhoto     String              @db.Text
+  storeLogo      String?              @db.Text
+  storePhoto     String               @db.Text
   nik            String
   ktpPhoto       String
   npwp           String?
   npwpPhoto      String?
-  user           User                @relation(fields: [userId], references: [id])
+  user           User                 @relation(fields: [userId], references: [id])
   userId         String
-  isOpen         Boolean             @default(false)
-  createdAt      DateTime            @default(now())
-  updatedAt      DateTime            @updatedAt
+  status         StoreApprovalStatus?
+  isOpen         Boolean              @default(false)
+  createdAt      DateTime             @default(now())
+  updatedAt      DateTime             @updatedAt
   storeApprovals StoreApprovalUser[]
 
   @@map("stores")
