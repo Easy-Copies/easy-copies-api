@@ -12,10 +12,12 @@ export interface IAppControllerConfigReturn {
 	config: (req: Request, res: Response, next?: NextFunction) => any
 }
 
+type PermissionRestriction = {
+	permissionCode: EAppPermission
+	permissionActions: EAppPermissionActions
+}
+
 export interface IAppControllerConfigRestrictionReturn
 	extends IAppControllerConfigReturn {
-	permission: {
-		permissionCode: EAppPermission
-		permissionActions: EAppPermissionActions
-	}
+	permission: PermissionRestriction
 }

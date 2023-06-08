@@ -14,7 +14,7 @@ import { SuccessOk } from '@/app/success/success'
 import { ErrorNotFound } from '@/app/errors'
 
 // Prisma
-import { Prisma, PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@prisma/client'
 
 // Init Prisma
 const prisma = new PrismaClient()
@@ -31,7 +31,7 @@ export class PermissionControllerV1 implements IPermissionControllerV1 {
 		validateInput: [],
 		config: async (req: Request, res: Response) => {
 			const permissionList = await prisma.user.findMany(
-				appCommonService.paginateArgs<Prisma.UserFindManyArgs>(req.query)
+				appCommonService.paginateArgs(req.query)
 			)
 			const permissionListPaginated = appCommonService.paginate(
 				{ result: permissionList, total: await prisma.role.count() },

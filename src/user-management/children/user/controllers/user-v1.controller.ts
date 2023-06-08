@@ -1,5 +1,9 @@
 // Types
 import { IUserControllerV1 } from './user-v1.controller.type'
+import {
+	EAppPermission,
+	EAppPermissionActions
+} from '@/app/types/app-permission.type'
 
 // Services
 import { AppCommonService } from '@/app/services/app-common.service'
@@ -23,10 +27,6 @@ import type { User } from '@prisma/client'
 // Lodash
 import omit from 'lodash.omit'
 import uniq from 'lodash.uniq'
-import {
-	EAppPermission,
-	EAppPermissionActions
-} from '@/app/types/app-permission.type'
 
 // Init Prisma
 const prisma = new PrismaClient()
@@ -89,7 +89,7 @@ export class UserControllerV1 implements IUserControllerV1 {
 		},
 		config: async (req: Request, res: Response) => {
 			const userList = await prisma.user.findMany(
-				appCommonService.paginateArgs<Prisma.UserFindManyArgs>(req.query)
+				appCommonService.paginateArgs(req.query)
 			)
 			const userListPaginated = appCommonService.paginate(
 				{ result: userList, total: await prisma.role.count() },

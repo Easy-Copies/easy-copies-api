@@ -1,32 +1,15 @@
 // Prisma
-import type { Prisma } from '@prisma/client'
+import type { StoreApprovalStatus, User } from '@prisma/client'
 
-export type TPrismaPaginateArgs = Prisma.RoleFindManyArgs & {
-	params: {
-		page?: number | undefined
-		limit?: number | undefined
-		sort?: string | undefined
-		column?: string | undefined
+// Express
+import { Request } from 'express'
+
+export type TPaginationArgsReturn = {
+	take: number
+	skip: number
+	orderBy: {
+		createdAt: 'desc'
 	}
-	prisma: {
-		take: any
-		skip: any
-		orderBy: any
-	}
-}
-
-export type TPaginationArgsPrisma = {
-	orderBy?: any | undefined
-}
-
-export type TPaginationArgs<T extends TPaginationArgsPrisma> = T & {
-	take?: number | undefined
-	skip?: number | undefined
-	orderBy?: T['orderBy'] | undefined
-	page?: string | undefined
-	limit?: string | undefined
-	sort?: string | undefined
-	column?: string | undefined
 }
 
 export type TPagination<T> = {
@@ -38,23 +21,27 @@ export type TPagination<T> = {
 	sort: string
 }
 
-export type TPrismaPaginateResponse<T = unknown> = {
-	limit: number
-	page: number
-	sort: string
-	totalRows: number
-	totalPages: number
-	rows: T[]
-}
-
 export type TPaginateResult<T> = { result: T[]; total: number }
+
+export type TGetAuthenticatedUserActiveRole = {
+	id: string
+	name: string
+}
 
 export type TAppCommonService = {
 	generateOtp: () => string
-	paginateArgs: <T extends TPaginationArgsPrisma>(args: TPaginationArgs<T>) => T
+	paginateArgs: (args: Request['query']) => TPaginationArgsReturn
 	paginate: <T>(
 		result: TPaginateResult<T>,
-		args: TPaginationArgs<TPaginationArgsPrisma>
+		args: Request['query']
 	) => TPagination<T>
 	hashPassword: (password: string) => Promise<string>
+	getAuthenticatedUser: (userId: string) => Promise<User>
+	getAuthenticatedUserActiveRole: (
+		userId: string
+	) => Promise<TGetAuthenticatedUserActiveRole>
+	isAuthenticatedUserAdmin: (userId: string) => Promise<boolean>
+	generateStoreStatusApprovalDescription: (
+		status: StoreApprovalStatus
+	) => string
 }
