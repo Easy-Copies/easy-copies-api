@@ -36,6 +36,24 @@ const prisma = new PrismaClient()
 
 export class StoreApprovalController implements IStoreApprovalControllerV1 {
 	/**
+	 * @description Map approval status name
+	 *
+	 * @return {string} string
+	 */
+	private _mapApprovalStatusName = (status: StoreApprovalStatus): string => {
+		switch (status) {
+			case StoreApprovalStatus.OnReview:
+				return 'Review'
+			case StoreApprovalStatus.Rejected:
+				return 'Reject'
+			case StoreApprovalStatus.Approved:
+				return 'Approve'
+			default:
+				return status
+		}
+	}
+
+	/**
 	 * @description Handle store approval
 	 *
 	 *
@@ -88,11 +106,15 @@ export class StoreApprovalController implements IStoreApprovalControllerV1 {
 				throw new ErrorBadRequest('Store already been approved')
 			}
 
+			// Check if user already reject, reject that
+			if (currentStoreStatus === StoreApprovalStatus.Rejected) {
+				throw new ErrorBadRequest('Store already been reject')
+			}
+
 			// Check if anybody want to go back to Pending or OnReview, reject that!
 			const isOnReviewOrPending = [
 				StoreApprovalStatus.Pending,
-				StoreApprovalStatus.OnReview,
-				StoreApprovalStatus.Rejected
+				StoreApprovalStatus.OnReview
 			]
 				.map(status => status.toString())
 				.includes(_approvalStatus)
@@ -131,6 +153,14 @@ export class StoreApprovalController implements IStoreApprovalControllerV1 {
 				throw new ErrorBadRequest(
 					'On Review approval cannot go back to Pending!'
 				)
+			}
+
+			// Check if current status is Pending, but not going to OnReview
+			if (
+				currentStoreStatus === StoreApprovalStatus.Pending &&
+				_approvalStatus !== StoreApprovalStatus.OnReview
+			) {
+				throw new ErrorBadRequest('Approval should go to On Review first!')
 			}
 
 			// Check if user want to revised, but before is not revise
@@ -200,6 +230,70 @@ export class StoreApprovalController implements IStoreApprovalControllerV1 {
 
 			const { code, ...restResponse } = SuccessOk({
 				result: updatedStore
+			})
+			return res.status(code).json(restResponse)
+		}
+	}
+
+	/**
+	 * @description Approval status list
+	 *
+	 *
+	 */
+	approvalStatusList = {
+		validateInput: [],
+		permission: {
+			permissionCode: EAppPermission.STORE_MANAGEMENT_APPROVAL,
+			permissionActions: EAppPermissionActions.UPDATE
+		},
+		config: async (req: Request, res: Response) => {
+			// Common State
+			const { storeId } = req.params
+			let statusList: StoreApprovalStatus[] = []
+
+			// Get store detail
+			const storeDetail = await prisma.store.findFirst({
+				where: { id: storeId },
+				include: {
+					storeApprovals: true
+				}
+			})
+
+			// Check if store exists
+			if (!storeDetail) throw new ErrorNotFound('Store not found')
+
+			// Get current approval of store
+			const currentStoreStatus =
+				await storeService.getCurrentStatusStoreApproval(storeDetail.id)
+
+			// Handle status list
+			switch (currentStoreStatus) {
+				case StoreApprovalStatus.Pending:
+					statusList.push(StoreApprovalStatus.OnReview)
+					break
+				case StoreApprovalStatus.OnReview:
+					statusList.push(
+						StoreApprovalStatus.Rejected,
+						StoreApprovalStatus.Revise,
+						StoreApprovalStatus.Approved
+					)
+					break
+				case StoreApprovalStatus.Revised:
+					statusList.push(
+						StoreApprovalStatus.Revise,
+						StoreApprovalStatus.Rejected,
+						StoreApprovalStatus.Approved
+					)
+					break
+				default:
+					statusList = []
+			}
+
+			const { code, ...restResponse } = SuccessOk({
+				result: statusList.map(status => ({
+					id: status,
+					name: this._mapApprovalStatusName(status)
+				}))
 			})
 			return res.status(code).json(restResponse)
 		}

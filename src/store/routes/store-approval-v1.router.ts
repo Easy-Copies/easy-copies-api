@@ -11,7 +11,7 @@ import { appValidationMiddleware } from '@/app/middlewares/app-validation.middle
 // Initialize anything
 const router = Router()
 const storeControllerV1 = new StoreApprovalController()
-const { handle, cancel } = storeControllerV1
+const { handle, approvalStatusList, cancel } = storeControllerV1
 
 router.put(
 	'/handle/:storeId',
@@ -19,6 +19,11 @@ router.put(
 	handle.validateInput,
 	appValidationMiddleware,
 	handle.config
+)
+router.get(
+	'/statuses/:storeId',
+	appAuthMiddleware({ ...approvalStatusList.permission }),
+	approvalStatusList.config
 )
 router.put(
 	'/cancel/:storeId',
