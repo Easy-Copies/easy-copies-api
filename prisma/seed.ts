@@ -1,6 +1,5 @@
-// Colors
-import colors from 'colors'
-colors.enable()
+// Logger
+import { appLogger } from '../src/app/logger/app-logger'
 
 // Prisma
 import { PrismaClient } from '@prisma/client'
@@ -175,7 +174,7 @@ main()
 		await prisma.$disconnect()
 	})
 	.catch(async e => {
-		console.log(`===prisma/seed.ts===: ${e}`.red)
+		appLogger.error(`===prisma/seed.ts===:`, e)
 		await prisma.$disconnect()
 		process.exit(1)
 	})
