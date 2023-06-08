@@ -7,7 +7,9 @@ import { ValidationError as ExpressErrorValidation } from 'express-validator'
 class ErrorValidation extends ErrorBase {
 	statusCode = 422
 
-	constructor(private errors: ExpressErrorValidation[]) {
+	constructor(
+		private errors: Omit<ExpressErrorValidation, 'location' | 'value'>[]
+	) {
 		super()
 
 		Object.setPrototypeOf(this, ErrorValidation.prototype)

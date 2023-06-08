@@ -1,3 +1,7 @@
+// Colors
+import colors from 'colors'
+colors.enable()
+
 // Nodemailer
 import nodemailer, { Transporter } from 'nodemailer'
 

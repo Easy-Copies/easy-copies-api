@@ -12,18 +12,12 @@ import bcrypt from 'bcryptjs'
 import { provinces } from './seeders/seed-province'
 import { regencies } from './seeders/seed-regency'
 import { districts } from './seeders/seed-district'
+import { users } from './seeders/seed-user'
+import { roles } from './seeders/seed-role'
+import { permissions } from './seeders/seed-permission'
 
 // Init Prisma
 const prisma = new PrismaClient()
-
-const users = [
-	{ name: 'Huda Prasetyo', email: 'test.hudaprasetyo@gmail.com' },
-	{ name: 'Anisa Indriani', email: 'anisaindriani15@gmail.com' },
-	{ name: 'Steven', email: 'stevengerrad57@gmail.com' },
-	{ name: 'Devi Debora', email: 'deboradevi56@gmail.com' }
-]
-const roles = [{ name: 'Admin' }, { name: 'Store' }, { name: 'Basic User' }]
-const permissions = [{ code: 'User Management' }, { code: 'Role Management' }]
 
 /**
  * @description Seed user
@@ -73,6 +67,7 @@ const roleSeeder = async () => {
  */
 const assignRoleToUserSeeder = async () => {
 	const adminRole = await prisma.role.findFirst({ where: { name: 'Admin' } })
+	const userRole = await prisma.role.findFirst({ where: { name: 'User' } })
 	const selectedUsers = await prisma.user.findMany({
 		where: {
 			email: {
@@ -92,6 +87,13 @@ const assignRoleToUserSeeder = async () => {
 								role: {
 									connect: {
 										id: adminRole?.id
+									}
+								}
+							},
+							{
+								role: {
+									connect: {
+										id: userRole?.id
 									}
 								}
 							}
@@ -123,9 +125,11 @@ const permissionSeeder = async () => {
  */
 const assignRoleToPermissions = async () => {
 	const adminRole = await prisma.role.findFirst({ where: { name: 'Admin' } })
+	const userRole = await prisma.role.findFirst({ where: { name: 'User' } })
 
-	await prisma.$transaction(
-		permissions.map(({ code }) =>
+	await prisma.$transaction([
+		// Assign to Admin Role
+		...permissions.map(({ code }) =>
 			prisma.role.update({
 				where: { id: adminRole?.id },
 				data: {
@@ -144,8 +148,32 @@ const assignRoleToPermissions = async () => {
 					}
 				}
 			})
-		)
-	)
+		),
+
+		// Assign to User Role
+		...permissions
+			.filter(permission => permission.code === 'Store Management')
+			.map(({ code }) =>
+				prisma.role.update({
+					where: { id: userRole?.id },
+					data: {
+						permissions: {
+							create: {
+								permission: {
+									connect: { code }
+								},
+								actions: {
+									create: true,
+									read: true,
+									update: true,
+									delete: true
+								}
+							}
+						}
+					}
+				})
+			)
+	])
 }
 
 /**

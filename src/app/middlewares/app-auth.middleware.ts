@@ -26,14 +26,6 @@ import {
 // Init Prisma
 const prisma = new PrismaClient()
 
-declare global {
-	namespace Express {
-		interface Request {
-			currentUser?: TUserJwtPayload
-		}
-	}
-}
-
 const appAuthMiddleware =
 	(options?: {
 		permissionCode?: EAppPermission
