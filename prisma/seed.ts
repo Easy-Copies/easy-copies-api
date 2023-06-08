@@ -16,9 +16,6 @@ import { users } from './seeders/seed-user'
 import { roles } from './seeders/seed-role'
 import { permissions } from './seeders/seed-permission'
 
-// Types
-import { EAppPermission } from '../src/app/types/app-permission.type'
-
 // Init Prisma
 const prisma = new PrismaClient()
 
@@ -70,7 +67,6 @@ const roleSeeder = async () => {
  */
 const assignRoleToUserSeeder = async () => {
 	const adminRole = await prisma.role.findFirst({ where: { name: 'Admin' } })
-	const userRole = await prisma.role.findFirst({ where: { name: 'User' } })
 	const selectedUsers = await prisma.user.findMany({
 		where: {
 			email: {
@@ -90,13 +86,6 @@ const assignRoleToUserSeeder = async () => {
 								role: {
 									connect: {
 										id: adminRole?.id
-									}
-								}
-							},
-							{
-								role: {
-									connect: {
-										id: userRole?.id
 									}
 								}
 							}
@@ -129,7 +118,6 @@ const permissionSeeder = async () => {
  */
 const assignRoleToPermissions = async () => {
 	const adminRole = await prisma.role.findFirst({ where: { name: 'Admin' } })
-	const userRole = await prisma.role.findFirst({ where: { name: 'User' } })
 
 	await prisma.$transaction([
 		// Assign to Admin Role
@@ -143,9 +131,7 @@ const assignRoleToPermissions = async () => {
 								connect: { code }
 							},
 							actions: {
-								create: ![EAppPermission.STORE_MANAGEMENT_APPROVAL].includes(
-									code as EAppPermission
-								),
+								create: true,
 								read: true,
 								update: true,
 								delete: true
@@ -154,42 +140,7 @@ const assignRoleToPermissions = async () => {
 					}
 				}
 			})
-		),
-
-		// Assign to User Role
-		...permissions
-			.filter(permission =>
-				[
-					EAppPermission.STORE_MANAGEMENT,
-					EAppPermission.STORE_MANAGEMENT_APPROVAL
-				].includes(permission.code as EAppPermission)
-			)
-			.map(({ code }) =>
-				prisma.role.update({
-					where: { id: userRole?.id },
-					data: {
-						permissions: {
-							create: {
-								permission: {
-									connect: { code }
-								},
-								actions: {
-									create: ![EAppPermission.STORE_MANAGEMENT_APPROVAL].includes(
-										code as EAppPermission
-									),
-									read: ![EAppPermission.STORE_MANAGEMENT_APPROVAL].includes(
-										code as EAppPermission
-									),
-									update: ![EAppPermission.STORE_MANAGEMENT_APPROVAL].includes(
-										code as EAppPermission
-									),
-									delete: true
-								}
-							}
-						}
-					}
-				})
-			)
+		)
 	])
 }
 

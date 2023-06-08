@@ -325,6 +325,11 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 			orderBy: { permission: { code: 'asc' } }
 		})
 
+		// Get all permissions
+		const permissions = await prisma.permission.findMany({
+			orderBy: { code: 'asc' }
+		})
+
 		const { code, ...restResponse } = SuccessOk({
 			result: omit(
 				{
@@ -333,9 +338,19 @@ export class AuthControllerV1 implements IAuthControllerV1 {
 						...omit(userRole, ['userId', 'roleId', 'role']),
 						roleName: userRole.role.name,
 						id: userRole.roleId,
-						permissions: userRolePermissions.map(userRolePermission =>
-							omit(userRolePermission, ['roleId'])
-						)
+						permissions: permissions.map(permission => ({
+							...permission,
+							actions: userRolePermissions.find(
+								userRolePermission =>
+									userRolePermission.permissionCode === permission.code &&
+									userRolePermission.roleId === userRole.roleId
+							)?.actions || {
+								create: false,
+								read: false,
+								update: false,
+								delete: false
+							}
+						}))
 					}))
 				},
 				['password']
