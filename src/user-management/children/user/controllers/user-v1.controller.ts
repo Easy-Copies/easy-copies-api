@@ -57,6 +57,7 @@ export class UserControllerV1 implements IUserControllerV1 {
 				select: {
 					role: {
 						select: {
+							id: true,
 							name: true
 						}
 					},
@@ -97,7 +98,10 @@ export class UserControllerV1 implements IUserControllerV1 {
 			)
 
 			const { code, ...restResponse } = SuccessOk({
-				result: userListPaginated
+				result: {
+					...userListPaginated,
+					rows: userListPaginated.rows.map(row => omit(row, ['password']))
+				}
 			})
 			return res.status(code).json(restResponse)
 		}

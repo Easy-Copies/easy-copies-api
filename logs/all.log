@@ -119,3 +119,358 @@
 [32m[39m
 09-06-2023 00:52:32:5232 [32minfo[39m: [32m[96mResponse: [32m200 [37m147.736 ms [39m
 [32m[39m
+10-06-2023 10:32:56:3256 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+10-06-2023 10:32:56:3256 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+10-06-2023 10:32:57:3257 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+10-06-2023 10:33:20:3320 [31merror[39m: [31m===app-error.middleware.ts===: "Your account not registered in our system"[39m
+10-06-2023 10:33:20:3320 [35mhttp[39m: [35mGET /api/v1/auth/roles 401 {} - 98.663 ms[39m
+[35m[39m
+10-06-2023 10:33:20:3320 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/auth/roles [90mat [37mSat Jun 10 2023 10:33:20 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:33:20:3320 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Your account not registered in our system"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:33:20:3320 [32minfo[39m: [32m[96mResponse: [33m401 [37m98.663 ms [39m
+[32m[39m
+10-06-2023 10:33:21:3321 [31merror[39m: [31m===app-error.middleware.ts===: "Your account not registered in our system"[39m
+10-06-2023 10:33:21:3321 [35mhttp[39m: [35mGET /api/v1/user-management/users?limit=10&page=1&sort=desc&column=createdAt 401 {} - 8.027 ms[39m
+[35m[39m
+10-06-2023 10:33:21:3321 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/user-management/users?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSat Jun 10 2023 10:33:21 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:33:21:3321 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Your account not registered in our system"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:33:21:3321 [32minfo[39m: [32m[96mResponse: [33m401 [37m8.027 ms [39m
+[32m[39m
+10-06-2023 10:33:23:3323 [31merror[39m: [31m===app-error.middleware.ts===: "Your account not registered in our system"[39m
+10-06-2023 10:33:23:3323 [35mhttp[39m: [35mGET /api/v1/user-management/users?limit=10&page=1&sort=desc&column=createdAt 401 {} - 4.209 ms[39m
+[35m[39m
+10-06-2023 10:33:23:3323 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/user-management/users?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSat Jun 10 2023 10:33:23 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:33:23:3323 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Your account not registered in our system"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:33:23:3323 [32minfo[39m: [32m[96mResponse: [33m401 [37m4.209 ms [39m
+[32m[39m
+10-06-2023 10:33:25:3325 [31merror[39m: [31m===app-error.middleware.ts===: "Invalid credentials"[39m
+10-06-2023 10:33:25:3325 [35mhttp[39m: [35mPOST /api/v1/auth/login 400 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - 60.046 ms[39m
+[35m[39m
+10-06-2023 10:33:25:3325 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/auth/login [90mat [37mSat Jun 10 2023 10:33:25 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:33:25:3325 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m	"password": "password"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:33:25:3325 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Invalid credentials"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:33:25:3325 [32minfo[39m: [32m[96mResponse: [33m400 [37m60.046 ms [39m
+[32m[39m
+10-06-2023 10:33:26:3326 [31merror[39m: [31m===app-error.middleware.ts===: "Your account not registered in our system"[39m
+10-06-2023 10:33:26:3326 [35mhttp[39m: [35mGET /api/v1/user-management/users?limit=10&page=1&sort=desc&column=createdAt 401 {} - 3.962 ms[39m
+[35m[39m
+10-06-2023 10:33:26:3326 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/user-management/users?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSat Jun 10 2023 10:33:26 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:33:26:3326 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Your account not registered in our system"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:33:26:3326 [32minfo[39m: [32m[96mResponse: [33m401 [37m3.962 ms [39m
+[32m[39m
+10-06-2023 10:33:30:3330 [31merror[39m: [31m===app-error.middleware.ts===: "Invalid credentials"[39m
+10-06-2023 10:33:30:3330 [35mhttp[39m: [35mPOST /api/v1/auth/login 400 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - 4.590 ms[39m
+[35m[39m
+10-06-2023 10:33:30:3330 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/auth/login [90mat [37mSat Jun 10 2023 10:33:30 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:33:30:3330 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m	"password": "password"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:33:30:3330 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Invalid credentials"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:33:30:3330 [32minfo[39m: [32m[96mResponse: [33m400 [37m4.590 ms [39m
+[32m[39m
+10-06-2023 10:34:12:3412 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - 123.847 ms[39m
+[35m[39m
+10-06-2023 10:34:12:3412 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/auth/login [90mat [37mSat Jun 10 2023 10:34:12 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:34:12:3412 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m	"password": "password"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:34:12:3412 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdmNTNhYTA3LTM4YjktNDcxNS05YzY0LWM3NjhhZTFiOTI2NiIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2MzY4MDUyLCJleHAiOjE2ODYzNjgzNTJ9.iVxwreZEbTPLj1Nu_HQZIhANydm-lTZ2rTJ-AqddcYM",[0m[39m
+[32m[97m		"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdmNTNhYTA3LTM4YjktNDcxNS05YzY0LWM3NjhhZTFiOTI2NiIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2MzY4MDUyLCJleHAiOjE2ODYzNjg2NTJ9.TRUph_pBs3Scb4lhXklmAYXMAsP1q6Fed8Vkp52DGvg"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:34:12:3412 [32minfo[39m: [32m[96mResponse: [32m200 [37m123.847 ms [39m
+[32m[39m
+10-06-2023 10:34:14:3414 [35mhttp[39m: [35mGET /api/v1/auth/roles 200 {} - 11.365 ms[39m
+[35m[39m
+10-06-2023 10:34:14:3414 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/auth/roles [90mat [37mSat Jun 10 2023 10:34:14 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:34:14:3414 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"id": "bf211f01-2a17-4c1f-9ac5-1202b20638e6",[0m[39m
+[32m[97m			"name": "Admin",[0m[39m
+[32m[97m			"isActive": false[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:34:14:3414 [32minfo[39m: [32m[96mResponse: [32m200 [37m11.365 ms [39m
+[32m[39m
+10-06-2023 10:34:19:3419 [35mhttp[39m: [35mPUT /api/v1/auth/roles/change-active 200 {"roleId":"bf211f01-2a17-4c1f-9ac5-1202b20638e6"} - 56.684 ms[39m
+[35m[39m
+10-06-2023 10:34:19:3419 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/auth/roles/change-active [90mat [37mSat Jun 10 2023 10:34:19 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:34:19:3419 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"roleId": "bf211f01-2a17-4c1f-9ac5-1202b20638e6"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:34:19:3419 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "Role Admin successfully activated",[0m[39m
+[32m[97m	"result": null[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:34:19:3419 [32minfo[39m: [32m[96mResponse: [32m200 [37m56.684 ms [39m
+[32m[39m
+10-06-2023 10:34:21:3421 [35mhttp[39m: [35mGET /api/v1/user-management/users?limit=10&page=1&sort=desc&column=createdAt 200 {} - 127.195 ms[39m
+[35m[39m
+10-06-2023 10:34:21:3421 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/user-management/users?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSat Jun 10 2023 10:34:21 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:34:21:3421 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "7f53aa07-38b9-4715-9c64-c768ae1b9266",[0m[39m
+[32m[97m				"name": "Huda Prasetyo",[0m[39m
+[32m[97m				"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m				"isUserVerified": true,[0m[39m
+[32m[97m				"createdAt": "2023-06-10T03:34:07.000Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-10T03:34:07.000Z"[0m[39m
+[32m[97m			},[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "583455e6-8805-4707-be08-4d57b3e57e02",[0m[39m
+[32m[97m				"name": "Anisa Indriani",[0m[39m
+[32m[97m				"email": "anisaindriani15@gmail.com",[0m[39m
+[32m[97m				"isUserVerified": true,[0m[39m
+[32m[97m				"createdAt": "2023-06-10T03:34:07.000Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-10T03:34:07.000Z"[0m[39m
+[32m[97m			},[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "19ae7124-a5e7-427d-b9ba-3a64a3169dc1",[0m[39m
+[32m[97m				"name": "Steven",[0m[39m
+[32m[97m				"email": "stevengerrad57@gmail.com",[0m[39m
+[32m[97m				"isUserVerified": true,[0m[39m
+[32m[97m				"createdAt": "2023-06-10T03:34:07.000Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-10T03:34:07.000Z"[0m[39m
+[32m[97m			},[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "800ce701-6d84-4767-9c91-7818cf337fcb",[0m[39m
+[32m[97m				"name": "Devi Debora",[0m[39m
+[32m[97m				"email": "deboradevi56@gmail.com",[0m[39m
+[32m[97m				"isUserVerified": true,[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+10-06-2023 10:34:21:3421 [32minfo[39m: [32m[96mResponse: [32m200 [37m127.195 ms [39m
+[32m[39m
+10-06-2023 10:34:58:3458 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+10-06-2023 10:34:58:3458 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+10-06-2023 10:34:58:3458 [35mhttp[39m: [35mGET /api/v1/user-management/users?limit=10&page=1&sort=desc&column=createdAt 200 {} - 191.149 ms[39m
+[35m[39m
+10-06-2023 10:34:58:3458 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/user-management/users?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSat Jun 10 2023 10:34:58 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:34:58:3458 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "7f53aa07-38b9-4715-9c64-c768ae1b9266",[0m[39m
+[32m[97m				"name": "Huda Prasetyo",[0m[39m
+[32m[97m				"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m				"isUserVerified": true,[0m[39m
+[32m[97m				"createdAt": "2023-06-10T03:34:07.000Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-10T03:34:07.000Z"[0m[39m
+[32m[97m			},[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "583455e6-8805-4707-be08-4d57b3e57e02",[0m[39m
+[32m[97m				"name": "Anisa Indriani",[0m[39m
+[32m[97m				"email": "anisaindriani15@gmail.com",[0m[39m
+[32m[97m				"isUserVerified": true,[0m[39m
+[32m[97m				"createdAt": "2023-06-10T03:34:07.000Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-10T03:34:07.000Z"[0m[39m
+[32m[97m			},[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "19ae7124-a5e7-427d-b9ba-3a64a3169dc1",[0m[39m
+[32m[97m				"name": "Steven",[0m[39m
+[32m[97m				"email": "stevengerrad57@gmail.com",[0m[39m
+[32m[97m				"isUserVerified": true,[0m[39m
+[32m[97m				"createdAt": "2023-06-10T03:34:07.000Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-10T03:34:07.000Z"[0m[39m
+[32m[97m			},[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "800ce701-6d84-4767-9c91-7818cf337fcb",[0m[39m
+[32m[97m				"name": "Devi Debora",[0m[39m
+[32m[97m				"email": "deboradevi56@gmail.com",[0m[39m
+[32m[97m				"isUserVerified": true,[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+10-06-2023 10:34:58:3458 [32minfo[39m: [32m[96mResponse: [32m200 [37m191.149 ms [39m
+[32m[39m
+10-06-2023 10:34:59:3459 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+10-06-2023 10:35:02:352 [35mhttp[39m: [35mGET /api/v1/user-management/roles?limit=10&page=1&sort=desc&column=createdAt 200 {} - 66.599 ms[39m
+[35m[39m
+10-06-2023 10:35:02:352 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/user-management/roles?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSat Jun 10 2023 10:35:02 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:35:02:352 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "bf211f01-2a17-4c1f-9ac5-1202b20638e6",[0m[39m
+[32m[97m				"name": "Admin",[0m[39m
+[32m[97m				"createdAt": "2023-06-10T03:34:06.786Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-10T03:34:06.786Z"[0m[39m
+[32m[97m			},[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "f683e86c-3eda-4d19-b54c-3b79ddb28c56",[0m[39m
+[32m[97m				"name": "User",[0m[39m
+[32m[97m				"createdAt": "2023-06-10T03:34:06.786Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-10T03:34:06.786Z"[0m[39m
+[32m[97m			}[0m[39m
+[32m[97m		],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:35:02:352 [32minfo[39m: [32m[96mResponse: [32m200 [37m66.599 ms [39m
+[32m[39m
+10-06-2023 10:35:06:356 [35mhttp[39m: [35mGET /api/v1/user-management/roles/bf211f01-2a17-4c1f-9ac5-1202b20638e6 200 {} - 9.243 ms[39m
+[35m[39m
+10-06-2023 10:35:06:356 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/user-management/roles/bf211f01-2a17-4c1f-9ac5-1202b20638e6 [90mat [37mSat Jun 10 2023 10:35:06 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:35:06:356 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "bf211f01-2a17-4c1f-9ac5-1202b20638e6",[0m[39m
+[32m[97m		"name": "Admin",[0m[39m
+[32m[97m		"createdAt": "2023-06-10T03:34:06.786Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-10T03:34:06.786Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:35:06:356 [32minfo[39m: [32m[96mResponse: [32m200 [37m9.243 ms [39m
+[32m[39m
+10-06-2023 10:35:20:3520 [35mhttp[39m: [35mGET /api/v1/user-management/users/7f53aa07-38b9-4715-9c64-c768ae1b9266 200 {} - 11.720 ms[39m
+[35m[39m
+10-06-2023 10:35:20:3520 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/user-management/users/7f53aa07-38b9-4715-9c64-c768ae1b9266 [90mat [37mSat Jun 10 2023 10:35:20 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+10-06-2023 10:35:20:3520 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "7f53aa07-38b9-4715-9c64-c768ae1b9266",[0m[39m
+[32m[97m		"name": "Huda Prasetyo",[0m[39m
+[32m[97m		"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m		"isUserVerified": true,[0m[39m
+[32m[97m		"createdAt": "2023-06-10T03:34:07.000Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-10T03:34:07.000Z",[0m[39m
+[32m[97m		"roles": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"role": {[0m[39m
+[32m[97m					"id": "bf211f01-2a17-4c1f-9ac5-1202b20638e6",[0m[39m
+[32m[97m					"name": "Admin"[0m[39m
+[32m[97m				},[0m[39m
+[32m[97m				"isActive": true,[0m[39m
+[32m[97m				"createdAt": "2023-06-10T03:34:07.016Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-10T03:34:19.718Z"[0m[39m
+[32m[97m			}[0m[39m
+[32m[97m		][0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+10-06-2023 10:35:20:3520 [32minfo[39m: [32m[96mResponse: [32m200 [37m11.720 ms [39m
+[32m[39m
