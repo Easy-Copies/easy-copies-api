@@ -148,6 +148,7 @@ model Store {
   createdAt      DateTime             @default(now())
   updatedAt      DateTime             @updatedAt
   storeApprovals StoreApprovalUser[]
+  storeServices  StoreService[]
 
   @@map("stores")
 }
@@ -175,4 +176,26 @@ enum StoreApprovalStatus {
   Revised
   OnReview
   Approved
+}
+
+model StoreService {
+  id            String           @id @default(uuid())
+  name          StoreServiceName
+  store         Store            @relation(fields: [storeId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  storeId       String
+  price         Float
+  pricePerSheet Float?
+  bindingType   String?
+  fotocopyType  String?
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+
+  @@map("store_services")
+}
+
+enum StoreServiceName {
+  Laminating
+  Priting
+  Jilid
+  Fotocopy
 }
