@@ -89,6 +89,7 @@ export class StoreService implements TStoreService {
 			regency: true,
 			user: {
 				select: {
+					id: true,
 					name: true
 				}
 			}

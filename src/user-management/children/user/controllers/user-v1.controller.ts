@@ -57,6 +57,7 @@ export class UserControllerV1 implements IUserControllerV1 {
 				select: {
 					role: {
 						select: {
+							id: true,
 							name: true
 						}
 					},
@@ -92,12 +93,15 @@ export class UserControllerV1 implements IUserControllerV1 {
 				appCommonService.paginateArgs(req.query)
 			)
 			const userListPaginated = appCommonService.paginate(
-				{ result: userList, total: await prisma.role.count() },
+				{ result: userList, total: await prisma.user.count() },
 				req.query
 			)
 
 			const { code, ...restResponse } = SuccessOk({
-				result: userListPaginated
+				result: {
+					...userListPaginated,
+					rows: userListPaginated.rows.map(row => omit(row, ['password']))
+				}
 			})
 			return res.status(code).json(restResponse)
 		}

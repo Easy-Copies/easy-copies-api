@@ -9,6 +9,7 @@ import { permissionV1Routes } from '@/user-management/children/permission/routes
 import { regionV1Routes } from '@/region/routes/region-v1.router'
 import { storeV1Routes } from '@/store/routes/store-v1.router'
 import { storeApprovalV1Routes } from '@/store/routes/store-approval-v1.router'
+import { storeServiceV1Routes } from '@/store/routes/store-service-v1.router'
 
 // Responses
 import { ErrorNotFound } from '@/app/errors'
@@ -32,6 +33,7 @@ export const routesInit = (app: Express): void => {
 	app.use('/api/v1/regions', regionV1Routes)
 	app.use('/api/v1/stores', storeV1Routes)
 	app.use('/api/v1/stores/approvals', storeApprovalV1Routes)
+	app.use('/api/v1/stores/services', storeServiceV1Routes)
 
 	// Catch any error
 	app.all('*', () => {

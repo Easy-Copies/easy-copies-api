@@ -2,7 +2,7 @@
 import { Router } from 'express'
 
 // Controller
-import { StoreApprovalController } from '@/store/controllers/store-approval-v1.controller'
+import { StoreApprovalControllerV1 } from '@/store/controllers/store-approval-v1.controller'
 
 // Middlewares
 import { appAuthMiddleware } from '@/app/middlewares/app-auth.middleware'
@@ -10,8 +10,8 @@ import { appValidationMiddleware } from '@/app/middlewares/app-validation.middle
 
 // Initialize anything
 const router = Router()
-const storeControllerV1 = new StoreApprovalController()
-const { handle, approvalStatusList, cancel } = storeControllerV1
+const storeApprovalControllerV1 = new StoreApprovalControllerV1()
+const { handle, approvalStatusList, cancel } = storeApprovalControllerV1
 
 router.put(
 	'/handle/:storeId',
