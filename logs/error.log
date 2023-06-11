@@ -1,2 +1,33 @@
 09-06-2023 00:45:39:4539 [31merror[39m: [31m===app-error.middleware.ts===: "Invalid credentials"[39m
 09-06-2023 00:49:00:490 [31merror[39m: [31m===app-error.middleware.ts===: "Invalid credentials"[39m
+11-06-2023 21:24:10:2410 [31merror[39m: [31m===app-error.middleware.ts===: "Store not found"[39m
+11-06-2023 21:27:59:2759 [31merror[39m: [31m===app-error.middleware.ts===: "Pending approval should be going through On Review or maybe to Rejected!"[39m
+11-06-2023 21:28:04:284 [31merror[39m: [31m===app-error.middleware.ts===: "jwt expired"[39m
+11-06-2023 21:28:33:2833 [31merror[39m: [31m===app-error.middleware.ts===: "You have no permission"[39m
+11-06-2023 21:29:24:2924 [31merror[39m: [31m===app-error.middleware.ts===: "Your account not registered in our system"[39m
+11-06-2023 21:29:41:2941 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:29:52:2952 [31merror[39m: [31m===app-error.middleware.ts===: "\nInvalid `prisma.store.findMany()` invocation in\n/Users/hudaboss/Projects/EasyCopies/API/src/store/controllers/store-v1.controller.ts:63:41\n\n  60 \t\treq.currentUser?.id as string\n  61 \t)\n  62 \n→ 63 const storeList = await prisma.store.findMany(\nError occurred during query execution:\nConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(Error { kind: Db, cause: Some(DbError { severity: \"ERROR\", parsed_severity: Some(Error), code: SqlState(EXX000), message: \"cache lookup failed for type 41946\", detail: None, hint: None, position: None, where_: Some(\"unnamed portal parameter $1\"), schema: None, table: None, column: None, datatype: None, constraint: None, file: Some(\"lsyscache.c\"), line: Some(2904), routine: Some(\"getTypeBinaryInputInfo\") }) }), transient: false })"[39m
+11-06-2023 21:31:53:3153 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:32:02:322 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:32:03:323 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:32:03:323 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:32:03:323 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:32:34:3234 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:32:34:3234 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:34:05:345 [31merror[39m: [31m===app-error.middleware.ts===: ""[39m
+11-06-2023 21:34:53:3453 [31merror[39m: [31m===app-error.middleware.ts===: ""[39m
+11-06-2023 21:34:57:3457 [31merror[39m: [31m===app-error.middleware.ts===: "Store not found"[39m
+11-06-2023 21:35:30:3530 [31merror[39m: [31m===app-error.middleware.ts===: "Name should be using StoreServiceName"[39m
+11-06-2023 21:36:14:3614 [31merror[39m: [31m===app-error.middleware.ts===: "jwt expired"[39m
+11-06-2023 21:36:15:3615 [31merror[39m: [31m===app-error.middleware.ts===: "jwt expired"[39m
+11-06-2023 21:39:06:396 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:39:06:396 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:39:26:3926 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:41:04:414 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:42:11:4211 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:42:42:4242 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:43:26:4326 [31merror[39m: [31m===app-error.middleware.ts===: "Service Laminating already registered in your store"[39m
+11-06-2023 21:46:21:4621 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:46:23:4623 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:46:24:4624 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:46:29:4629 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m

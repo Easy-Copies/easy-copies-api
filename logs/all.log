@@ -119,3 +119,2950 @@
 [32m[39m
 09-06-2023 00:52:32:5232 [32minfo[39m: [32m[96mResponse: [32m200 [37m147.736 ms [39m
 [32m[39m
+11-06-2023 20:28:55:2855 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 20:28:55:2855 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 20:28:57:2857 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 20:39:22:3922 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 20:39:22:3922 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 20:39:23:3923 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:21:49:2149 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:21:49:2149 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:21:51:2151 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:22:21:2221 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:22:21:2221 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:22:22:2222 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:23:02:232 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - 165.579 ms[39m
+[35m[39m
+11-06-2023 21:23:02:232 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/auth/login [90mat [37mSun Jun 11 2023 21:23:02 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:23:02:232 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m	"password": "password"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:23:02:232 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkMGMxOTg3LTVjNWQtNDBmNS1iM2MyLTgwODQxYWIwMTNiNyIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzMzgxLCJleHAiOjE2ODY0OTM2ODF9.HGb8SBGYAF8DVtdY_9DfWBTL6aKGCv9P2tskFHazurk",[0m[39m
+[32m[97m		"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkMGMxOTg3LTVjNWQtNDBmNS1iM2MyLTgwODQxYWIwMTNiNyIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzMzgxLCJleHAiOjE2ODY0OTM5ODF9.gGevRCQeauvThLmKibMjcPselgd7wpNvP1TQuky8a3E"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:23:02:232 [32minfo[39m: [32m[96mResponse: [32m200 [37m165.579 ms [39m
+[32m[39m
+11-06-2023 21:23:13:2313 [35mhttp[39m: [35mGET /api/v1/auth/roles 200 {} - 67.128 ms[39m
+[35m[39m
+11-06-2023 21:23:13:2313 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/auth/roles [90mat [37mSun Jun 11 2023 21:23:13 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:23:13:2313 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"id": "fb8e7307-b65a-4653-8298-7948d272139e",[0m[39m
+[32m[97m			"name": "Admin",[0m[39m
+[32m[97m			"isActive": true[0m[39m
+[32m[97m		},[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"id": "d8149b40-f1b6-4b08-ad84-6fa5b54c34f4",[0m[39m
+[32m[97m			"name": "User",[0m[39m
+[32m[97m			"isActive": false[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:23:13:2313 [32minfo[39m: [32m[96mResponse: [32m200 [37m67.128 ms [39m
+[32m[39m
+11-06-2023 21:23:17:2317 [35mhttp[39m: [35mGET /api/v1/auth/me 200 {} - 28.638 ms[39m
+[35m[39m
+11-06-2023 21:23:17:2317 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/auth/me [90mat [37mSun Jun 11 2023 21:23:17 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:23:17:2317 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "cd0c1987-5c5d-40f5-b3c2-80841ab013b7",[0m[39m
+[32m[97m		"name": "Huda Prasetyo updated",[0m[39m
+[32m[97m		"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m		"isUserVerified": true,[0m[39m
+[32m[97m		"createdAt": "2023-06-08T15:39:00.563Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-08T15:41:13.706Z",[0m[39m
+[32m[97m		"roles": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "fb8e7307-b65a-4653-8298-7948d272139e",[0m[39m
+[32m[97m				"isActive": true,[0m[39m
+[32m[97m				"createdAt": "2023-06-08T15:39:00.570Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-08T15:41:13.706Z",[0m[39m
+[32m[97m				"roleName": "Admin",[0m[39m
+[32m[97m				"permissions": [[0m[39m
+[32m[97m					{[0m[39m
+[32m[97m						"code": "Role Management",[0m[39m
+[32m[97m						"actions": {[0m[39m
+[32m[97m							"read": true,[0m[39m
+[32m[97m							"create": true,[0m[39m
+[32m[97m							"delete": true,[0m[39m
+[32m[97m							"update": true[0m[39m
+[32m[97m						}[0m[39m
+[32m[97m					},[0m[39m
+[32m[97m					{[0m[39m
+[32m[97m						"code": "Store Management",[0m[39m
+[32m[97m						"actions": {[0m[39m
+[32m[97m							"read": true,[0m[39m
+[32m[97m							"create": true,[0m[39m
+[32m[97m							"delete": true,[0m[39m
+[32m[97m							"update": true[0m[39m
+[32m[97m						}[0m[39m
+[32m[97m					},[0m[39m
+[32m[97m					{[0m[39m
+[32m[97m						"code": "Store Management Approval",[0m[39m
+[32m[97m						"actions": {[0m[39m
+[32m[97m							"read": true,[0m[39m
+[32m[97m							"create": true,[0m[39m
+[32m[97m							"delete": true,[0m[39m
+[32m[97m							"update": true[0m[39m
+[32m[97m						}[0m[39m
+[32m[97m					},[0m[39m
+[32m[97m	[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+11-06-2023 21:23:17:2317 [32minfo[39m: [32m[96mResponse: [32m200 [37m28.638 ms [39m
+[32m[39m
+11-06-2023 21:23:26:2326 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=OnReview 200 {} - 159.036 ms[39m
+[35m[39m
+11-06-2023 21:23:26:2326 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=OnReview [90mat [37mSun Jun 11 2023 21:23:26 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:23:26:2326 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 3,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:23:26:2326 [32minfo[39m: [32m[96mResponse: [32m200 [37m159.036 ms [39m
+[32m[39m
+11-06-2023 21:24:10:2410 [31merror[39m: [31m===app-error.middleware.ts===: "Store not found"[39m
+11-06-2023 21:24:10:2410 [35mhttp[39m: [35mGET /api/v1/stores/services 404 {} - 21.141 ms[39m
+[35m[39m
+11-06-2023 21:24:10:2410 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services [90mat [37mSun Jun 11 2023 21:24:10 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:24:10:2410 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:24:10:2410 [32minfo[39m: [32m[96mResponse: [33m404 [37m21.141 ms [39m
+[32m[39m
+11-06-2023 21:24:33:2433 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Approved 200 {} - 51.412 ms[39m
+[35m[39m
+11-06-2023 21:24:33:2433 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Approved [90mat [37mSun Jun 11 2023 21:24:33 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:24:33:2433 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 3,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "aae716fd-39bb-49bb-85eb-f4176c8d9616",[0m[39m
+[32m[97m				"name": "Jaya Abadi Updated",[0m[39m
+[32m[97m				"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m				"phoneNumber": "089898943497",[0m[39m
+[32m[97m				"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m				"address": "Kampus Widyatama",[0m[39m
+[32m[97m				"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m				"provinceCode": "32",[0m[39m
+[32m[97m				"regencyCode": "3273",[0m[39m
+[32m[97m				"districtCode": "327314",[0m[39m
+[32m[97m				"postalCode": "40125",[0m[39m
+[32m[97m				"mapCoordinate": {[0m[39m
+[32m[97m					"latitude": -6.8979318,[0m[39m
+[32m[97m					"longitude": 107.6448221[0m[39m
+[32m[97m				},[0m[39m
+[32m[97m				"storeLogo": null,[0m[39m
+[32m[97m				"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"nik": "3321116502910000",[0m[39m
+[32m[97m				"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"npwp": null,[0m[39m
+[32m[97m				"npwpPhoto": null,[0m[39m
+[32m[97m				"userId": "cd0c1987-5c5d-40f5-b3c2-80841ab013b7",[0m[39m
+[32m[97m				"status": "Approved",[0m[39m
+[32m[97m				"isOpen": false,[0m[39m
+[32m[97m				"createdAt": "2023-06-08T17:08:21.542Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-08T17:10:06[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+11-06-2023 21:24:33:2433 [32minfo[39m: [32m[96mResponse: [32m200 [37m51.412 ms [39m
+[32m[39m
+11-06-2023 21:24:38:2438 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 16.521 ms[39m
+[35m[39m
+11-06-2023 21:24:38:2438 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:24:38 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:24:38:2438 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 3,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:24:38:2438 [32minfo[39m: [32m[96mResponse: [32m200 [37m16.521 ms [39m
+[32m[39m
+11-06-2023 21:25:42:2542 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:25:42:2542 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:25:43:2543 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:26:10:2610 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:26:10:2610 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:26:12:2612 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:26:25:2625 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:26:25:2625 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:26:26:2626 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:26:32:2632 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:26:32:2632 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:26:33:2633 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:27:36:2736 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:27:36:2736 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:27:37:2737 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:27:39:2739 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 160.627 ms[39m
+[35m[39m
+11-06-2023 21:27:39:2739 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:27:39 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:27:39:2739 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 3,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:27:39:2739 [32minfo[39m: [32m[96mResponse: [32m200 [37m160.627 ms [39m
+[32m[39m
+11-06-2023 21:27:41:2741 [35mhttp[39m: [35mPOST /api/v1/stores 201 {"name":"Jaya Abadi","description":"Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy","phoneNumber":"089898943497","address":"Kampus Widyatama","addressNote":"Turunan Gedung B","provinceCode":"32","regencyCode":"3273","districtCode":"327314","postalCode":"40125","mapCoordinate":{"longitude":107.6448221,"latitude":-6.8979318},"storeLogo":null,"storePhoto":"https://picsum.photos/200/300","nik":"3321116502910000","ktpPhoto":"https://picsum.photos/200/300","npwp":null,"npwpPhoto":null,"isOpen":false} - 29.227 ms[39m
+[35m[39m
+11-06-2023 21:27:41:2741 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/stores [90mat [37mSun Jun 11 2023 21:27:41 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:27:41:2741 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Jaya Abadi",[0m[39m
+[32m[97m	"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m	"phoneNumber": "089898943497",[0m[39m
+[32m[97m	"address": "Kampus Widyatama",[0m[39m
+[32m[97m	"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m	"provinceCode": "32",[0m[39m
+[32m[97m	"regencyCode": "3273",[0m[39m
+[32m[97m	"districtCode": "327314",[0m[39m
+[32m[97m	"postalCode": "40125",[0m[39m
+[32m[97m	"mapCoordinate": {[0m[39m
+[32m[97m		"longitude": 107.6448221,[0m[39m
+[32m[97m		"latitude": -6.8979318[0m[39m
+[32m[97m	},[0m[39m
+[32m[97m	"storeLogo": null,[0m[39m
+[32m[97m	"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m	"nik": "3321116502910000",[0m[39m
+[32m[97m	"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m	"npwp": null,[0m[39m
+[32m[97m	"npwpPhoto": null,[0m[39m
+[32m[97m	"isOpen": false[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:27:41:2741 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "Store successfully created and waiting Admin for approval",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "7b093ffd-b085-41d1-ad2e-d8141acf9f12",[0m[39m
+[32m[97m		"name": "Jaya Abadi",[0m[39m
+[32m[97m		"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m		"phoneNumber": "089898943497",[0m[39m
+[32m[97m		"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m		"address": "Kampus Widyatama",[0m[39m
+[32m[97m		"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m		"provinceCode": "32",[0m[39m
+[32m[97m		"regencyCode": "3273",[0m[39m
+[32m[97m		"districtCode": "327314",[0m[39m
+[32m[97m		"postalCode": "40125",[0m[39m
+[32m[97m		"mapCoordinate": {[0m[39m
+[32m[97m			"latitude": -6.8979318,[0m[39m
+[32m[97m			"longitude": 107.6448221[0m[39m
+[32m[97m		},[0m[39m
+[32m[97m		"storeLogo": null,[0m[39m
+[32m[97m		"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"nik": "3321116502910000",[0m[39m
+[32m[97m		"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"npwp": null,[0m[39m
+[32m[97m		"npwpPhoto": null,[0m[39m
+[32m[97m		"userId": "cd0c1987-5c5d-40f5-b3c2-80841ab013b7",[0m[39m
+[32m[97m		"status": "Pending",[0m[39m
+[32m[97m		"isOpen": false,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:27:41.604Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:27:41.604Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:27:41:2741 [32minfo[39m: [32m[96mResponse: [32m201 [37m29.227 ms [39m
+[32m[39m
+11-06-2023 21:27:59:2759 [31merror[39m: [31m===app-error.middleware.ts===: "Pending approval should be going through On Review or maybe to Rejected!"[39m
+11-06-2023 21:27:59:2759 [35mhttp[39m: [35mPUT /api/v1/stores/approvals/handle/7b093ffd-b085-41d1-ad2e-d8141acf9f12 400 {"approvalStatus":"Approved","reviseComment":"Mohon maaf sebelumnya, minta tolong dicheck lagi ya KTP nya","rejectReason":"Rejected, kebanyakan revisi"} - 91.484 ms[39m
+[35m[39m
+11-06-2023 21:27:59:2759 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/stores/approvals/handle/7b093ffd-b085-41d1-ad2e-d8141acf9f12 [90mat [37mSun Jun 11 2023 21:27:59 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:27:59:2759 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"approvalStatus": "Approved",[0m[39m
+[32m[97m	"reviseComment": "Mohon maaf sebelumnya, minta tolong dicheck lagi ya KTP nya",[0m[39m
+[32m[97m	"rejectReason": "Rejected, kebanyakan revisi"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:27:59:2759 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Pending approval should be going through On Review or maybe to Rejected!"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:27:59:2759 [32minfo[39m: [32m[96mResponse: [33m400 [37m91.484 ms [39m
+[32m[39m
+11-06-2023 21:28:04:284 [31merror[39m: [31m===app-error.middleware.ts===: "jwt expired"[39m
+11-06-2023 21:28:04:284 [35mhttp[39m: [35mPUT /api/v1/stores/approvals/handle/7b093ffd-b085-41d1-ad2e-d8141acf9f12 401 {"approvalStatus":"OnReview","reviseComment":"Mohon maaf sebelumnya, minta tolong dicheck lagi ya KTP nya","rejectReason":"Rejected, kebanyakan revisi"} - 3.187 ms[39m
+[35m[39m
+11-06-2023 21:28:04:284 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/stores/approvals/handle/7b093ffd-b085-41d1-ad2e-d8141acf9f12 [90mat [37mSun Jun 11 2023 21:28:04 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:28:04:284 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"approvalStatus": "OnReview",[0m[39m
+[32m[97m	"reviseComment": "Mohon maaf sebelumnya, minta tolong dicheck lagi ya KTP nya",[0m[39m
+[32m[97m	"rejectReason": "Rejected, kebanyakan revisi"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:28:04:284 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "jwt expired"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:28:04:284 [32minfo[39m: [32m[96mResponse: [33m401 [37m3.187 ms [39m
+[32m[39m
+11-06-2023 21:28:07:287 [35mhttp[39m: [35mPOST /api/v1/auth/refresh-token 200 {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkMGMxOTg3LTVjNWQtNDBmNS1iM2MyLTgwODQxYWIwMTNiNyIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzMzgxLCJleHAiOjE2ODY0OTM5ODF9.gGevRCQeauvThLmKibMjcPselgd7wpNvP1TQuky8a3E"} - 6.975 ms[39m
+[35m[39m
+11-06-2023 21:28:07:287 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/auth/refresh-token [90mat [37mSun Jun 11 2023 21:28:07 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:28:07:287 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkMGMxOTg3LTVjNWQtNDBmNS1iM2MyLTgwODQxYWIwMTNiNyIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzMzgxLCJleHAiOjE2ODY0OTM5ODF9.gGevRCQeauvThLmKibMjcPselgd7wpNvP1TQuky8a3E"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:28:07:287 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkMGMxOTg3LTVjNWQtNDBmNS1iM2MyLTgwODQxYWIwMTNiNyIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzNjg3LCJleHAiOjE2ODY0OTM5ODd9.S3NHgPcl7_uyLMuqQPzrRPkubX2WycQWWzIz8TYtOME",[0m[39m
+[32m[97m		"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkMGMxOTg3LTVjNWQtNDBmNS1iM2MyLTgwODQxYWIwMTNiNyIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzNjg3LCJleHAiOjE2ODY0OTQyODd9.fCWJBYkJn5nBWigAyE_PopMBpgZs5i8HmEHNTC9O-Ug"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:28:07:287 [32minfo[39m: [32m[96mResponse: [32m200 [37m6.975 ms [39m
+[32m[39m
+11-06-2023 21:28:11:2811 [35mhttp[39m: [35mPUT /api/v1/stores/approvals/handle/7b093ffd-b085-41d1-ad2e-d8141acf9f12 200 {"approvalStatus":"OnReview","reviseComment":"Mohon maaf sebelumnya, minta tolong dicheck lagi ya KTP nya","rejectReason":"Rejected, kebanyakan revisi"} - 89.103 ms[39m
+[35m[39m
+11-06-2023 21:28:11:2811 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/stores/approvals/handle/7b093ffd-b085-41d1-ad2e-d8141acf9f12 [90mat [37mSun Jun 11 2023 21:28:11 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:28:11:2811 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"approvalStatus": "OnReview",[0m[39m
+[32m[97m	"reviseComment": "Mohon maaf sebelumnya, minta tolong dicheck lagi ya KTP nya",[0m[39m
+[32m[97m	"rejectReason": "Rejected, kebanyakan revisi"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:28:11:2811 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "7b093ffd-b085-41d1-ad2e-d8141acf9f12",[0m[39m
+[32m[97m		"name": "Jaya Abadi",[0m[39m
+[32m[97m		"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m		"phoneNumber": "089898943497",[0m[39m
+[32m[97m		"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m		"address": "Kampus Widyatama",[0m[39m
+[32m[97m		"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m		"provinceCode": "32",[0m[39m
+[32m[97m		"regencyCode": "3273",[0m[39m
+[32m[97m		"districtCode": "327314",[0m[39m
+[32m[97m		"postalCode": "40125",[0m[39m
+[32m[97m		"mapCoordinate": {[0m[39m
+[32m[97m			"latitude": -6.8979318,[0m[39m
+[32m[97m			"longitude": 107.6448221[0m[39m
+[32m[97m		},[0m[39m
+[32m[97m		"storeLogo": null,[0m[39m
+[32m[97m		"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"nik": "3321116502910000",[0m[39m
+[32m[97m		"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"npwp": null,[0m[39m
+[32m[97m		"npwpPhoto": null,[0m[39m
+[32m[97m		"userId": "cd0c1987-5c5d-40f5-b3c2-80841ab013b7",[0m[39m
+[32m[97m		"status": "OnReview",[0m[39m
+[32m[97m		"isOpen": false,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:27:41.604Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:28:11.563Z",[0m[39m
+[32m[97m		"storeApprovals": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "79a5a52c-0ec5-4d65-b6c2-d6e24bf97c25",[0m[39m
+[32m[97m				"userId": "cd0c1987-5c5d-40f5-b3c2-80841ab013b7",[0m[39m
+[32m[97m			[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+11-06-2023 21:28:11:2811 [32minfo[39m: [32m[96mResponse: [32m200 [37m89.103 ms [39m
+[32m[39m
+11-06-2023 21:28:16:2816 [35mhttp[39m: [35mPUT /api/v1/stores/approvals/handle/7b093ffd-b085-41d1-ad2e-d8141acf9f12 200 {"approvalStatus":"Approved","reviseComment":"Mohon maaf sebelumnya, minta tolong dicheck lagi ya KTP nya","rejectReason":"Rejected, kebanyakan revisi"} - 27.129 ms[39m
+[35m[39m
+11-06-2023 21:28:16:2816 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/stores/approvals/handle/7b093ffd-b085-41d1-ad2e-d8141acf9f12 [90mat [37mSun Jun 11 2023 21:28:16 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:28:16:2816 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"approvalStatus": "Approved",[0m[39m
+[32m[97m	"reviseComment": "Mohon maaf sebelumnya, minta tolong dicheck lagi ya KTP nya",[0m[39m
+[32m[97m	"rejectReason": "Rejected, kebanyakan revisi"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:28:16:2816 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "7b093ffd-b085-41d1-ad2e-d8141acf9f12",[0m[39m
+[32m[97m		"name": "Jaya Abadi",[0m[39m
+[32m[97m		"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m		"phoneNumber": "089898943497",[0m[39m
+[32m[97m		"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m		"address": "Kampus Widyatama",[0m[39m
+[32m[97m		"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m		"provinceCode": "32",[0m[39m
+[32m[97m		"regencyCode": "3273",[0m[39m
+[32m[97m		"districtCode": "327314",[0m[39m
+[32m[97m		"postalCode": "40125",[0m[39m
+[32m[97m		"mapCoordinate": {[0m[39m
+[32m[97m			"latitude": -6.8979318,[0m[39m
+[32m[97m			"longitude": 107.6448221[0m[39m
+[32m[97m		},[0m[39m
+[32m[97m		"storeLogo": null,[0m[39m
+[32m[97m		"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"nik": "3321116502910000",[0m[39m
+[32m[97m		"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"npwp": null,[0m[39m
+[32m[97m		"npwpPhoto": null,[0m[39m
+[32m[97m		"userId": "cd0c1987-5c5d-40f5-b3c2-80841ab013b7",[0m[39m
+[32m[97m		"status": "Approved",[0m[39m
+[32m[97m		"isOpen": false,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:27:41.604Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:28:16.185Z",[0m[39m
+[32m[97m		"storeApprovals": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "79a5a52c-0ec5-4d65-b6c2-d6e24bf97c25",[0m[39m
+[32m[97m				"userId": "cd0c1987-5c5d-40f5-b3c2-80841ab013b7",[0m[39m
+[32m[97m			[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+11-06-2023 21:28:16:2816 [32minfo[39m: [32m[96mResponse: [32m200 [37m27.129 ms [39m
+[32m[39m
+11-06-2023 21:28:23:2823 [35mhttp[39m: [35mPOST /api/v1/stores 201 {"name":"Jaya Abadi","description":"Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy","phoneNumber":"089898943497","address":"Kampus Widyatama","addressNote":"Turunan Gedung B","provinceCode":"32","regencyCode":"3273","districtCode":"327314","postalCode":"40125","mapCoordinate":{"longitude":107.6448221,"latitude":-6.8979318},"storeLogo":null,"storePhoto":"https://picsum.photos/200/300","nik":"3321116502910000","ktpPhoto":"https://picsum.photos/200/300","npwp":null,"npwpPhoto":null,"isOpen":false} - 21.114 ms[39m
+[35m[39m
+11-06-2023 21:28:23:2823 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/stores [90mat [37mSun Jun 11 2023 21:28:23 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:28:23:2823 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Jaya Abadi",[0m[39m
+[32m[97m	"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m	"phoneNumber": "089898943497",[0m[39m
+[32m[97m	"address": "Kampus Widyatama",[0m[39m
+[32m[97m	"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m	"provinceCode": "32",[0m[39m
+[32m[97m	"regencyCode": "3273",[0m[39m
+[32m[97m	"districtCode": "327314",[0m[39m
+[32m[97m	"postalCode": "40125",[0m[39m
+[32m[97m	"mapCoordinate": {[0m[39m
+[32m[97m		"longitude": 107.6448221,[0m[39m
+[32m[97m		"latitude": -6.8979318[0m[39m
+[32m[97m	},[0m[39m
+[32m[97m	"storeLogo": null,[0m[39m
+[32m[97m	"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m	"nik": "3321116502910000",[0m[39m
+[32m[97m	"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m	"npwp": null,[0m[39m
+[32m[97m	"npwpPhoto": null,[0m[39m
+[32m[97m	"isOpen": false[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:28:23:2823 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "Store successfully created and waiting Admin for approval",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "09cc99d9-c1bd-4ca2-a901-30b783444875",[0m[39m
+[32m[97m		"name": "Jaya Abadi",[0m[39m
+[32m[97m		"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m		"phoneNumber": "089898943497",[0m[39m
+[32m[97m		"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m		"address": "Kampus Widyatama",[0m[39m
+[32m[97m		"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m		"provinceCode": "32",[0m[39m
+[32m[97m		"regencyCode": "3273",[0m[39m
+[32m[97m		"districtCode": "327314",[0m[39m
+[32m[97m		"postalCode": "40125",[0m[39m
+[32m[97m		"mapCoordinate": {[0m[39m
+[32m[97m			"latitude": -6.8979318,[0m[39m
+[32m[97m			"longitude": 107.6448221[0m[39m
+[32m[97m		},[0m[39m
+[32m[97m		"storeLogo": null,[0m[39m
+[32m[97m		"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"nik": "3321116502910000",[0m[39m
+[32m[97m		"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"npwp": null,[0m[39m
+[32m[97m		"npwpPhoto": null,[0m[39m
+[32m[97m		"userId": "cd0c1987-5c5d-40f5-b3c2-80841ab013b7",[0m[39m
+[32m[97m		"status": "Pending",[0m[39m
+[32m[97m		"isOpen": false,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:28:23.948Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:28:23.948Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:28:23:2823 [32minfo[39m: [32m[96mResponse: [32m201 [37m21.114 ms [39m
+[32m[39m
+11-06-2023 21:28:33:2833 [31merror[39m: [31m===app-error.middleware.ts===: "You have no permission"[39m
+11-06-2023 21:28:33:2833 [35mhttp[39m: [35mGET /api/v1/stores/services/09cc99d9-c1bd-4ca2-a901-30b783444875 403 {} - 13.525 ms[39m
+[35m[39m
+11-06-2023 21:28:33:2833 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/09cc99d9-c1bd-4ca2-a901-30b783444875 [90mat [37mSun Jun 11 2023 21:28:33 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:28:33:2833 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "You have no permission"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:28:33:2833 [32minfo[39m: [32m[96mResponse: [33m403 [37m13.525 ms [39m
+[32m[39m
+11-06-2023 21:29:24:2924 [31merror[39m: [31m===app-error.middleware.ts===: "Your account not registered in our system"[39m
+11-06-2023 21:29:24:2924 [35mhttp[39m: [35mGET /api/v1/stores/services/09cc99d9-c1bd-4ca2-a901-30b783444875 401 {} - 42.335 ms[39m
+[35m[39m
+11-06-2023 21:29:24:2924 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/09cc99d9-c1bd-4ca2-a901-30b783444875 [90mat [37mSun Jun 11 2023 21:29:24 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:29:24:2924 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Your account not registered in our system"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:29:24:2924 [32minfo[39m: [32m[96mResponse: [33m401 [37m42.335 ms [39m
+[32m[39m
+11-06-2023 21:29:27:2927 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - 156.764 ms[39m
+[35m[39m
+11-06-2023 21:29:27:2927 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/auth/login [90mat [37mSun Jun 11 2023 21:29:27 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:29:27:2927 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m	"password": "password"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:29:27:2927 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzNzY3LCJleHAiOjE2ODY0OTQwNjd9.3u0Gft6LTzHpUgQ3gyTFsBM_RcOi-zWBMth3Ug9Rf_4",[0m[39m
+[32m[97m		"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzNzY3LCJleHAiOjE2ODY0OTQzNjd9.SPjx7QEHWsq_4YyLdM0X2eQrjbfyKlhzZAyiwgFTxu4"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:29:27:2927 [32minfo[39m: [32m[96mResponse: [32m200 [37m156.764 ms [39m
+[32m[39m
+11-06-2023 21:29:28:2928 [35mhttp[39m: [35mGET /api/v1/auth/roles 200 {} - 6.593 ms[39m
+[35m[39m
+11-06-2023 21:29:28:2928 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/auth/roles [90mat [37mSun Jun 11 2023 21:29:28 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:29:28:2928 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"id": "eac52a82-0889-4740-a19d-f20f001bc362",[0m[39m
+[32m[97m			"name": "Admin",[0m[39m
+[32m[97m			"isActive": false[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:29:28:2928 [32minfo[39m: [32m[96mResponse: [32m200 [37m6.593 ms [39m
+[32m[39m
+11-06-2023 21:29:36:2936 [35mhttp[39m: [35mPUT /api/v1/auth/roles/change-active 200 {"roleId":"eac52a82-0889-4740-a19d-f20f001bc362"} - 20.473 ms[39m
+[35m[39m
+11-06-2023 21:29:36:2936 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/auth/roles/change-active [90mat [37mSun Jun 11 2023 21:29:36 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:29:36:2936 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"roleId": "eac52a82-0889-4740-a19d-f20f001bc362"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:29:36:2936 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "Role Admin successfully activated",[0m[39m
+[32m[97m	"result": null[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:29:36:2936 [32minfo[39m: [32m[96mResponse: [32m200 [37m20.473 ms [39m
+[32m[39m
+11-06-2023 21:29:41:2941 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:29:41:2941 [35mhttp[39m: [35mGET /api/v1/stores/services/09cc99d9-c1bd-4ca2-a901-30b783444875 404 {} - 68.057 ms[39m
+[35m[39m
+11-06-2023 21:29:41:2941 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/09cc99d9-c1bd-4ca2-a901-30b783444875 [90mat [37mSun Jun 11 2023 21:29:41 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:29:41:2941 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:29:41:2941 [32minfo[39m: [32m[96mResponse: [33m404 [37m68.057 ms [39m
+[32m[39m
+11-06-2023 21:29:52:2952 [31merror[39m: [31m===app-error.middleware.ts===: "\nInvalid `prisma.store.findMany()` invocation in\n/Users/hudaboss/Projects/EasyCopies/API/src/store/controllers/store-v1.controller.ts:63:41\n\n  60 \t\treq.currentUser?.id as string\n  61 \t)\n  62 \n→ 63 const storeList = await prisma.store.findMany(\nError occurred during query execution:\nConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(Error { kind: Db, cause: Some(DbError { severity: \"ERROR\", parsed_severity: Some(Error), code: SqlState(EXX000), message: \"cache lookup failed for type 41946\", detail: None, hint: None, position: None, where_: Some(\"unnamed portal parameter $1\"), schema: None, table: None, column: None, datatype: None, constraint: None, file: Some(\"lsyscache.c\"), line: Some(2904), routine: Some(\"getTypeBinaryInputInfo\") }) }), transient: false })"[39m
+11-06-2023 21:29:52:2952 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 500 {} - 45.893 ms[39m
+[35m[39m
+11-06-2023 21:29:52:2952 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:29:52 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:29:52:2952 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Prisma.PrismaClientUnknownRequestError: \nInvalid `prisma.store.findMany()` invocation in\n/Users/hudaboss/Projects/EasyCopies/API/src/store/controllers/store-v1.controller.ts:63:41\n\n  60 \t\treq.currentUser?.id as string\n  61 \t)\n  62 \n→ 63 const storeList = await prisma.store.findMany(\nError occurred during query execution:\nConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(Error { kind: Db, cause: Some(DbError { severity: \"ERROR\", parsed_severity: Some(Error), code: SqlState(EXX000), message: \"cache lookup failed for type 41946\", detail: None, hint: None, position: None, where_: Some(\"unnamed portal parameter $1\"), schema: None, table: None, column: None, datatype: None, constraint: None, file: Some(\"lsyscache.c\"), line: Some(2904), routine: Some(\"getTypeBinaryInputInfo\") }) }), transient: false })"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:29:52:2952 [32minfo[39m: [32m[96mResponse: [31m500 [37m45.893 ms [39m
+[32m[39m
+11-06-2023 21:30:42:3042 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:30:42:3042 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:30:43:3043 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:30:44:3044 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 150.619 ms[39m
+[35m[39m
+11-06-2023 21:30:44:3044 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:30:44 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:30:44:3044 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 0,[0m[39m
+[32m[97m		"totalRows": 0,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:30:44:3044 [32minfo[39m: [32m[96mResponse: [32m200 [37m150.619 ms [39m
+[32m[39m
+11-06-2023 21:30:46:3046 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 29.943 ms[39m
+[35m[39m
+11-06-2023 21:30:46:3046 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:30:46 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:30:46:3046 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 0,[0m[39m
+[32m[97m		"totalRows": 0,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:30:46:3046 [32minfo[39m: [32m[96mResponse: [32m200 [37m29.943 ms [39m
+[32m[39m
+11-06-2023 21:31:00:310 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 32.709 ms[39m
+[35m[39m
+11-06-2023 21:31:00:310 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:31:00 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:31:00:310 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 0,[0m[39m
+[32m[97m		"totalRows": 0,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:31:00:310 [32minfo[39m: [32m[96mResponse: [32m200 [37m32.709 ms [39m
+[32m[39m
+11-06-2023 21:31:08:318 [35mhttp[39m: [35mPOST /api/v1/stores 201 {"name":"Jaya Abadi","description":"Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy","phoneNumber":"089898943497","address":"Kampus Widyatama","addressNote":"Turunan Gedung B","provinceCode":"32","regencyCode":"3273","districtCode":"327314","postalCode":"40125","mapCoordinate":{"longitude":107.6448221,"latitude":-6.8979318},"storeLogo":null,"storePhoto":"https://picsum.photos/200/300","nik":"3321116502910000","ktpPhoto":"https://picsum.photos/200/300","npwp":null,"npwpPhoto":null,"isOpen":false} - 28.310 ms[39m
+[35m[39m
+11-06-2023 21:31:08:318 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/stores [90mat [37mSun Jun 11 2023 21:31:08 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:31:08:318 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Jaya Abadi",[0m[39m
+[32m[97m	"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m	"phoneNumber": "089898943497",[0m[39m
+[32m[97m	"address": "Kampus Widyatama",[0m[39m
+[32m[97m	"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m	"provinceCode": "32",[0m[39m
+[32m[97m	"regencyCode": "3273",[0m[39m
+[32m[97m	"districtCode": "327314",[0m[39m
+[32m[97m	"postalCode": "40125",[0m[39m
+[32m[97m	"mapCoordinate": {[0m[39m
+[32m[97m		"longitude": 107.6448221,[0m[39m
+[32m[97m		"latitude": -6.8979318[0m[39m
+[32m[97m	},[0m[39m
+[32m[97m	"storeLogo": null,[0m[39m
+[32m[97m	"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m	"nik": "3321116502910000",[0m[39m
+[32m[97m	"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m	"npwp": null,[0m[39m
+[32m[97m	"npwpPhoto": null,[0m[39m
+[32m[97m	"isOpen": false[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:31:08:318 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "Store successfully created and waiting Admin for approval",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"name": "Jaya Abadi",[0m[39m
+[32m[97m		"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m		"phoneNumber": "089898943497",[0m[39m
+[32m[97m		"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m		"address": "Kampus Widyatama",[0m[39m
+[32m[97m		"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m		"provinceCode": "32",[0m[39m
+[32m[97m		"regencyCode": "3273",[0m[39m
+[32m[97m		"districtCode": "327314",[0m[39m
+[32m[97m		"postalCode": "40125",[0m[39m
+[32m[97m		"mapCoordinate": {[0m[39m
+[32m[97m			"latitude": -6.8979318,[0m[39m
+[32m[97m			"longitude": 107.6448221[0m[39m
+[32m[97m		},[0m[39m
+[32m[97m		"storeLogo": null,[0m[39m
+[32m[97m		"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"nik": "3321116502910000",[0m[39m
+[32m[97m		"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"npwp": null,[0m[39m
+[32m[97m		"npwpPhoto": null,[0m[39m
+[32m[97m		"userId": "c238c66b-37b4-4d0f-90f9-78d0cb61a43e",[0m[39m
+[32m[97m		"status": "Pending",[0m[39m
+[32m[97m		"isOpen": false,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:31:08.747Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:31:08:318 [32minfo[39m: [32m[96mResponse: [32m201 [37m28.310 ms [39m
+[32m[39m
+11-06-2023 21:31:13:3113 [35mhttp[39m: [35mPOST /api/v1/auth/refresh-token 200 {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzNzY3LCJleHAiOjE2ODY0OTQzNjd9.SPjx7QEHWsq_4YyLdM0X2eQrjbfyKlhzZAyiwgFTxu4"} - 6.305 ms[39m
+[35m[39m
+11-06-2023 21:31:13:3113 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/auth/refresh-token [90mat [37mSun Jun 11 2023 21:31:13 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:31:13:3113 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzNzY3LCJleHAiOjE2ODY0OTQzNjd9.SPjx7QEHWsq_4YyLdM0X2eQrjbfyKlhzZAyiwgFTxu4"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:31:13:3113 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzODczLCJleHAiOjE2ODY0OTQxNzN9.eJtBwB46hKTzFtad5nChH2N_I6JM_uhw2HFLt9Kf914",[0m[39m
+[32m[97m		"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzODczLCJleHAiOjE2ODY0OTQ0NzN9.zvTN0KDtyWj1d_cpC06YRXFTkVix9qM5kM4MglGL8nI"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:31:13:3113 [32minfo[39m: [32m[96mResponse: [32m200 [37m6.305 ms [39m
+[32m[39m
+11-06-2023 21:31:15:3115 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 25.803 ms[39m
+[35m[39m
+11-06-2023 21:31:15:3115 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:31:15 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:31:15:3115 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"name": "Jaya Abadi",[0m[39m
+[32m[97m				"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m				"phoneNumber": "089898943497",[0m[39m
+[32m[97m				"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m				"address": "Kampus Widyatama",[0m[39m
+[32m[97m				"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m				"provinceCode": "32",[0m[39m
+[32m[97m				"regencyCode": "3273",[0m[39m
+[32m[97m				"districtCode": "327314",[0m[39m
+[32m[97m				"postalCode": "40125",[0m[39m
+[32m[97m				"mapCoordinate": {[0m[39m
+[32m[97m					"latitude": -6.8979318,[0m[39m
+[32m[97m					"longitude": 107.6448221[0m[39m
+[32m[97m				},[0m[39m
+[32m[97m				"storeLogo": null,[0m[39m
+[32m[97m				"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"nik": "3321116502910000",[0m[39m
+[32m[97m				"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"npwp": null,[0m[39m
+[32m[97m				"npwpPhoto": null,[0m[39m
+[32m[97m				"userId": "c238c66b-37b4-4d0f-90f9-78d0cb61a43e",[0m[39m
+[32m[97m				"status": "Pending",[0m[39m
+[32m[97m				"isOpen": false,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m	[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+11-06-2023 21:31:15:3115 [32minfo[39m: [32m[96mResponse: [32m200 [37m25.803 ms [39m
+[32m[39m
+11-06-2023 21:31:37:3137 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:31:37:3137 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:31:37:3137 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:31:37:3137 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 135.734 ms[39m
+[35m[39m
+11-06-2023 21:31:37:3137 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:31:37 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:31:37:3137 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"name": "Jaya Abadi",[0m[39m
+[32m[97m				"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m				"phoneNumber": "089898943497",[0m[39m
+[32m[97m				"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m				"address": "Kampus Widyatama",[0m[39m
+[32m[97m				"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m				"provinceCode": "32",[0m[39m
+[32m[97m				"regencyCode": "3273",[0m[39m
+[32m[97m				"districtCode": "327314",[0m[39m
+[32m[97m				"postalCode": "40125",[0m[39m
+[32m[97m				"mapCoordinate": {[0m[39m
+[32m[97m					"latitude": -6.8979318,[0m[39m
+[32m[97m					"longitude": 107.6448221[0m[39m
+[32m[97m				},[0m[39m
+[32m[97m				"storeLogo": null,[0m[39m
+[32m[97m				"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"nik": "3321116502910000",[0m[39m
+[32m[97m				"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"npwp": null,[0m[39m
+[32m[97m				"npwpPhoto": null,[0m[39m
+[32m[97m				"userId": "c238c66b-37b4-4d0f-90f9-78d0cb61a43e",[0m[39m
+[32m[97m				"status": "Pending",[0m[39m
+[32m[97m				"isOpen": false,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m	[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+11-06-2023 21:31:37:3137 [32minfo[39m: [32m[96mResponse: [32m200 [37m135.734 ms [39m
+[32m[39m
+11-06-2023 21:31:53:3153 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:31:53:3153 [35mhttp[39m: [35mGET /api/v1/stores/services/09cc99d9-c1bd-4ca2-a901-30b783444875 404 {} - 84.822 ms[39m
+[35m[39m
+11-06-2023 21:31:53:3153 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/09cc99d9-c1bd-4ca2-a901-30b783444875 [90mat [37mSun Jun 11 2023 21:31:53 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:31:53:3153 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:31:53:3153 [32minfo[39m: [32m[96mResponse: [33m404 [37m84.822 ms [39m
+[32m[39m
+11-06-2023 21:31:57:3157 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 35.291 ms[39m
+[35m[39m
+11-06-2023 21:31:57:3157 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:31:57 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:31:57:3157 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"name": "Jaya Abadi",[0m[39m
+[32m[97m				"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m				"phoneNumber": "089898943497",[0m[39m
+[32m[97m				"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m				"address": "Kampus Widyatama",[0m[39m
+[32m[97m				"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m				"provinceCode": "32",[0m[39m
+[32m[97m				"regencyCode": "3273",[0m[39m
+[32m[97m				"districtCode": "327314",[0m[39m
+[32m[97m				"postalCode": "40125",[0m[39m
+[32m[97m				"mapCoordinate": {[0m[39m
+[32m[97m					"latitude": -6.8979318,[0m[39m
+[32m[97m					"longitude": 107.6448221[0m[39m
+[32m[97m				},[0m[39m
+[32m[97m				"storeLogo": null,[0m[39m
+[32m[97m				"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"nik": "3321116502910000",[0m[39m
+[32m[97m				"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"npwp": null,[0m[39m
+[32m[97m				"npwpPhoto": null,[0m[39m
+[32m[97m				"userId": "c238c66b-37b4-4d0f-90f9-78d0cb61a43e",[0m[39m
+[32m[97m				"status": "Pending",[0m[39m
+[32m[97m				"isOpen": false,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m	[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+11-06-2023 21:31:57:3157 [32minfo[39m: [32m[96mResponse: [32m200 [37m35.291 ms [39m
+[32m[39m
+11-06-2023 21:32:02:322 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:32:02:322 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 404 {} - 12.595 ms[39m
+[35m[39m
+11-06-2023 21:32:02:322 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:32:02 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:32:02:322 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:32:02:322 [32minfo[39m: [32m[96mResponse: [33m404 [37m12.595 ms [39m
+[32m[39m
+11-06-2023 21:32:03:323 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:32:03:323 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 404 {} - 24.364 ms[39m
+[35m[39m
+11-06-2023 21:32:03:323 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:32:03 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:32:03:323 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:32:03:323 [32minfo[39m: [32m[96mResponse: [33m404 [37m24.364 ms [39m
+[32m[39m
+11-06-2023 21:32:03:323 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:32:03:323 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 404 {} - 13.035 ms[39m
+[35m[39m
+11-06-2023 21:32:03:323 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:32:03 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:32:03:323 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:32:03:323 [32minfo[39m: [32m[96mResponse: [33m404 [37m13.035 ms [39m
+[32m[39m
+11-06-2023 21:32:03:323 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:32:03:323 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 404 {} - 12.404 ms[39m
+[35m[39m
+11-06-2023 21:32:03:323 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:32:03 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:32:03:323 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:32:03:323 [32minfo[39m: [32m[96mResponse: [33m404 [37m12.404 ms [39m
+[32m[39m
+11-06-2023 21:32:28:3228 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:32:28:3228 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:32:30:3230 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:32:30:3230 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:32:31:3231 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:32:34:3234 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:32:34:3234 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 404 {} - 129.101 ms[39m
+[35m[39m
+11-06-2023 21:32:34:3234 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:32:34 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:32:34:3234 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:32:34:3234 [32minfo[39m: [32m[96mResponse: [33m404 [37m129.101 ms [39m
+[32m[39m
+11-06-2023 21:32:34:3234 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:32:34:3234 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 404 {} - 19.274 ms[39m
+[35m[39m
+11-06-2023 21:32:34:3234 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:32:34 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:32:34:3234 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:32:34:3234 [32minfo[39m: [32m[96mResponse: [33m404 [37m19.274 ms [39m
+[32m[39m
+11-06-2023 21:32:50:3250 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:32:50:3250 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:32:52:3252 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:33:05:335 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:33:05:335 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:33:05:335 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:33:06:336 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 200 {} - 126.659 ms[39m
+[35m[39m
+11-06-2023 21:33:06:336 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:33:06 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:33:06:336 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 0,[0m[39m
+[32m[97m		"totalRows": 0,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:33:06:336 [32minfo[39m: [32m[96mResponse: [32m200 [37m126.659 ms [39m
+[32m[39m
+11-06-2023 21:33:37:3337 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 200 {} - 33.297 ms[39m
+[35m[39m
+11-06-2023 21:33:37:3337 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:33:37 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:33:37:3337 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 0,[0m[39m
+[32m[97m		"totalRows": 0,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:33:37:3337 [32minfo[39m: [32m[96mResponse: [32m200 [37m33.297 ms [39m
+[32m[39m
+11-06-2023 21:33:52:3352 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 128.597 ms[39m
+[35m[39m
+11-06-2023 21:33:52:3352 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:33:52 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:33:52:3352 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"name": "Jaya Abadi",[0m[39m
+[32m[97m				"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m				"phoneNumber": "089898943497",[0m[39m
+[32m[97m				"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m				"address": "Kampus Widyatama",[0m[39m
+[32m[97m				"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m				"provinceCode": "32",[0m[39m
+[32m[97m				"regencyCode": "3273",[0m[39m
+[32m[97m				"districtCode": "327314",[0m[39m
+[32m[97m				"postalCode": "40125",[0m[39m
+[32m[97m				"mapCoordinate": {[0m[39m
+[32m[97m					"latitude": -6.8979318,[0m[39m
+[32m[97m					"longitude": 107.6448221[0m[39m
+[32m[97m				},[0m[39m
+[32m[97m				"storeLogo": null,[0m[39m
+[32m[97m				"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"nik": "3321116502910000",[0m[39m
+[32m[97m				"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"npwp": null,[0m[39m
+[32m[97m				"npwpPhoto": null,[0m[39m
+[32m[97m				"userId": "c238c66b-37b4-4d0f-90f9-78d0cb61a43e",[0m[39m
+[32m[97m				"status": "Pending",[0m[39m
+[32m[97m				"isOpen": false,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m	[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+11-06-2023 21:33:52:3352 [32minfo[39m: [32m[96mResponse: [32m200 [37m128.597 ms [39m
+[32m[39m
+11-06-2023 21:34:01:341 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 200 {} - 16.050 ms[39m
+[35m[39m
+11-06-2023 21:34:01:341 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:34:01 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:34:01:341 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 0,[0m[39m
+[32m[97m		"totalRows": 0,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:34:01:341 [32minfo[39m: [32m[96mResponse: [32m200 [37m16.050 ms [39m
+[32m[39m
+11-06-2023 21:34:05:345 [31merror[39m: [31m===app-error.middleware.ts===: ""[39m
+11-06-2023 21:34:05:345 [35mhttp[39m: [35mPOST /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 422 {} - 13.862 ms[39m
+[35m[39m
+11-06-2023 21:34:05:345 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:34:05 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:34:05:345 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Name is required",[0m[39m
+[32m[97m			"field": "name"[0m[39m
+[32m[97m		},[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Invalid value",[0m[39m
+[32m[97m			"field": "price"[0m[39m
+[32m[97m		},[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Price should be numeric",[0m[39m
+[32m[97m			"field": "price"[0m[39m
+[32m[97m		},[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Invalid value",[0m[39m
+[32m[97m			"field": "pricePerSheet"[0m[39m
+[32m[97m		},[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Price should be numeric",[0m[39m
+[32m[97m			"field": "pricePerSheet"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:34:05:345 [32minfo[39m: [32m[96mResponse: [33m422 [37m13.862 ms [39m
+[32m[39m
+11-06-2023 21:34:53:3453 [31merror[39m: [31m===app-error.middleware.ts===: ""[39m
+11-06-2023 21:34:53:3453 [35mhttp[39m: [35mPOST /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 422 {"name":"Focotopy","price":1000,"pricePerSheet":"asdas"} - 16.647 ms[39m
+[35m[39m
+11-06-2023 21:34:53:3453 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:34:53 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:34:53:3453 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Focotopy",[0m[39m
+[32m[97m	"price": 1000,[0m[39m
+[32m[97m	"pricePerSheet": "asdas"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:34:53:3453 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Price should be numeric",[0m[39m
+[32m[97m			"field": "pricePerSheet"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:34:53:3453 [32minfo[39m: [32m[96mResponse: [33m422 [37m16.647 ms [39m
+[32m[39m
+11-06-2023 21:34:57:3457 [31merror[39m: [31m===app-error.middleware.ts===: "Store not found"[39m
+11-06-2023 21:34:57:3457 [35mhttp[39m: [35mPOST /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 404 {"name":"Focotopy","price":1000,"pricePerSheet":100} - 17.622 ms[39m
+[35m[39m
+11-06-2023 21:34:57:3457 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:34:57 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:34:57:3457 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Focotopy",[0m[39m
+[32m[97m	"price": 1000,[0m[39m
+[32m[97m	"pricePerSheet": 100[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:34:57:3457 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:34:57:3457 [32minfo[39m: [32m[96mResponse: [33m404 [37m17.622 ms [39m
+[32m[39m
+11-06-2023 21:35:00:350 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 23.856 ms[39m
+[35m[39m
+11-06-2023 21:35:00:350 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:35:00 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:35:00:350 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"name": "Jaya Abadi",[0m[39m
+[32m[97m				"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m				"phoneNumber": "089898943497",[0m[39m
+[32m[97m				"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m				"address": "Kampus Widyatama",[0m[39m
+[32m[97m				"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m				"provinceCode": "32",[0m[39m
+[32m[97m				"regencyCode": "3273",[0m[39m
+[32m[97m				"districtCode": "327314",[0m[39m
+[32m[97m				"postalCode": "40125",[0m[39m
+[32m[97m				"mapCoordinate": {[0m[39m
+[32m[97m					"latitude": -6.8979318,[0m[39m
+[32m[97m					"longitude": 107.6448221[0m[39m
+[32m[97m				},[0m[39m
+[32m[97m				"storeLogo": null,[0m[39m
+[32m[97m				"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"nik": "3321116502910000",[0m[39m
+[32m[97m				"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"npwp": null,[0m[39m
+[32m[97m				"npwpPhoto": null,[0m[39m
+[32m[97m				"userId": "c238c66b-37b4-4d0f-90f9-78d0cb61a43e",[0m[39m
+[32m[97m				"status": "Pending",[0m[39m
+[32m[97m				"isOpen": false,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m	[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+11-06-2023 21:35:00:350 [32minfo[39m: [32m[96mResponse: [32m200 [37m23.856 ms [39m
+[32m[39m
+11-06-2023 21:35:22:3522 [35mhttp[39m: [35mPUT /api/v1/stores/approvals/handle/601eea35-4772-469e-ae40-da03cc5297f8 200 {"approvalStatus":"OnReview","reviseComment":"Mohon maaf sebelumnya, minta tolong dicheck lagi ya KTP nya","rejectReason":"Rejected, kebanyakan revisi"} - 81.314 ms[39m
+[35m[39m
+11-06-2023 21:35:22:3522 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/stores/approvals/handle/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:35:22 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:35:22:3522 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"approvalStatus": "OnReview",[0m[39m
+[32m[97m	"reviseComment": "Mohon maaf sebelumnya, minta tolong dicheck lagi ya KTP nya",[0m[39m
+[32m[97m	"rejectReason": "Rejected, kebanyakan revisi"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:35:22:3522 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"name": "Jaya Abadi",[0m[39m
+[32m[97m		"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m		"phoneNumber": "089898943497",[0m[39m
+[32m[97m		"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m		"address": "Kampus Widyatama",[0m[39m
+[32m[97m		"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m		"provinceCode": "32",[0m[39m
+[32m[97m		"regencyCode": "3273",[0m[39m
+[32m[97m		"districtCode": "327314",[0m[39m
+[32m[97m		"postalCode": "40125",[0m[39m
+[32m[97m		"mapCoordinate": {[0m[39m
+[32m[97m			"latitude": -6.8979318,[0m[39m
+[32m[97m			"longitude": 107.6448221[0m[39m
+[32m[97m		},[0m[39m
+[32m[97m		"storeLogo": null,[0m[39m
+[32m[97m		"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"nik": "3321116502910000",[0m[39m
+[32m[97m		"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"npwp": null,[0m[39m
+[32m[97m		"npwpPhoto": null,[0m[39m
+[32m[97m		"userId": "c238c66b-37b4-4d0f-90f9-78d0cb61a43e",[0m[39m
+[32m[97m		"status": "OnReview",[0m[39m
+[32m[97m		"isOpen": false,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:35:22.035Z",[0m[39m
+[32m[97m		"storeApprovals": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "84670edf-a144-45b0-a905-c25d9320b1dd",[0m[39m
+[32m[97m				"userId": "c238c66b-37b4-4d0f-90f9-78d0cb61a43e",[0m[39m
+[32m[97m			[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+11-06-2023 21:35:22:3522 [32minfo[39m: [32m[96mResponse: [32m200 [37m81.314 ms [39m
+[32m[39m
+11-06-2023 21:35:26:3526 [35mhttp[39m: [35mPUT /api/v1/stores/approvals/handle/601eea35-4772-469e-ae40-da03cc5297f8 200 {"approvalStatus":"Approved","reviseComment":"Mohon maaf sebelumnya, minta tolong dicheck lagi ya KTP nya","rejectReason":"Rejected, kebanyakan revisi"} - 21.108 ms[39m
+[35m[39m
+11-06-2023 21:35:26:3526 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/stores/approvals/handle/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:35:26 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:35:26:3526 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"approvalStatus": "Approved",[0m[39m
+[32m[97m	"reviseComment": "Mohon maaf sebelumnya, minta tolong dicheck lagi ya KTP nya",[0m[39m
+[32m[97m	"rejectReason": "Rejected, kebanyakan revisi"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:35:26:3526 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"name": "Jaya Abadi",[0m[39m
+[32m[97m		"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m		"phoneNumber": "089898943497",[0m[39m
+[32m[97m		"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m		"address": "Kampus Widyatama",[0m[39m
+[32m[97m		"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m		"provinceCode": "32",[0m[39m
+[32m[97m		"regencyCode": "3273",[0m[39m
+[32m[97m		"districtCode": "327314",[0m[39m
+[32m[97m		"postalCode": "40125",[0m[39m
+[32m[97m		"mapCoordinate": {[0m[39m
+[32m[97m			"latitude": -6.8979318,[0m[39m
+[32m[97m			"longitude": 107.6448221[0m[39m
+[32m[97m		},[0m[39m
+[32m[97m		"storeLogo": null,[0m[39m
+[32m[97m		"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"nik": "3321116502910000",[0m[39m
+[32m[97m		"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"npwp": null,[0m[39m
+[32m[97m		"npwpPhoto": null,[0m[39m
+[32m[97m		"userId": "c238c66b-37b4-4d0f-90f9-78d0cb61a43e",[0m[39m
+[32m[97m		"status": "Approved",[0m[39m
+[32m[97m		"isOpen": false,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:35:26.876Z",[0m[39m
+[32m[97m		"storeApprovals": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "84670edf-a144-45b0-a905-c25d9320b1dd",[0m[39m
+[32m[97m				"userId": "c238c66b-37b4-4d0f-90f9-78d0cb61a43e",[0m[39m
+[32m[97m			[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+11-06-2023 21:35:26:3526 [32minfo[39m: [32m[96mResponse: [32m200 [37m21.108 ms [39m
+[32m[39m
+11-06-2023 21:35:28:3528 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 200 {} - 23.865 ms[39m
+[35m[39m
+11-06-2023 21:35:28:3528 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:35:28 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:35:28:3528 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 0,[0m[39m
+[32m[97m		"totalRows": 0,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:35:28:3528 [32minfo[39m: [32m[96mResponse: [32m200 [37m23.865 ms [39m
+[32m[39m
+11-06-2023 21:35:30:3530 [31merror[39m: [31m===app-error.middleware.ts===: "Name should be using StoreServiceName"[39m
+11-06-2023 21:35:30:3530 [35mhttp[39m: [35mPOST /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 400 {"name":"Focotopy","price":1000,"pricePerSheet":100} - 11.772 ms[39m
+[35m[39m
+11-06-2023 21:35:30:3530 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:35:30 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:35:30:3530 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Focotopy",[0m[39m
+[32m[97m	"price": 1000,[0m[39m
+[32m[97m	"pricePerSheet": 100[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:35:30:3530 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Name should be using StoreServiceName"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:35:30:3530 [32minfo[39m: [32m[96mResponse: [33m400 [37m11.772 ms [39m
+[32m[39m
+11-06-2023 21:35:39:3539 [35mhttp[39m: [35mPOST /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 201 {"name":"Fotocopy","price":1000,"pricePerSheet":100} - 29.558 ms[39m
+[35m[39m
+11-06-2023 21:35:39:3539 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:35:39 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:35:39:3539 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Fotocopy",[0m[39m
+[32m[97m	"price": 1000,[0m[39m
+[32m[97m	"pricePerSheet": 100[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:35:39:3539 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "Created",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m		"name": "Fotocopy",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 1000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:35:39:3539 [32minfo[39m: [32m[96mResponse: [32m201 [37m29.558 ms [39m
+[32m[39m
+11-06-2023 21:35:53:3553 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 200 {} - 21.982 ms[39m
+[35m[39m
+11-06-2023 21:35:53:3553 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:35:53 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:35:53:3553 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:35:53:3553 [32minfo[39m: [32m[96mResponse: [32m200 [37m21.982 ms [39m
+[32m[39m
+11-06-2023 21:36:12:3612 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:36:12:3612 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:36:14:3614 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:36:14:3614 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:36:14:3614 [31merror[39m: [31m===app-error.middleware.ts===: "jwt expired"[39m
+11-06-2023 21:36:14:3614 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 401 {} - 3.971 ms[39m
+[35m[39m
+11-06-2023 21:36:14:3614 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:36:14 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:36:14:3614 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "jwt expired"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:36:14:3614 [32minfo[39m: [32m[96mResponse: [33m401 [37m3.971 ms [39m
+[32m[39m
+11-06-2023 21:36:14:3614 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:36:15:3615 [31merror[39m: [31m===app-error.middleware.ts===: "jwt expired"[39m
+11-06-2023 21:36:15:3615 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 401 {} - 4.077 ms[39m
+[35m[39m
+11-06-2023 21:36:15:3615 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:36:15 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:36:15:3615 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "jwt expired"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:36:15:3615 [32minfo[39m: [32m[96mResponse: [33m401 [37m4.077 ms [39m
+[32m[39m
+11-06-2023 21:36:17:3617 [35mhttp[39m: [35mPOST /api/v1/auth/refresh-token 200 {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzODczLCJleHAiOjE2ODY0OTQ0NzN9.zvTN0KDtyWj1d_cpC06YRXFTkVix9qM5kM4MglGL8nI"} - 8.772 ms[39m
+[35m[39m
+11-06-2023 21:36:17:3617 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/auth/refresh-token [90mat [37mSun Jun 11 2023 21:36:17 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:36:17:3617 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDkzODczLCJleHAiOjE2ODY0OTQ0NzN9.zvTN0KDtyWj1d_cpC06YRXFTkVix9qM5kM4MglGL8nI"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:36:17:3617 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDk0MTc3LCJleHAiOjE2ODY0OTQ0Nzd9.weRHXYzrt-O4R49oK-Q9Sdo7RUNRXJe_NfqTX4QGYzE",[0m[39m
+[32m[97m		"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDk0MTc3LCJleHAiOjE2ODY0OTQ3Nzd9.yLMA4PsvnLZB9LsEZ3c3Y5ESSEBVHBx6TLSDJV1RqSk"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:36:17:3617 [32minfo[39m: [32m[96mResponse: [32m200 [37m8.772 ms [39m
+[32m[39m
+11-06-2023 21:36:19:3619 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 200 {} - 151.323 ms[39m
+[35m[39m
+11-06-2023 21:36:19:3619 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:36:19 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:36:19:3619 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m				"name": "Fotocopy",[0m[39m
+[32m[97m				"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"price": 1000,[0m[39m
+[32m[97m				"pricePerSheet": 100,[0m[39m
+[32m[97m				"bindingType": null,[0m[39m
+[32m[97m				"fotocopyType": null,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m			}[0m[39m
+[32m[97m		],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:36:19:3619 [32minfo[39m: [32m[96mResponse: [32m200 [37m151.323 ms [39m
+[32m[39m
+11-06-2023 21:36:52:3652 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 200 {} - 22.285 ms[39m
+[35m[39m
+11-06-2023 21:36:52:3652 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:36:52 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:36:52:3652 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m				"name": "Fotocopy",[0m[39m
+[32m[97m				"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"price": 1000,[0m[39m
+[32m[97m				"pricePerSheet": 100,[0m[39m
+[32m[97m				"bindingType": null,[0m[39m
+[32m[97m				"fotocopyType": null,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m			}[0m[39m
+[32m[97m		],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:36:52:3652 [32minfo[39m: [32m[96mResponse: [32m200 [37m22.285 ms [39m
+[32m[39m
+11-06-2023 21:36:58:3658 [35mhttp[39m: [35mGET /api/v1/stores/services/c542f01a-5b6e-4392-b89c-c495befef446 200 {} - 16.104 ms[39m
+[35m[39m
+11-06-2023 21:36:58:3658 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/c542f01a-5b6e-4392-b89c-c495befef446 [90mat [37mSun Jun 11 2023 21:36:58 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:36:58:3658 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:36:58:3658 [32minfo[39m: [32m[96mResponse: [32m200 [37m16.104 ms [39m
+[32m[39m
+11-06-2023 21:38:03:383 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:38:04:384 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:38:04:384 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:38:06:386 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/:serviceId 200 {} - 120.759 ms[39m
+[35m[39m
+11-06-2023 21:38:06:386 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/:serviceId [90mat [37mSun Jun 11 2023 21:38:06 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:38:06:386 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m		"name": "Fotocopy",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 1000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:38:06:386 [32minfo[39m: [32m[96mResponse: [32m200 [37m120.759 ms [39m
+[32m[39m
+11-06-2023 21:38:13:3813 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/:serviceId 200 {} - 16.464 ms[39m
+[35m[39m
+11-06-2023 21:38:13:3813 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/:serviceId [90mat [37mSun Jun 11 2023 21:38:13 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:38:13:3813 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m		"name": "Fotocopy",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 1000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:38:13:3813 [32minfo[39m: [32m[96mResponse: [32m200 [37m16.464 ms [39m
+[32m[39m
+11-06-2023 21:38:26:3826 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/asdasd 200 {} - 19.118 ms[39m
+[35m[39m
+11-06-2023 21:38:26:3826 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/asdasd [90mat [37mSun Jun 11 2023 21:38:26 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:38:26:3826 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m		"name": "Fotocopy",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 1000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:38:26:3826 [32minfo[39m: [32m[96mResponse: [32m200 [37m19.118 ms [39m
+[32m[39m
+11-06-2023 21:38:27:3827 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/asdasd 200 {} - 10.174 ms[39m
+[35m[39m
+11-06-2023 21:38:27:3827 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/asdasd [90mat [37mSun Jun 11 2023 21:38:27 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:38:27:3827 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m		"name": "Fotocopy",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 1000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:38:27:3827 [32minfo[39m: [32m[96mResponse: [32m200 [37m10.174 ms [39m
+[32m[39m
+11-06-2023 21:38:27:3827 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/asdasd 200 {} - 12.563 ms[39m
+[35m[39m
+11-06-2023 21:38:27:3827 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/asdasd [90mat [37mSun Jun 11 2023 21:38:27 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:38:27:3827 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m		"name": "Fotocopy",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 1000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:38:27:3827 [32minfo[39m: [32m[96mResponse: [32m200 [37m12.563 ms [39m
+[32m[39m
+11-06-2023 21:38:37:3837 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:38:37:3837 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:38:38:3838 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:38:39:3839 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/asdasd 200 {} - 113.219 ms[39m
+[35m[39m
+11-06-2023 21:38:39:3839 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/asdasd [90mat [37mSun Jun 11 2023 21:38:39 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:38:39:3839 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m		"name": "Fotocopy",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 1000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:38:39:3839 [32minfo[39m: [32m[96mResponse: [32m200 [37m113.219 ms [39m
+[32m[39m
+11-06-2023 21:38:55:3855 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+11-06-2023 21:38:55:3855 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+11-06-2023 21:38:55:3855 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+11-06-2023 21:39:06:396 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:39:06:396 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/asdasd 404 {} - 125.589 ms[39m
+[35m[39m
+11-06-2023 21:39:06:396 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/asdasd [90mat [37mSun Jun 11 2023 21:39:06 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:39:06:396 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:06:396 [32minfo[39m: [32m[96mResponse: [33m404 [37m125.589 ms [39m
+[32m[39m
+11-06-2023 21:39:06:396 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:39:06:396 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/asdasd 404 {} - 42.585 ms[39m
+[35m[39m
+11-06-2023 21:39:06:396 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/asdasd [90mat [37mSun Jun 11 2023 21:39:06 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:39:06:396 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:06:396 [32minfo[39m: [32m[96mResponse: [33m404 [37m42.585 ms [39m
+[32m[39m
+11-06-2023 21:39:08:398 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 119.699 ms[39m
+[35m[39m
+11-06-2023 21:39:08:398 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:39:08 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:39:08:398 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:08:398 [32minfo[39m: [32m[96mResponse: [32m200 [37m119.699 ms [39m
+[32m[39m
+11-06-2023 21:39:10:3910 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 16.647 ms[39m
+[35m[39m
+11-06-2023 21:39:10:3910 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:39:10 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:39:10:3910 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:10:3910 [32minfo[39m: [32m[96mResponse: [32m200 [37m16.647 ms [39m
+[32m[39m
+11-06-2023 21:39:10:3910 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 9.029 ms[39m
+[35m[39m
+11-06-2023 21:39:10:3910 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:39:10 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:39:10:3910 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:10:3910 [32minfo[39m: [32m[96mResponse: [32m200 [37m9.029 ms [39m
+[32m[39m
+11-06-2023 21:39:11:3911 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 16.074 ms[39m
+[35m[39m
+11-06-2023 21:39:11:3911 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:39:11 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:39:11:3911 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:11:3911 [32minfo[39m: [32m[96mResponse: [32m200 [37m16.074 ms [39m
+[32m[39m
+11-06-2023 21:39:13:3913 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 200 {} - 19.016 ms[39m
+[35m[39m
+11-06-2023 21:39:13:3913 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:39:13 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:39:13:3913 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m				"name": "Fotocopy",[0m[39m
+[32m[97m				"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"price": 1000,[0m[39m
+[32m[97m				"pricePerSheet": 100,[0m[39m
+[32m[97m				"bindingType": null,[0m[39m
+[32m[97m				"fotocopyType": null,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m			}[0m[39m
+[32m[97m		],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:13:3913 [32minfo[39m: [32m[96mResponse: [32m200 [37m19.016 ms [39m
+[32m[39m
+11-06-2023 21:39:17:3917 [35mhttp[39m: [35mPOST /api/v1/auth/refresh-token 200 {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDk0MTc3LCJleHAiOjE2ODY0OTQ3Nzd9.yLMA4PsvnLZB9LsEZ3c3Y5ESSEBVHBx6TLSDJV1RqSk"} - 8.565 ms[39m
+[35m[39m
+11-06-2023 21:39:17:3917 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/auth/refresh-token [90mat [37mSun Jun 11 2023 21:39:17 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:39:17:3917 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDk0MTc3LCJleHAiOjE2ODY0OTQ3Nzd9.yLMA4PsvnLZB9LsEZ3c3Y5ESSEBVHBx6TLSDJV1RqSk"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:17:3917 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDk0MzU3LCJleHAiOjE2ODY0OTQ2NTd9.B3webR6wxjddBm3NwGa8qFCvvy8Ljo63DQ0zUKAhvfw",[0m[39m
+[32m[97m		"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDk0MzU3LCJleHAiOjE2ODY0OTQ5NTd9.WVPYx5Zf17L-eYf1wSg3dC8PrF0czpuxY6B0JNOJGJU"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:17:3917 [32minfo[39m: [32m[96mResponse: [32m200 [37m8.565 ms [39m
+[32m[39m
+11-06-2023 21:39:19:3919 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 200 {} - 18.320 ms[39m
+[35m[39m
+11-06-2023 21:39:19:3919 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:39:19 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:39:19:3919 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m				"name": "Fotocopy",[0m[39m
+[32m[97m				"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"price": 1000,[0m[39m
+[32m[97m				"pricePerSheet": 100,[0m[39m
+[32m[97m				"bindingType": null,[0m[39m
+[32m[97m				"fotocopyType": null,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m			}[0m[39m
+[32m[97m		],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:19:3919 [32minfo[39m: [32m[96mResponse: [32m200 [37m18.320 ms [39m
+[32m[39m
+11-06-2023 21:39:21:3921 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 16.540 ms[39m
+[35m[39m
+11-06-2023 21:39:21:3921 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:39:21 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:39:21:3921 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:21:3921 [32minfo[39m: [32m[96mResponse: [32m200 [37m16.540 ms [39m
+[32m[39m
+11-06-2023 21:39:24:3924 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 200 {} - 15.974 ms[39m
+[35m[39m
+11-06-2023 21:39:24:3924 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:39:24 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:39:24:3924 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m				"name": "Fotocopy",[0m[39m
+[32m[97m				"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"price": 1000,[0m[39m
+[32m[97m				"pricePerSheet": 100,[0m[39m
+[32m[97m				"bindingType": null,[0m[39m
+[32m[97m				"fotocopyType": null,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m			}[0m[39m
+[32m[97m		],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:24:3924 [32minfo[39m: [32m[96mResponse: [32m200 [37m15.974 ms [39m
+[32m[39m
+11-06-2023 21:39:26:3926 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:39:26:3926 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/asdasd 404 {} - 10.590 ms[39m
+[35m[39m
+11-06-2023 21:39:26:3926 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/asdasd [90mat [37mSun Jun 11 2023 21:39:26 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:39:26:3926 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:26:3926 [32minfo[39m: [32m[96mResponse: [33m404 [37m10.590 ms [39m
+[32m[39m
+11-06-2023 21:39:33:3933 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/c542f01a-5b6e-4392-b89c-c495befef446 200 {} - 25.040 ms[39m
+[35m[39m
+11-06-2023 21:39:33:3933 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/c542f01a-5b6e-4392-b89c-c495befef446 [90mat [37mSun Jun 11 2023 21:39:33 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:39:33:3933 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m		"name": "Fotocopy",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 1000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:39:33:3933 [32minfo[39m: [32m[96mResponse: [32m200 [37m25.040 ms [39m
+[32m[39m
+11-06-2023 21:41:02:412 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/c542f01a-5b6e-4392-b89c-c495befef446 200 {} - 18.411 ms[39m
+[35m[39m
+11-06-2023 21:41:02:412 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/c542f01a-5b6e-4392-b89c-c495befef446 [90mat [37mSun Jun 11 2023 21:41:02 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:41:02:412 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m		"name": "Fotocopy",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 1000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:41:02:412 [32minfo[39m: [32m[96mResponse: [32m200 [37m18.411 ms [39m
+[32m[39m
+11-06-2023 21:41:04:414 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:41:04:414 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/c542f01a-5b6e-4392-b89c-c495befef44 404 {} - 23.553 ms[39m
+[35m[39m
+11-06-2023 21:41:04:414 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/c542f01a-5b6e-4392-b89c-c495befef44 [90mat [37mSun Jun 11 2023 21:41:04 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:41:04:414 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:41:04:414 [32minfo[39m: [32m[96mResponse: [33m404 [37m23.553 ms [39m
+[32m[39m
+11-06-2023 21:41:05:415 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/c542f01a-5b6e-4392-b89c-c495befef446 200 {} - 12.907 ms[39m
+[35m[39m
+11-06-2023 21:41:05:415 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/c542f01a-5b6e-4392-b89c-c495befef446 [90mat [37mSun Jun 11 2023 21:41:05 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:41:05:415 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m		"name": "Fotocopy",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 1000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:41:05:415 [32minfo[39m: [32m[96mResponse: [32m200 [37m12.907 ms [39m
+[32m[39m
+11-06-2023 21:41:16:4116 [35mhttp[39m: [35mGET /api/v1/stores/services/detail/c542f01a-5b6e-4392-b89c-c495befef446 200 {} - 12.678 ms[39m
+[35m[39m
+11-06-2023 21:41:16:4116 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/detail/c542f01a-5b6e-4392-b89c-c495befef446 [90mat [37mSun Jun 11 2023 21:41:16 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:41:16:4116 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m		"name": "Fotocopy",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 1000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:41:16:4116 [32minfo[39m: [32m[96mResponse: [32m200 [37m12.678 ms [39m
+[32m[39m
+11-06-2023 21:42:11:4211 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:42:11:4211 [35mhttp[39m: [35mPUT /api/v1/stores/services/:serviceId 404 {"name":"Fotocopy","price":2000,"pricePerSheet":100} - 17.035 ms[39m
+[35m[39m
+11-06-2023 21:42:11:4211 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/stores/services/:serviceId [90mat [37mSun Jun 11 2023 21:42:11 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:42:11:4211 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Fotocopy",[0m[39m
+[32m[97m	"price": 2000,[0m[39m
+[32m[97m	"pricePerSheet": 100[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:42:11:4211 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:42:11:4211 [32minfo[39m: [32m[96mResponse: [33m404 [37m17.035 ms [39m
+[32m[39m
+11-06-2023 21:42:42:4242 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:42:42:4242 [35mhttp[39m: [35mPUT /api/v1/stores/services/:serviceId 404 {"name":"Fotocopy","price":2000,"pricePerSheet":100} - 20.554 ms[39m
+[35m[39m
+11-06-2023 21:42:42:4242 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/stores/services/:serviceId [90mat [37mSun Jun 11 2023 21:42:42 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:42:42:4242 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Fotocopy",[0m[39m
+[32m[97m	"price": 2000,[0m[39m
+[32m[97m	"pricePerSheet": 100[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:42:42:4242 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:42:42:4242 [32minfo[39m: [32m[96mResponse: [33m404 [37m20.554 ms [39m
+[32m[39m
+11-06-2023 21:42:56:4256 [35mhttp[39m: [35mPOST /api/v1/auth/refresh-token 200 {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDk0MzU3LCJleHAiOjE2ODY0OTQ5NTd9.WVPYx5Zf17L-eYf1wSg3dC8PrF0czpuxY6B0JNOJGJU"} - 4.314 ms[39m
+[35m[39m
+11-06-2023 21:42:56:4256 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/auth/refresh-token [90mat [37mSun Jun 11 2023 21:42:56 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:42:56:4256 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDk0MzU3LCJleHAiOjE2ODY0OTQ5NTd9.WVPYx5Zf17L-eYf1wSg3dC8PrF0czpuxY6B0JNOJGJU"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:42:56:4256 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDk0NTc2LCJleHAiOjE2ODY0OTQ4NzZ9.thsh9oUQL1bF7OwZJMEFgQeXFYLkLr9fs1xDdpSyn8g",[0m[39m
+[32m[97m		"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyMzhjNjZiLTM3YjQtNGQwZi05MGY5LTc4ZDBjYjYxYTQzZSIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NDk0NTc2LCJleHAiOjE2ODY0OTUxNzZ9.bASTgZvm27RU4_XxKwTxfD3CuphBwyJorwJgMk6ye6g"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:42:56:4256 [32minfo[39m: [32m[96mResponse: [32m200 [37m4.314 ms [39m
+[32m[39m
+11-06-2023 21:43:07:437 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 200 {} - 19.898 ms[39m
+[35m[39m
+11-06-2023 21:43:07:437 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:43:07 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:43:07:437 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m				"name": "Fotocopy",[0m[39m
+[32m[97m				"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"price": 1000,[0m[39m
+[32m[97m				"pricePerSheet": 100,[0m[39m
+[32m[97m				"bindingType": null,[0m[39m
+[32m[97m				"fotocopyType": null,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:35:39.818Z"[0m[39m
+[32m[97m			}[0m[39m
+[32m[97m		],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:43:07:437 [32minfo[39m: [32m[96mResponse: [32m200 [37m19.898 ms [39m
+[32m[39m
+11-06-2023 21:43:12:4312 [35mhttp[39m: [35mPUT /api/v1/stores/services/c542f01a-5b6e-4392-b89c-c495befef446 200 {"name":"Fotocopy","price":2000,"pricePerSheet":100} - 38.995 ms[39m
+[35m[39m
+11-06-2023 21:43:12:4312 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/stores/services/c542f01a-5b6e-4392-b89c-c495befef446 [90mat [37mSun Jun 11 2023 21:43:12 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:43:12:4312 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Fotocopy",[0m[39m
+[32m[97m	"price": 2000,[0m[39m
+[32m[97m	"pricePerSheet": 100[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:43:12:4312 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m		"name": "Fotocopy",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 2000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:43:12.328Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:43:12:4312 [32minfo[39m: [32m[96mResponse: [32m200 [37m38.995 ms [39m
+[32m[39m
+11-06-2023 21:43:20:4320 [35mhttp[39m: [35mPOST /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 201 {"name":"Laminating","price":1000,"pricePerSheet":100} - 22.055 ms[39m
+[35m[39m
+11-06-2023 21:43:20:4320 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:43:20 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:43:20:4320 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Laminating",[0m[39m
+[32m[97m	"price": 1000,[0m[39m
+[32m[97m	"pricePerSheet": 100[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:43:20:4320 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "Created",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "16b5dcd7-9aa2-44c3-8830-65641c9642f6",[0m[39m
+[32m[97m		"name": "Laminating",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 1000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:43:20.128Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:43:20.128Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:43:20:4320 [32minfo[39m: [32m[96mResponse: [32m201 [37m22.055 ms [39m
+[32m[39m
+11-06-2023 21:43:26:4326 [31merror[39m: [31m===app-error.middleware.ts===: "Service Laminating already registered in your store"[39m
+11-06-2023 21:43:26:4326 [35mhttp[39m: [35mPUT /api/v1/stores/services/c542f01a-5b6e-4392-b89c-c495befef446 400 {"name":"Laminating","price":2000,"pricePerSheet":100} - 26.535 ms[39m
+[35m[39m
+11-06-2023 21:43:26:4326 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/stores/services/c542f01a-5b6e-4392-b89c-c495befef446 [90mat [37mSun Jun 11 2023 21:43:26 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:43:26:4326 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Laminating",[0m[39m
+[32m[97m	"price": 2000,[0m[39m
+[32m[97m	"pricePerSheet": 100[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:43:26:4326 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Service Laminating already registered in your store"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:43:26:4326 [32minfo[39m: [32m[96mResponse: [33m400 [37m26.535 ms [39m
+[32m[39m
+11-06-2023 21:43:30:4330 [35mhttp[39m: [35mPUT /api/v1/stores/services/c542f01a-5b6e-4392-b89c-c495befef446 200 {"name":"Fotocopy","price":2000,"pricePerSheet":100} - 14.831 ms[39m
+[35m[39m
+11-06-2023 21:43:30:4330 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/stores/services/c542f01a-5b6e-4392-b89c-c495befef446 [90mat [37mSun Jun 11 2023 21:43:30 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:43:30:4330 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Fotocopy",[0m[39m
+[32m[97m	"price": 2000,[0m[39m
+[32m[97m	"pricePerSheet": 100[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:43:30:4330 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m		"name": "Fotocopy",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 2000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:43:30.242Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:43:30:4330 [32minfo[39m: [32m[96mResponse: [32m200 [37m14.831 ms [39m
+[32m[39m
+11-06-2023 21:44:23:4423 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 200 {} - 30.260 ms[39m
+[35m[39m
+11-06-2023 21:44:23:4423 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mSun Jun 11 2023 21:44:23 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:44:23:4423 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "16b5dcd7-9aa2-44c3-8830-65641c9642f6",[0m[39m
+[32m[97m				"name": "Laminating",[0m[39m
+[32m[97m				"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"price": 1000,[0m[39m
+[32m[97m				"pricePerSheet": 100,[0m[39m
+[32m[97m				"bindingType": null,[0m[39m
+[32m[97m				"fotocopyType": null,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:43:20.128Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:43:20.128Z"[0m[39m
+[32m[97m			},[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m				"name": "Fotocopy",[0m[39m
+[32m[97m				"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"price": 2000,[0m[39m
+[32m[97m				"pricePerSheet": 100,[0m[39m
+[32m[97m				"bindingType": null,[0m[39m
+[32m[97m				"fotocopyType": null,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:43:30.242Z"[0m[39m
+[32m[97m			}[0m[39m
+[32m[97m		],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:44:23:4423 [32minfo[39m: [32m[96mResponse: [32m200 [37m30.260 ms [39m
+[32m[39m
+11-06-2023 21:44:39:4439 [35mhttp[39m: [35mGET /api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 19.457 ms[39m
+[35m[39m
+11-06-2023 21:44:39:4439 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:44:39 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:44:39:4439 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:44:39:4439 [32minfo[39m: [32m[96mResponse: [32m200 [37m19.457 ms [39m
+[32m[39m
+11-06-2023 21:44:57:4457 [35mhttp[39m: [35mGET /api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt 200 {} - 16.078 ms[39m
+[35m[39m
+11-06-2023 21:44:57:4457 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSun Jun 11 2023 21:44:57 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:44:57:4457 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:44:57:4457 [32minfo[39m: [32m[96mResponse: [32m200 [37m16.078 ms [39m
+[32m[39m
+11-06-2023 21:45:08:458 [35mhttp[39m: [35mGET /api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt 200 {} - 12.867 ms[39m
+[35m[39m
+11-06-2023 21:45:08:458 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSun Jun 11 2023 21:45:08 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:45:08:458 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:45:08:458 [32minfo[39m: [32m[96mResponse: [32m200 [37m12.867 ms [39m
+[32m[39m
+11-06-2023 21:45:08:458 [35mhttp[39m: [35mGET /api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt 200 {} - 29.142 ms[39m
+[35m[39m
+11-06-2023 21:45:08:458 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSun Jun 11 2023 21:45:08 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:45:08:458 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:45:08:458 [32minfo[39m: [32m[96mResponse: [32m200 [37m29.142 ms [39m
+[32m[39m
+11-06-2023 21:45:09:459 [35mhttp[39m: [35mGET /api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt 200 {} - 15.963 ms[39m
+[35m[39m
+11-06-2023 21:45:09:459 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSun Jun 11 2023 21:45:09 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:45:09:459 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:45:09:459 [32minfo[39m: [32m[96mResponse: [32m200 [37m15.963 ms [39m
+[32m[39m
+11-06-2023 21:45:09:459 [35mhttp[39m: [35mGET /api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt 200 {} - 24.451 ms[39m
+[35m[39m
+11-06-2023 21:45:09:459 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSun Jun 11 2023 21:45:09 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:45:09:459 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:45:09:459 [32minfo[39m: [32m[96mResponse: [32m200 [37m24.451 ms [39m
+[32m[39m
+11-06-2023 21:45:10:4510 [35mhttp[39m: [35mGET /api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt 200 {} - 16.393 ms[39m
+[35m[39m
+11-06-2023 21:45:10:4510 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSun Jun 11 2023 21:45:10 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:45:10:4510 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:45:10:4510 [32minfo[39m: [32m[96mResponse: [32m200 [37m16.393 ms [39m
+[32m[39m
+11-06-2023 21:45:10:4510 [35mhttp[39m: [35mGET /api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt 200 {} - 14.294 ms[39m
+[35m[39m
+11-06-2023 21:45:10:4510 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSun Jun 11 2023 21:45:10 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:45:10:4510 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:45:10:4510 [32minfo[39m: [32m[96mResponse: [32m200 [37m14.294 ms [39m
+[32m[39m
+11-06-2023 21:45:19:4519 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 67.404 ms[39m
+[35m[39m
+11-06-2023 21:45:19:4519 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:45:19 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:45:19:4519 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:45:19:4519 [32minfo[39m: [32m[96mResponse: [32m200 [37m67.404 ms [39m
+[32m[39m
+11-06-2023 21:45:21:4521 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 14.502 ms[39m
+[35m[39m
+11-06-2023 21:45:21:4521 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:45:21 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:45:21:4521 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:45:21:4521 [32minfo[39m: [32m[96mResponse: [32m200 [37m14.502 ms [39m
+[32m[39m
+11-06-2023 21:45:21:4521 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 17.948 ms[39m
+[35m[39m
+11-06-2023 21:45:21:4521 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mSun Jun 11 2023 21:45:21 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:45:21:4521 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:45:21:4521 [32minfo[39m: [32m[96mResponse: [32m200 [37m17.948 ms [39m
+[32m[39m
+11-06-2023 21:45:25:4525 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Approved 200 {} - 21.837 ms[39m
+[35m[39m
+11-06-2023 21:45:25:4525 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Approved [90mat [37mSun Jun 11 2023 21:45:25 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:45:25:4525 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"name": "Jaya Abadi",[0m[39m
+[32m[97m				"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m				"phoneNumber": "089898943497",[0m[39m
+[32m[97m				"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m				"address": "Kampus Widyatama",[0m[39m
+[32m[97m				"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m				"provinceCode": "32",[0m[39m
+[32m[97m				"regencyCode": "3273",[0m[39m
+[32m[97m				"districtCode": "327314",[0m[39m
+[32m[97m				"postalCode": "40125",[0m[39m
+[32m[97m				"mapCoordinate": {[0m[39m
+[32m[97m					"latitude": -6.8979318,[0m[39m
+[32m[97m					"longitude": 107.6448221[0m[39m
+[32m[97m				},[0m[39m
+[32m[97m				"storeLogo": null,[0m[39m
+[32m[97m				"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"nik": "3321116502910000",[0m[39m
+[32m[97m				"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"npwp": null,[0m[39m
+[32m[97m				"npwpPhoto": null,[0m[39m
+[32m[97m				"userId": "c238c66b-37b4-4d0f-90f9-78d0cb61a43e",[0m[39m
+[32m[97m				"status": "Approved",[0m[39m
+[32m[97m				"isOpen": false,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:31:08.747Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:35:26.876Z",[0m[39m
+[32m[97m[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+11-06-2023 21:45:25:4525 [32minfo[39m: [32m[96mResponse: [32m200 [37m21.837 ms [39m
+[32m[39m
+11-06-2023 21:45:29:4529 [35mhttp[39m: [35mGET /api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt 200 {} - 13.238 ms[39m
+[35m[39m
+11-06-2023 21:45:29:4529 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/:storeId?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSun Jun 11 2023 21:45:29 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:45:29:4529 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:45:29:4529 [32minfo[39m: [32m[96mResponse: [32m200 [37m13.238 ms [39m
+[32m[39m
+11-06-2023 21:45:31:4531 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8?limit=10&page=1&sort=desc&column=createdAt 200 {} - 13.562 ms[39m
+[35m[39m
+11-06-2023 21:45:31:4531 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSun Jun 11 2023 21:45:31 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:45:31:4531 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "16b5dcd7-9aa2-44c3-8830-65641c9642f6",[0m[39m
+[32m[97m				"name": "Laminating",[0m[39m
+[32m[97m				"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"price": 1000,[0m[39m
+[32m[97m				"pricePerSheet": 100,[0m[39m
+[32m[97m				"bindingType": null,[0m[39m
+[32m[97m				"fotocopyType": null,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:43:20.128Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:43:20.128Z"[0m[39m
+[32m[97m			},[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m				"name": "Fotocopy",[0m[39m
+[32m[97m				"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"price": 2000,[0m[39m
+[32m[97m				"pricePerSheet": 100,[0m[39m
+[32m[97m				"bindingType": null,[0m[39m
+[32m[97m				"fotocopyType": null,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:43:30.242Z"[0m[39m
+[32m[97m			}[0m[39m
+[32m[97m		],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:45:31:4531 [32minfo[39m: [32m[96mResponse: [32m200 [37m13.562 ms [39m
+[32m[39m
+11-06-2023 21:45:57:4557 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8?limit=10&page=1&sort=desc&column=createdAt 200 {} - 18.544 ms[39m
+[35m[39m
+11-06-2023 21:45:57:4557 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSun Jun 11 2023 21:45:57 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:45:57:4557 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 2,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "16b5dcd7-9aa2-44c3-8830-65641c9642f6",[0m[39m
+[32m[97m				"name": "Laminating",[0m[39m
+[32m[97m				"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"price": 1000,[0m[39m
+[32m[97m				"pricePerSheet": 100,[0m[39m
+[32m[97m				"bindingType": null,[0m[39m
+[32m[97m				"fotocopyType": null,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:43:20.128Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:43:20.128Z"[0m[39m
+[32m[97m			},[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m				"name": "Fotocopy",[0m[39m
+[32m[97m				"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"price": 2000,[0m[39m
+[32m[97m				"pricePerSheet": 100,[0m[39m
+[32m[97m				"bindingType": null,[0m[39m
+[32m[97m				"fotocopyType": null,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:43:30.242Z"[0m[39m
+[32m[97m			}[0m[39m
+[32m[97m		],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:45:57:4557 [32minfo[39m: [32m[96mResponse: [32m200 [37m18.544 ms [39m
+[32m[39m
+11-06-2023 21:46:03:463 [35mhttp[39m: [35mDELETE /api/v1/stores/services/16b5dcd7-9aa2-44c3-8830-65641c9642f6 200 {} - 27.180 ms[39m
+[35m[39m
+11-06-2023 21:46:03:463 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mDELETE [97m/api/v1/stores/services/16b5dcd7-9aa2-44c3-8830-65641c9642f6 [90mat [37mSun Jun 11 2023 21:46:03 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:46:03:463 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "16b5dcd7-9aa2-44c3-8830-65641c9642f6",[0m[39m
+[32m[97m		"name": "Laminating",[0m[39m
+[32m[97m		"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m		"price": 1000,[0m[39m
+[32m[97m		"pricePerSheet": 100,[0m[39m
+[32m[97m		"bindingType": null,[0m[39m
+[32m[97m		"fotocopyType": null,[0m[39m
+[32m[97m		"createdAt": "2023-06-11T14:43:20.128Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-11T14:43:20.128Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:46:03:463 [32minfo[39m: [32m[96mResponse: [32m200 [37m27.180 ms [39m
+[32m[39m
+11-06-2023 21:46:06:466 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8?limit=10&page=1&sort=desc&column=createdAt 200 {} - 14.302 ms[39m
+[35m[39m
+11-06-2023 21:46:06:466 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8?limit=10&page=1&sort=desc&column=createdAt [90mat [37mSun Jun 11 2023 21:46:06 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:46:06:466 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "c542f01a-5b6e-4392-b89c-c495befef446",[0m[39m
+[32m[97m				"name": "Fotocopy",[0m[39m
+[32m[97m				"storeId": "601eea35-4772-469e-ae40-da03cc5297f8",[0m[39m
+[32m[97m				"price": 2000,[0m[39m
+[32m[97m				"pricePerSheet": 100,[0m[39m
+[32m[97m				"bindingType": null,[0m[39m
+[32m[97m				"fotocopyType": null,[0m[39m
+[32m[97m				"createdAt": "2023-06-11T14:35:39.818Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-11T14:43:30.242Z"[0m[39m
+[32m[97m			}[0m[39m
+[32m[97m		],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:46:06:466 [32minfo[39m: [32m[96mResponse: [32m200 [37m14.302 ms [39m
+[32m[39m
+11-06-2023 21:46:21:4621 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:46:21:4621 [35mhttp[39m: [35mDELETE /api/v1/stores/services/16b5dcd7-9aa2-44c3-8830-65641c9642f 404 {} - 17.604 ms[39m
+[35m[39m
+11-06-2023 21:46:21:4621 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mDELETE [97m/api/v1/stores/services/16b5dcd7-9aa2-44c3-8830-65641c9642f [90mat [37mSun Jun 11 2023 21:46:21 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:46:21:4621 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:46:21:4621 [32minfo[39m: [32m[96mResponse: [33m404 [37m17.604 ms [39m
+[32m[39m
+11-06-2023 21:46:23:4623 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:46:23:4623 [35mhttp[39m: [35mDELETE /api/v1/stores/services/16b5dcd7-9aa2-44c3-8830-65641c9642f6 404 {} - 12.133 ms[39m
+[35m[39m
+11-06-2023 21:46:23:4623 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mDELETE [97m/api/v1/stores/services/16b5dcd7-9aa2-44c3-8830-65641c9642f6 [90mat [37mSun Jun 11 2023 21:46:23 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:46:23:4623 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:46:23:4623 [32minfo[39m: [32m[96mResponse: [33m404 [37m12.133 ms [39m
+[32m[39m
+11-06-2023 21:46:24:4624 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:46:24:4624 [35mhttp[39m: [35mDELETE /api/v1/stores/services/16b5dcd7-9aa2-44c3-8830-65641c9642f6 404 {} - 8.417 ms[39m
+[35m[39m
+11-06-2023 21:46:24:4624 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mDELETE [97m/api/v1/stores/services/16b5dcd7-9aa2-44c3-8830-65641c9642f6 [90mat [37mSun Jun 11 2023 21:46:24 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:46:24:4624 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:46:24:4624 [32minfo[39m: [32m[96mResponse: [33m404 [37m8.417 ms [39m
+[32m[39m
+11-06-2023 21:46:29:4629 [31merror[39m: [31m===app-error.middleware.ts===: "Store Service not found"[39m
+11-06-2023 21:46:29:4629 [35mhttp[39m: [35mDELETE /api/v1/stores/services/16b5dcd7-9aa2-44c3-8830-65641c9642f6 404 {} - 12.393 ms[39m
+[35m[39m
+11-06-2023 21:46:29:4629 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mDELETE [97m/api/v1/stores/services/16b5dcd7-9aa2-44c3-8830-65641c9642f6 [90mat [37mSun Jun 11 2023 21:46:29 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+11-06-2023 21:46:29:4629 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store Service not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+11-06-2023 21:46:29:4629 [32minfo[39m: [32m[96mResponse: [33m404 [37m12.393 ms [39m
+[32m[39m

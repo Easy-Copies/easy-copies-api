@@ -34,7 +34,7 @@ const storeService = new StoreService()
 // Init Prisma
 const prisma = new PrismaClient()
 
-export class StoreApprovalController implements IStoreApprovalControllerV1 {
+export class StoreApprovalControllerV1 implements IStoreApprovalControllerV1 {
 	/**
 	 * @description Map approval status name
 	 *
