@@ -92,7 +92,7 @@ export class UserControllerV1 implements IUserControllerV1 {
 				appCommonService.paginateArgs(req.query)
 			)
 			const userListPaginated = appCommonService.paginate(
-				{ result: userList, total: await prisma.role.count() },
+				{ result: userList, total: await prisma.user.count() },
 				req.query
 			)
 

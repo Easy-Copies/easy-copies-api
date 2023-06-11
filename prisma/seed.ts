@@ -15,9 +15,6 @@ import { users } from './seeders/seed-user'
 import { roles } from './seeders/seed-role'
 import { permissions } from './seeders/seed-permission'
 
-// Types
-import { EAppPermission } from '../src/app/types/app-permission.type'
-
 // Init Prisma
 const prisma = new PrismaClient()
 
@@ -133,9 +130,7 @@ const assignRoleToPermissions = async () => {
 								connect: { code }
 							},
 							actions: {
-								create: ![EAppPermission.STORE_MANAGEMENT_APPROVAL].includes(
-									code as EAppPermission
-								),
+								create: true,
 								read: true,
 								update: true,
 								delete: true
