@@ -1,121 +1,486 @@
-2023-06-09 00:34:28:3428 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 530 - 195.602 ms[39m
+13-06-2023 23:03:40:340 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+13-06-2023 23:03:40:340 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+13-06-2023 23:03:41:341 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+13-06-2023 23:04:21:421 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+13-06-2023 23:04:21:421 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+13-06-2023 23:04:23:423 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+13-06-2023 23:13:35:1335 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+13-06-2023 23:13:35:1335 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+13-06-2023 23:13:37:1337 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+13-06-2023 23:22:07:227 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+13-06-2023 23:22:07:227 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+13-06-2023 23:22:08:228 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+13-06-2023 23:22:59:2259 [31merror[39m: [31m===app-error.middleware.ts===: "jwt expired"[39m
+13-06-2023 23:22:59:2259 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 401 {} - 12.527 ms[39m
 [35m[39m
-09-06-2023 00:34:58:3458 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 530 - 163.454 ms[39m
-[35m[39m
-09-06-2023 00:35:25:3525 [35mhttp[39m: [35mGET /api/v1/regions/provinces 200 1272 - 138.047 ms[39m
-[35m[39m
-09-06-2023 00:36:29:3629 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 530 - 108.039 ms[39m
-[35m[39m
-09-06-2023 00:41:36:4136 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:41:36:4136 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:41:37:4137 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:41:37:4137 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:41:49:4149 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 530 - 192.066 ms[39m
-[35m[39m
-09-06-2023 00:42:34:4234 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:42:34:4234 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:42:35:4235 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:43:36:4336 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:43:36:4336 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:43:37:4337 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:43:43:4343 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:43:43:4343 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:43:43:4343 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:43:43:4343 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:43:46:4346 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:43:46:4346 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:43:47:4347 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:43:52:4352 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:43:52:4352 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:43:55:4355 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:43:55:4355 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:43:55:4355 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:44:05:445 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:44:05:445 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:44:08:448 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:44:08:448 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:44:09:449 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:44:25:4425 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:44:25:4425 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:44:27:4427 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:44:27:4427 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:44:28:4428 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:44:52:4452 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:44:52:4452 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:44:55:4455 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:44:55:4455 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:44:56:4456 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:44:56:4456 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - 141.971 ms[39m
-[35m[39m
-09-06-2023 00:45:19:4519 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:45:19:4519 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:45:19:4519 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:45:22:4522 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:45:22:4522 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:45:23:4523 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:45:30:4530 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:45:30:4530 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:45:33:4533 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:45:33:4533 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:45:33:4533 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:45:34:4534 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - 127.294 ms[39m
-[35m[39m
-09-06-2023 00:45:39:4539 [31merror[39m: [31m===app-error.middleware.ts===: "Invalid credentials"[39m
-09-06-2023 00:45:39:4539 [35mhttp[39m: [35mPOST /api/v1/auth/login 400 {"email":"testhudaprasetyo@gmail.com","password":"password"} - 5.730 ms[39m
-[35m[39m
-09-06-2023 00:45:49:4549 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - 99.737 ms[39m
-[35m[39m
-09-06-2023 00:46:31:4631 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:46:31:4631 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:46:32:4632 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:46:36:4636 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:46:36:4636 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:46:38:4638 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:46:38:4638 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:46:39:4639 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - - 122.161 ms[39m
-[35m[39m
-09-06-2023 00:46:39:4639 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:46:50:4650 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:46:50:4650 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:46:51:4651 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:46:52:4652 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - - 130.869 ms[39m
-[35m[39m
-09-06-2023 00:48:25:4825 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:48:25:4825 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:48:26:4826 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:48:31:4831 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:48:31:4831 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:48:32:4832 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:48:34:4834 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - 130.461 ms[39m
-[35m[39m
-09-06-2023 00:49:00:490 [31merror[39m: [31m===app-error.middleware.ts===: "Invalid credentials"[39m
-09-06-2023 00:49:00:490 [35mhttp[39m: [35mPOST /api/v1/auth/login 400 {"email":"testhudaprasetyo@gmail.com","password":"password"} - 15.686 ms[39m
-[35m[39m
-09-06-2023 00:50:52:5052 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:50:52:5052 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:50:53:5053 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:52:29:5229 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
-09-06-2023 00:52:29:5229 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
-09-06-2023 00:52:30:5230 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
-09-06-2023 00:52:32:5232 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - 147.736 ms[39m
-[35m[39m
-09-06-2023 00:52:32:5232 [32minfo[39m: [32m[39m
-[32m[96mRequest: [93mPOST [97m/api/v1/auth/login [90mat [37mFri Jun 09 2023 00:52:32 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+13-06-2023 23:22:59:2259 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mTue Jun 13 2023 23:22:59 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
 [32m[39m
-09-06-2023 00:52:32:5232 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+13-06-2023 23:22:59:2259 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "jwt expired"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:22:59:2259 [32minfo[39m: [32m[96mResponse: [33m401 [37m12.527 ms [39m
+[32m[39m
+13-06-2023 23:23:04:234 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - 168.568 ms[39m
+[35m[39m
+13-06-2023 23:23:04:234 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/auth/login [90mat [37mTue Jun 13 2023 23:23:04 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:23:04:234 [32minfo[39m: [32m[95mRequest Body:[0m[39m
 [32m[97m{[0m[39m
 [32m[97m	"email": "test.hudaprasetyo@gmail.com",[0m[39m
 [32m[97m	"password": "password"[0m[39m
 [32m[97m}[0m[39m
 [32m[39m
-09-06-2023 00:52:32:5232 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+13-06-2023 23:23:04:234 [32minfo[39m: [32m[95mResponse Body:[0m[39m
 [32m[97m{[0m[39m
 [32m[97m	"message": "OK",[0m[39m
 [32m[97m	"result": {[0m[39m
-[32m[97m		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkMGMxOTg3LTVjNWQtNDBmNS1iM2MyLTgwODQxYWIwMTNiNyIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2MjQ2NzUyLCJleHAiOjE2ODYyNDcwNTJ9.0YBYsibKiHe58Uoocx3Deas07Up5_BFLVlvRkvwAZds",[0m[39m
-[32m[97m		"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkMGMxOTg3LTVjNWQtNDBmNS1iM2MyLTgwODQxYWIwMTNiNyIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2MjQ2NzUyLCJleHAiOjE2ODYyNDczNTJ9.UbdlAmTw4mOwVwJmop9vLGmVJivCArfTn0QFp03on4o"[0m[39m
+[32m[97m		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwMTBmYTIwLTZhMmItNGQxZi05ZWFiLTc0OGMzNjI0NThlNiIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NjczMzg0LCJleHAiOjE2ODY2NzM2ODR9.kYLx8tI6gWDt0tUbTneVxhX4goQkc8tTlFn6onEjlik",[0m[39m
+[32m[97m		"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwMTBmYTIwLTZhMmItNGQxZi05ZWFiLTc0OGMzNjI0NThlNiIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NjczMzg0LCJleHAiOjE2ODY2NzM5ODR9.smNVyb1FdH8tl9cIy4KO23GQOVFmw3SdCF3yjoSy9c4"[0m[39m
 [32m[97m	}[0m[39m
 [32m[97m}[0m[39m
 [32m[39m
-09-06-2023 00:52:32:5232 [32minfo[39m: [32m[96mResponse: [32m200 [37m147.736 ms [39m
+13-06-2023 23:23:04:234 [32minfo[39m: [32m[96mResponse: [32m200 [37m168.568 ms [39m
 [32m[39m
+13-06-2023 23:23:06:236 [31merror[39m: [31m===app-error.middleware.ts===: "You did not have active role"[39m
+13-06-2023 23:23:06:236 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 403 {} - 76.934 ms[39m
+[35m[39m
+13-06-2023 23:23:06:236 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mTue Jun 13 2023 23:23:06 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:23:06:236 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "You did not have active role"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:23:06:236 [32minfo[39m: [32m[96mResponse: [33m403 [37m76.934 ms [39m
+[32m[39m
+13-06-2023 23:23:09:239 [35mhttp[39m: [35mGET /api/v1/auth/roles 200 {} - 12.380 ms[39m
+[35m[39m
+13-06-2023 23:23:09:239 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/auth/roles [90mat [37mTue Jun 13 2023 23:23:09 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:23:09:239 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"id": "8f97a14c-8095-481a-a4d6-36afe7584698",[0m[39m
+[32m[97m			"name": "Admin",[0m[39m
+[32m[97m			"isActive": false[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:23:09:239 [32minfo[39m: [32m[96mResponse: [32m200 [37m12.380 ms [39m
+[32m[39m
+13-06-2023 23:23:15:2315 [35mhttp[39m: [35mPUT /api/v1/auth/roles/change-active 200 {"roleId":"8f97a14c-8095-481a-a4d6-36afe7584698"} - 28.051 ms[39m
+[35m[39m
+13-06-2023 23:23:15:2315 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPUT [97m/api/v1/auth/roles/change-active [90mat [37mTue Jun 13 2023 23:23:15 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:23:15:2315 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"roleId": "8f97a14c-8095-481a-a4d6-36afe7584698"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:23:15:2315 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "Role Admin successfully activated",[0m[39m
+[32m[97m	"result": null[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:23:15:2315 [32minfo[39m: [32m[96mResponse: [32m200 [37m28.051 ms [39m
+[32m[39m
+13-06-2023 23:23:19:2319 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 141.056 ms[39m
+[35m[39m
+13-06-2023 23:23:19:2319 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mTue Jun 13 2023 23:23:19 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:23:19:2319 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 0,[0m[39m
+[32m[97m		"totalRows": 0,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:23:19:2319 [32minfo[39m: [32m[96mResponse: [32m200 [37m141.056 ms [39m
+[32m[39m
+13-06-2023 23:24:03:243 [31merror[39m: [31m===app-error.middleware.ts===: "\nInvalid `prisma.store.findMany()` invocation in\n/Users/hudaboss/Projects/EasyCopies/API/src/store/controllers/store-v1.controller.ts:63:41\n\n  60 \t\treq.currentUser?.id as string\n  61 \t)\n  62 \n→ 63 const storeList = await prisma.store.findMany({\n       take: 10,\n       skip: 0,\n       orderBy: {\n         createdAt: 'desc'\n       },\n       include: {\n         province: true,\n         district: true,\n         regency: true,\n         user: {\n           select: {\n             id: true,\n             name: true\n           }\n         }\n       },\n       where: {\n         userId: undefined,\n         status: {\n           equals: 'WaitingBeProcess'\n         }\n         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n       }\n     })\n\nArgument status: Provided value \n{\n  equals: 'WaitingBeProcess'\n}\nof type Json on prisma.findManyStore is not a StoreApprovalStatus.\n→ Possible values: StoreApprovalStatus.Pending, StoreApprovalStatus.Cancel, StoreApprovalStatus.Rejected, StoreApprovalStatus.Revise, StoreApprovalStatus.Revised, StoreApprovalStatus.OnReview, StoreApprovalStatus.Approved\n\n"[39m
+13-06-2023 23:24:03:243 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess 500 {} - 36.197 ms[39m
+[35m[39m
+13-06-2023 23:24:03:243 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess [90mat [37mTue Jun 13 2023 23:24:03 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:24:03:243 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Prisma.PrismaClientValidationError: \nInvalid `prisma.store.findMany()` invocation in\n/Users/hudaboss/Projects/EasyCopies/API/src/store/controllers/store-v1.controller.ts:63:41\n\n  60 \t\treq.currentUser?.id as string\n  61 \t)\n  62 \n→ 63 const storeList = await prisma.store.findMany({\n       take: 10,\n       skip: 0,\n       orderBy: {\n         createdAt: 'desc'\n       },\n       include: {\n         province: true,\n         district: true,\n         regency: true,\n         user: {\n           select: {\n             id: true,\n             name: true\n           }\n         }\n       },\n       where: {\n         userId: undefined,\n         status: {\n           equals: 'WaitingBeProcess'\n         }\n         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n       }\n     })\n\nArgument status: Provided value \n{\n  equals: 'WaitingBeProcess'\n}\nof type Json on prisma.findManyStore is not a StoreApprovalStatus.\n→ Possible values: StoreApprovalStatus.Pendi[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+13-06-2023 23:24:03:243 [32minfo[39m: [32m[96mResponse: [31m500 [37m36.197 ms [39m
+[32m[39m
+13-06-2023 23:24:23:2423 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+13-06-2023 23:24:23:2423 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+13-06-2023 23:24:24:2424 [31merror[39m: [31m===app-error.middleware.ts===: "\nInvalid `prisma.store.findMany()` invocation in\n/Users/hudaboss/Projects/EasyCopies/API/src/store/controllers/store-v1.controller.ts:63:41\n\n  60 \t\treq.currentUser?.id as string\n  61 \t)\n  62 \n→ 63 const storeList = await prisma.store.findMany({\n       take: 10,\n       skip: 0,\n       orderBy: {\n         createdAt: 'desc'\n       },\n       include: {\n         province: true,\n         district: true,\n         regency: true,\n         user: {\n           select: {\n             id: true,\n             name: true\n           }\n         }\n       },\n       where: {\n         userId: undefined,\n         status: {\n           equals: 'WaitingBeProcess'\n         }\n         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n       }\n     })\n\nArgument status: Provided value \n{\n  equals: 'WaitingBeProcess'\n}\nof type Json on prisma.findManyStore is not a StoreApprovalStatus.\n→ Possible values: StoreApprovalStatus.Pending, StoreApprovalStatus.Cancel, StoreApprovalStatus.Rejected, StoreApprovalStatus.Revise, StoreApprovalStatus.Revised, StoreApprovalStatus.OnReview, StoreApprovalStatus.Approved\n\n"[39m
+13-06-2023 23:24:24:2424 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess 500 {} - 174.776 ms[39m
+[35m[39m
+13-06-2023 23:24:24:2424 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess [90mat [37mTue Jun 13 2023 23:24:24 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:24:24:2424 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Prisma.PrismaClientValidationError: \nInvalid `prisma.store.findMany()` invocation in\n/Users/hudaboss/Projects/EasyCopies/API/src/store/controllers/store-v1.controller.ts:63:41\n\n  60 \t\treq.currentUser?.id as string\n  61 \t)\n  62 \n→ 63 const storeList = await prisma.store.findMany({\n       take: 10,\n       skip: 0,\n       orderBy: {\n         createdAt: 'desc'\n       },\n       include: {\n         province: true,\n         district: true,\n         regency: true,\n         user: {\n           select: {\n             id: true,\n             name: true\n           }\n         }\n       },\n       where: {\n         userId: undefined,\n         status: {\n           equals: 'WaitingBeProcess'\n         }\n         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n       }\n     })\n\nArgument status: Provided value \n{\n  equals: 'WaitingBeProcess'\n}\nof type Json on prisma.findManyStore is not a StoreApprovalStatus.\n→ Possible values: StoreApprovalStatus.Pendi[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+13-06-2023 23:24:24:2424 [32minfo[39m: [32m[96mResponse: [31m500 [37m174.776 ms [39m
+[32m[39m
+13-06-2023 23:24:24:2424 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m
+13-06-2023 23:24:25:2425 [31merror[39m: [31m===app-error.middleware.ts===: "\nInvalid `prisma.store.findMany()` invocation in\n/Users/hudaboss/Projects/EasyCopies/API/src/store/controllers/store-v1.controller.ts:63:41\n\n  60 \t\treq.currentUser?.id as string\n  61 \t)\n  62 \n→ 63 const storeList = await prisma.store.findMany({\n       take: 10,\n       skip: 0,\n       orderBy: {\n         createdAt: 'desc'\n       },\n       include: {\n         province: true,\n         district: true,\n         regency: true,\n         user: {\n           select: {\n             id: true,\n             name: true\n           }\n         }\n       },\n       where: {\n         userId: undefined,\n         status: {\n           equals: 'WaitingBeProcess'\n         }\n         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n       }\n     })\n\nArgument status: Provided value \n{\n  equals: 'WaitingBeProcess'\n}\nof type Json on prisma.findManyStore is not a StoreApprovalStatus.\n→ Possible values: StoreApprovalStatus.Pending, StoreApprovalStatus.Cancel, StoreApprovalStatus.Rejected, StoreApprovalStatus.Revise, StoreApprovalStatus.Revised, StoreApprovalStatus.OnReview, StoreApprovalStatus.Approved\n\n"[39m
+13-06-2023 23:24:25:2425 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess 500 {} - 25.374 ms[39m
+[35m[39m
+13-06-2023 23:24:25:2425 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess [90mat [37mTue Jun 13 2023 23:24:25 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:24:25:2425 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Prisma.PrismaClientValidationError: \nInvalid `prisma.store.findMany()` invocation in\n/Users/hudaboss/Projects/EasyCopies/API/src/store/controllers/store-v1.controller.ts:63:41\n\n  60 \t\treq.currentUser?.id as string\n  61 \t)\n  62 \n→ 63 const storeList = await prisma.store.findMany({\n       take: 10,\n       skip: 0,\n       orderBy: {\n         createdAt: 'desc'\n       },\n       include: {\n         province: true,\n         district: true,\n         regency: true,\n         user: {\n           select: {\n             id: true,\n             name: true\n           }\n         }\n       },\n       where: {\n         userId: undefined,\n         status: {\n           equals: 'WaitingBeProcess'\n         }\n         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n       }\n     })\n\nArgument status: Provided value \n{\n  equals: 'WaitingBeProcess'\n}\nof type Json on prisma.findManyStore is not a StoreApprovalStatus.\n→ Possible values: StoreApprovalStatus.Pendi[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+13-06-2023 23:24:25:2425 [32minfo[39m: [32m[96mResponse: [31m500 [37m25.374 ms [39m
+[32m[39m
+13-06-2023 23:24:31:2431 [31merror[39m: [31m===app-error.middleware.ts===: "\nInvalid `prisma.store.findMany()` invocation in\n/Users/hudaboss/Projects/EasyCopies/API/src/store/controllers/store-v1.controller.ts:63:41\n\n  60 \t\treq.currentUser?.id as string\n  61 \t)\n  62 \n→ 63 const storeList = await prisma.store.findMany({\n       take: 10,\n       skip: 0,\n       orderBy: {\n         createdAt: 'desc'\n       },\n       include: {\n         province: true,\n         district: true,\n         regency: true,\n         user: {\n           select: {\n             id: true,\n             name: true\n           }\n         }\n       },\n       where: {\n         userId: undefined,\n         status: {\n           equals: 'WaitingBeProcess'\n         }\n         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n       }\n     })\n\nArgument status: Provided value \n{\n  equals: 'WaitingBeProcess'\n}\nof type Json on prisma.findManyStore is not a StoreApprovalStatus.\n→ Possible values: StoreApprovalStatus.Pending, StoreApprovalStatus.Cancel, StoreApprovalStatus.Rejected, StoreApprovalStatus.Revise, StoreApprovalStatus.Revised, StoreApprovalStatus.OnReview, StoreApprovalStatus.Approved\n\n"[39m
+13-06-2023 23:24:31:2431 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess 500 {} - 22.159 ms[39m
+[35m[39m
+13-06-2023 23:24:31:2431 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess [90mat [37mTue Jun 13 2023 23:24:31 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:24:31:2431 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Prisma.PrismaClientValidationError: \nInvalid `prisma.store.findMany()` invocation in\n/Users/hudaboss/Projects/EasyCopies/API/src/store/controllers/store-v1.controller.ts:63:41\n\n  60 \t\treq.currentUser?.id as string\n  61 \t)\n  62 \n→ 63 const storeList = await prisma.store.findMany({\n       take: 10,\n       skip: 0,\n       orderBy: {\n         createdAt: 'desc'\n       },\n       include: {\n         province: true,\n         district: true,\n         regency: true,\n         user: {\n           select: {\n             id: true,\n             name: true\n           }\n         }\n       },\n       where: {\n         userId: undefined,\n         status: {\n           equals: 'WaitingBeProcess'\n         }\n         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n       }\n     })\n\nArgument status: Provided value \n{\n  equals: 'WaitingBeProcess'\n}\nof type Json on prisma.findManyStore is not a StoreApprovalStatus.\n→ Possible values: StoreApprovalStatus.Pendi[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+13-06-2023 23:24:31:2431 [32minfo[39m: [32m[96mResponse: [31m500 [37m22.159 ms [39m
+[32m[39m
+13-06-2023 23:24:35:2435 [35mhttp[39m: [35mGET /api/v1/transactions?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess 200 {} - 115.338 ms[39m
+[35m[39m
+13-06-2023 23:24:35:2435 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/transactions?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess [90mat [37mTue Jun 13 2023 23:24:35 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:24:35:2435 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 0,[0m[39m
+[32m[97m		"totalRows": 0,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:24:35:2435 [32minfo[39m: [32m[96mResponse: [32m200 [37m115.338 ms [39m
+[32m[39m
+13-06-2023 23:24:54:2454 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - 134.147 ms[39m
+[35m[39m
+13-06-2023 23:24:54:2454 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/auth/login [90mat [37mTue Jun 13 2023 23:24:54 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:24:54:2454 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m	"password": "password"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:24:54:2454 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwMTBmYTIwLTZhMmItNGQxZi05ZWFiLTc0OGMzNjI0NThlNiIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NjczNDk0LCJleHAiOjE2ODY2NzM3OTR9.M6YKFqGXE599nSZKoZ2DPII85lvdQ7tyI3Hm3g7tOHY",[0m[39m
+[32m[97m		"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwMTBmYTIwLTZhMmItNGQxZi05ZWFiLTc0OGMzNjI0NThlNiIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NjczNDk0LCJleHAiOjE2ODY2NzQwOTR9.91qcO2gzLrjezP8pIRhLkfouTvAAnvof0n4dTyljrjg"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:24:54:2454 [32minfo[39m: [32m[96mResponse: [32m200 [37m134.147 ms [39m
+[32m[39m
+13-06-2023 23:25:07:257 [35mhttp[39m: [35mPOST /api/v1/auth/login 200 {"email":"test.hudaprasetyo@gmail.com","password":"password"} - 104.023 ms[39m
+[35m[39m
+13-06-2023 23:25:07:257 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/auth/login [90mat [37mTue Jun 13 2023 23:25:07 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:25:07:257 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m	"password": "password"[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:25:07:257 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwMTBmYTIwLTZhMmItNGQxZi05ZWFiLTc0OGMzNjI0NThlNiIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NjczNTA3LCJleHAiOjE2ODY2NzM4MDd9.yOnUihCEoKSazY3cpdjSmwtxkgNAtgY6xc8HK-CmV_U",[0m[39m
+[32m[97m		"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYwMTBmYTIwLTZhMmItNGQxZi05ZWFiLTc0OGMzNjI0NThlNiIsImVtYWlsIjoidGVzdC5odWRhcHJhc2V0eW9AZ21haWwuY29tIiwiaWF0IjoxNjg2NjczNTA3LCJleHAiOjE2ODY2NzQxMDd9.Vus-wlyXXqztDSGSuRcw-VhlaEaSkWK6TvzEv0zsfus"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:25:07:257 [32minfo[39m: [32m[96mResponse: [32m200 [37m104.023 ms [39m
+[32m[39m
+13-06-2023 23:25:16:2516 [31merror[39m: [31m===app-error.middleware.ts===: "Store not found"[39m
+13-06-2023 23:25:16:2516 [35mhttp[39m: [35mPOST /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 404 {"name":"Laminating","price":1000,"pricePerSheet":100} - 85.943 ms[39m
+[35m[39m
+13-06-2023 23:25:16:2516 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8 [90mat [37mTue Jun 13 2023 23:25:16 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:25:16:2516 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Laminating",[0m[39m
+[32m[97m	"price": 1000,[0m[39m
+[32m[97m	"pricePerSheet": 100[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:25:16:2516 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Store not found"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:25:16:2516 [32minfo[39m: [32m[96mResponse: [33m404 [37m85.943 ms [39m
+[32m[39m
+13-06-2023 23:25:18:2518 [35mhttp[39m: [35mGET /api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8?limit=10&page=1&sort=desc&column=createdAt 200 {} - 30.322 ms[39m
+[35m[39m
+13-06-2023 23:25:18:2518 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores/services/601eea35-4772-469e-ae40-da03cc5297f8?limit=10&page=1&sort=desc&column=createdAt [90mat [37mTue Jun 13 2023 23:25:18 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:25:18:2518 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 0,[0m[39m
+[32m[97m		"totalRows": 0,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:25:18:2518 [32minfo[39m: [32m[96mResponse: [32m200 [37m30.322 ms [39m
+[32m[39m
+13-06-2023 23:25:55:2555 [35mhttp[39m: [35mPOST /api/v1/stores 201 {"name":"Jaya Abadi","description":"Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy","phoneNumber":"089898943497","address":"Kampus Widyatama","addressNote":"Turunan Gedung B","provinceCode":"32","regencyCode":"3273","districtCode":"327314","postalCode":"40125","mapCoordinate":{"longitude":107.6448221,"latitude":-6.8979318},"storeLogo":null,"storePhoto":"https://picsum.photos/200/300","nik":"3321116502910000","ktpPhoto":"https://picsum.photos/200/300","npwp":null,"npwpPhoto":null,"isOpen":false} - 42.554 ms[39m
+[35m[39m
+13-06-2023 23:25:55:2555 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mPOST [97m/api/v1/stores [90mat [37mTue Jun 13 2023 23:25:55 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:25:55:2555 [32minfo[39m: [32m[95mRequest Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"name": "Jaya Abadi",[0m[39m
+[32m[97m	"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m	"phoneNumber": "089898943497",[0m[39m
+[32m[97m	"address": "Kampus Widyatama",[0m[39m
+[32m[97m	"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m	"provinceCode": "32",[0m[39m
+[32m[97m	"regencyCode": "3273",[0m[39m
+[32m[97m	"districtCode": "327314",[0m[39m
+[32m[97m	"postalCode": "40125",[0m[39m
+[32m[97m	"mapCoordinate": {[0m[39m
+[32m[97m		"longitude": 107.6448221,[0m[39m
+[32m[97m		"latitude": -6.8979318[0m[39m
+[32m[97m	},[0m[39m
+[32m[97m	"storeLogo": null,[0m[39m
+[32m[97m	"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m	"nik": "3321116502910000",[0m[39m
+[32m[97m	"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m	"npwp": null,[0m[39m
+[32m[97m	"npwpPhoto": null,[0m[39m
+[32m[97m	"isOpen": false[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:25:55:2555 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "Store successfully created and waiting Admin for approval",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"id": "023e1bd2-79e7-4652-a7a4-615a83a77596",[0m[39m
+[32m[97m		"name": "Jaya Abadi",[0m[39m
+[32m[97m		"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m		"phoneNumber": "089898943497",[0m[39m
+[32m[97m		"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m		"address": "Kampus Widyatama",[0m[39m
+[32m[97m		"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m		"provinceCode": "32",[0m[39m
+[32m[97m		"regencyCode": "3273",[0m[39m
+[32m[97m		"districtCode": "327314",[0m[39m
+[32m[97m		"postalCode": "40125",[0m[39m
+[32m[97m		"mapCoordinate": {[0m[39m
+[32m[97m			"latitude": -6.8979318,[0m[39m
+[32m[97m			"longitude": 107.6448221[0m[39m
+[32m[97m		},[0m[39m
+[32m[97m		"storeLogo": null,[0m[39m
+[32m[97m		"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"nik": "3321116502910000",[0m[39m
+[32m[97m		"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m		"npwp": null,[0m[39m
+[32m[97m		"npwpPhoto": null,[0m[39m
+[32m[97m		"userId": "f010fa20-6a2b-4d1f-9eab-748c362458e6",[0m[39m
+[32m[97m		"status": "Pending",[0m[39m
+[32m[97m		"isOpen": false,[0m[39m
+[32m[97m		"createdAt": "2023-06-13T16:25:55.850Z",[0m[39m
+[32m[97m		"updatedAt": "2023-06-13T16:25:55.850Z"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:25:55:2555 [32minfo[39m: [32m[96mResponse: [32m201 [37m42.554 ms [39m
+[32m[39m
+13-06-2023 23:25:57:2557 [35mhttp[39m: [35mGET /api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending 200 {} - 20.500 ms[39m
+[35m[39m
+13-06-2023 23:25:57:2557 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/stores?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mTue Jun 13 2023 23:25:57 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:25:57:2557 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 1,[0m[39m
+[32m[97m		"totalRows": 1,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [[0m[39m
+[32m[97m			{[0m[39m
+[32m[97m				"id": "023e1bd2-79e7-4652-a7a4-615a83a77596",[0m[39m
+[32m[97m				"name": "Jaya Abadi",[0m[39m
+[32m[97m				"description": "Jaya Abadi Open 24 Jam Untuk Penerimaan Fotocopy",[0m[39m
+[32m[97m				"phoneNumber": "089898943497",[0m[39m
+[32m[97m				"email": "test.hudaprasetyo@gmail.com",[0m[39m
+[32m[97m				"address": "Kampus Widyatama",[0m[39m
+[32m[97m				"addressNote": "Turunan Gedung B",[0m[39m
+[32m[97m				"provinceCode": "32",[0m[39m
+[32m[97m				"regencyCode": "3273",[0m[39m
+[32m[97m				"districtCode": "327314",[0m[39m
+[32m[97m				"postalCode": "40125",[0m[39m
+[32m[97m				"mapCoordinate": {[0m[39m
+[32m[97m					"latitude": -6.8979318,[0m[39m
+[32m[97m					"longitude": 107.6448221[0m[39m
+[32m[97m				},[0m[39m
+[32m[97m				"storeLogo": null,[0m[39m
+[32m[97m				"storePhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"nik": "3321116502910000",[0m[39m
+[32m[97m				"ktpPhoto": "https://picsum.photos/200/300",[0m[39m
+[32m[97m				"npwp": null,[0m[39m
+[32m[97m				"npwpPhoto": null,[0m[39m
+[32m[97m				"userId": "f010fa20-6a2b-4d1f-9eab-748c362458e6",[0m[39m
+[32m[97m				"status": "Pending",[0m[39m
+[32m[97m				"isOpen": false,[0m[39m
+[32m[97m				"createdAt": "2023-06-13T16:25:55.850Z",[0m[39m
+[32m[97m				"updatedAt": "2023-06-13T16:25:55.850Z",[0m[39m
+[32m[97m	[0m[39m
+[32m[97m...[0m[39m
+[32m[39m
+13-06-2023 23:25:57:2557 [32minfo[39m: [32m[96mResponse: [32m200 [37m20.500 ms [39m
+[32m[39m
+13-06-2023 23:26:13:2613 [31merror[39m: [31m===app-error.middleware.ts===: "\nInvalid `prisma.transaction.findMany()` invocation in\n/Users/hudaboss/Projects/EasyCopies/API/src/transaction/controllers/transaction-v1.controller.ts:62:53\n\n  59 \t\treq.currentUser?.id as string\n  60 \t)\n  61 \n→ 62 const transactionList = await prisma.transaction.findMany({\n       take: 10,\n       skip: 0,\n       orderBy: {\n         createdAt: 'desc'\n       },\n       where: {\n         userId: undefined,\n         status: {\n           equals: 'Pending'\n         }\n         ~~~~~~~~~~~~~~~~~~~\n       }\n     })\n\nArgument status: Provided value \n{\n  equals: 'Pending'\n}\nof type Json on prisma.findManyTransaction is not a TransactionApprovalStatus.\n→ Possible values: TransactionApprovalStatus.WaitingBeProcess, TransactionApprovalStatus.OnProcess, TransactionApprovalStatus.Rejected, TransactionApprovalStatus.Canceled, TransactionApprovalStatus.Done\n\n"[39m
+13-06-2023 23:26:13:2613 [35mhttp[39m: [35mGET /api/v1/transactions?limit=10&page=1&sort=desc&column=createdAt&status=Pending 500 {} - 33.781 ms[39m
+[35m[39m
+13-06-2023 23:26:13:2613 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/transactions?limit=10&page=1&sort=desc&column=createdAt&status=Pending [90mat [37mTue Jun 13 2023 23:26:13 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:26:13:2613 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"errors": [[0m[39m
+[32m[97m		{[0m[39m
+[32m[97m			"message": "Prisma.PrismaClientValidationError: \nInvalid `prisma.transaction.findMany()` invocation in\n/Users/hudaboss/Projects/EasyCopies/API/src/transaction/controllers/transaction-v1.controller.ts:62:53\n\n  59 \t\treq.currentUser?.id as string\n  60 \t)\n  61 \n→ 62 const transactionList = await prisma.transaction.findMany({\n       take: 10,\n       skip: 0,\n       orderBy: {\n         createdAt: 'desc'\n       },\n       where: {\n         userId: undefined,\n         status: {\n           equals: 'Pending'\n         }\n         ~~~~~~~~~~~~~~~~~~~\n       }\n     })\n\nArgument status: Provided value \n{\n  equals: 'Pending'\n}\nof type Json on prisma.findManyTransaction is not a TransactionApprovalStatus.\n→ Possible values: TransactionApprovalStatus.WaitingBeProcess, TransactionApprovalStatus.OnProcess, TransactionApprovalStatus.Rejected, TransactionApprovalStatus.Canceled, TransactionApprovalStatus.Done\n\n"[0m[39m
+[32m[97m		}[0m[39m
+[32m[97m	][0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:26:13:2613 [32minfo[39m: [32m[96mResponse: [31m500 [37m33.781 ms [39m
+[32m[39m
+13-06-2023 23:26:24:2624 [35mhttp[39m: [35mGET /api/v1/transactions?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess 200 {} - 28.349 ms[39m
+[35m[39m
+13-06-2023 23:26:24:2624 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/transactions?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess [90mat [37mTue Jun 13 2023 23:26:24 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:26:24:2624 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 0,[0m[39m
+[32m[97m		"totalRows": 0,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:26:24:2624 [32minfo[39m: [32m[96mResponse: [32m200 [37m28.349 ms [39m
+[32m[39m
+13-06-2023 23:26:30:2630 [35mhttp[39m: [35mGET /api/v1/transactions?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess 200 {} - 16.620 ms[39m
+[35m[39m
+13-06-2023 23:26:30:2630 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/transactions?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess [90mat [37mTue Jun 13 2023 23:26:30 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:26:30:2630 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 0,[0m[39m
+[32m[97m		"totalRows": 0,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:26:30:2630 [32minfo[39m: [32m[96mResponse: [32m200 [37m16.620 ms [39m
+[32m[39m
+13-06-2023 23:27:24:2724 [35mhttp[39m: [35mGET /api/v1/transactions?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess 200 {} - 24.666 ms[39m
+[35m[39m
+13-06-2023 23:27:24:2724 [32minfo[39m: [32m[39m
+[32m[96mRequest: [93mGET [97m/api/v1/transactions?limit=10&page=1&sort=desc&column=createdAt&status=WaitingBeProcess [90mat [37mTue Jun 13 2023 23:27:24 GMT+0700, [90mIP: [37m::1[0m, [90mUser Agent: PostmanRuntime/7.32.2[0m[39m
+[32m[39m
+13-06-2023 23:27:24:2724 [32minfo[39m: [32m[95mResponse Body:[0m[39m
+[32m[97m{[0m[39m
+[32m[97m	"message": "OK",[0m[39m
+[32m[97m	"result": {[0m[39m
+[32m[97m		"limit": 10,[0m[39m
+[32m[97m		"totalPages": 0,[0m[39m
+[32m[97m		"totalRows": 0,[0m[39m
+[32m[97m		"page": 1,[0m[39m
+[32m[97m		"rows": [],[0m[39m
+[32m[97m		"sort": "desc"[0m[39m
+[32m[97m	}[0m[39m
+[32m[97m}[0m[39m
+[32m[39m
+13-06-2023 23:27:24:2724 [32minfo[39m: [32m[96mResponse: [32m200 [37m24.666 ms [39m
+[32m[39m
+14-06-2023 00:15:38:1538 [32minfo[39m: [32m===app.ts===: Prisma ORM connected![39m
+14-06-2023 00:15:38:1538 [32minfo[39m: [32m===app.ts===: Easy Copies API started at port 5000[39m
+14-06-2023 00:15:40:1540 [32minfo[39m: [32m===app-nodemailer-wrapper.service.ts===: Ready to send mail![39m

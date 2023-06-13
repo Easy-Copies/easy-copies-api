@@ -87,7 +87,7 @@ export class StoreServiceControllerV1 implements IStoreServiceControllerV1 {
 				.not()
 				.isEmpty()
 				.isNumeric()
-				.withMessage('Price should be numeric')
+				.withMessage('Price Per Sheet should be numeric')
 		],
 		permission: {
 			permissionCode: EAppPermission.STORE_MANAGEMENT_SERVICE,

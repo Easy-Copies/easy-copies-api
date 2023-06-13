@@ -8,17 +8,19 @@ datasource db {
 }
 
 model User {
-  id             String              @id @default(uuid())
-  name           String              @db.VarChar(255)
-  email          String              @unique @db.VarChar(255)
-  isUserVerified Boolean             @default(false)
-  password       String              @db.VarChar(255)
-  createdAt      DateTime            @default(now())
-  updatedAt      DateTime            @updatedAt
-  tokens         Token[]
-  roles          RoleUser[]
-  stores         Store[]
-  storeApprovals StoreApprovalUser[]
+  id                   String                    @id @default(uuid())
+  name                 String                    @db.VarChar(255)
+  email                String                    @unique @db.VarChar(255)
+  isUserVerified       Boolean                   @default(false)
+  password             String                    @db.VarChar(255)
+  createdAt            DateTime                  @default(now())
+  updatedAt            DateTime                  @updatedAt
+  tokens               Token[]
+  roles                RoleUser[]
+  stores               Store[]
+  storeApprovals       StoreApprovalUser[]
+  transactions         Transaction[]
+  transactionApprovals TransactionApprovalUser[]
 
   @@map("users")
 }
@@ -198,4 +200,62 @@ enum StoreServiceName {
   Priting
   Jilid
   Fotocopy
+}
+
+model Transaction {
+  id                   String                    @id @default(uuid())
+  storeName            String
+  storePhoneNumber     String
+  storeEmail           String
+  storePrice           Float
+  storePricePerSheet   Float?
+  storeAddress         String
+  storeAddressNote     String?
+  storeProvince        Json?
+  storeRegency         Json?
+  storeDistrict        Json?
+  storePostalCode      String
+  storeMapCoordinate   Json?
+  storeLogo            String?
+  storePhoto           String
+  storeServiceType     StoreServiceName
+  inkType              InkType
+  sheetLength          Int
+  files                Json?
+  status               TransactionApprovalStatus
+  user                 User                      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId               String
+  createdAt            DateTime                  @default(now())
+  updatedAt            DateTime                  @updatedAt
+  transactionApprovals TransactionApprovalUser[]
+
+  @@map("transactions")
+}
+
+enum InkType {
+  BlackWhite
+  Color
+}
+
+model TransactionApprovalUser {
+  id                String                    @id @default(uuid())
+  user              User                      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId            String
+  transaction       Transaction               @relation(fields: [transactionId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  transactionId     String
+  status            TransactionApprovalStatus
+  statusDescription String                    @db.Text
+  cancelReason      String?
+  rejectReason      String?
+  createdAt         DateTime                  @default(now())
+
+  @@map("transaction_approval_users")
+}
+
+enum TransactionApprovalStatus {
+  WaitingBeProcess
+  OnProcess
+  Rejected
+  Canceled
+  Done
 }
