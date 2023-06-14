@@ -70,7 +70,7 @@ export class TransactionApprovalControllerV1
 				.withMessage('Approval Status is required')
 		],
 		permission: {
-			permissionCode: EAppPermission.STORE_MANAGEMENT_APPROVAL,
+			permissionCode: EAppPermission.TRANSACTION_MANAGEMENT_APPROVAL,
 			permissionActions: EAppPermissionActions.UPDATE
 		},
 		config: async (req: Request, res: Response) => {
@@ -233,7 +233,7 @@ export class TransactionApprovalControllerV1
 	approvalStatusList = {
 		validateInput: [],
 		permission: {
-			permissionCode: EAppPermission.STORE_MANAGEMENT_APPROVAL,
+			permissionCode: EAppPermission.TRANSACTION_MANAGEMENT_APPROVAL,
 			permissionActions: EAppPermissionActions.UPDATE
 		},
 		config: async (req: Request, res: Response) => {

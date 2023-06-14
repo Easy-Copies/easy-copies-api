@@ -21,6 +21,7 @@ model User {
   storeApprovals       StoreApprovalUser[]
   transactions         Transaction[]
   transactionApprovals TransactionApprovalUser[]
+  transactionPayments  TransactionPayment[]
 
   @@map("users")
 }
@@ -232,6 +233,7 @@ model Transaction {
   createdAt            DateTime                  @default(now())
   updatedAt            DateTime                  @updatedAt
   transactionApprovals TransactionApprovalUser[]
+  transactionPayments  TransactionPayment[]
 
   @@map("transactions")
 }
@@ -268,4 +270,19 @@ enum TransactionApprovalStatus {
   Canceled
   Rejected
   Done
+}
+
+model TransactionPayment {
+  id            String      @id @default(uuid())
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId        String
+  transaction   Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  transactionId String
+  senderName    String
+  bankName      String
+  accountNumber String
+  file          Json
+  createdAt     DateTime    @default(now())
+
+  @@map("transaction_payments")
 }

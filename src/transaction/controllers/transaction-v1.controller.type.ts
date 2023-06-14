@@ -5,4 +5,6 @@ export interface ITransactionControllerV1 {
 	index: IAppControllerConfigRestrictionReturn
 	store: IAppControllerConfigRestrictionReturn
 	show: IAppControllerConfigRestrictionReturn
+	pay: IAppControllerConfigRestrictionReturn
+	paymentDetail: IAppControllerConfigRestrictionReturn
 }

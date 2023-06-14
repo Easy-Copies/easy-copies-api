@@ -11,8 +11,20 @@ import { appValidationMiddleware } from '@/app/middlewares/app-validation.middle
 // Initialize anything
 const router = Router()
 const transactionControllerV1 = new TransactionControllerV1()
-const { index, store, show } = transactionControllerV1
+const { index, store, show, pay, paymentDetail } = transactionControllerV1
 
+router.get(
+	'/payments/:transactionId',
+	appAuthMiddleware({ ...paymentDetail.permission }),
+	paymentDetail.config
+)
+router.post(
+	'/payments/:transactionId',
+	appAuthMiddleware({ ...pay.permission }),
+	pay.validateInput,
+	appValidationMiddleware,
+	pay.config
+)
 router.get('/', appAuthMiddleware({ ...index.permission }), index.config)
 router.post(
 	'/:storeId',

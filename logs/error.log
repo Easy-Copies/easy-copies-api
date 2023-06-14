@@ -675,3 +675,13 @@
 14-06-2023 23:11:20:1120 [31merror[39m: [31m===app-error.middleware.ts===: "Transaction not found"[39m
 14-06-2023 23:11:27:1127 [31merror[39m: [31m===app-error.middleware.ts===: "Store not found"[39m
 14-06-2023 23:11:38:1138 [31merror[39m: [31m===app-error.middleware.ts===: "Payment not supported in here!"[39m
+14-06-2023 23:39:13:3913 [31merror[39m: [31m===app-error.middleware.ts===: ""[39m
+14-06-2023 23:39:28:3928 [31merror[39m: [31m===app-error.middleware.ts===: ""[39m
+14-06-2023 23:45:17:4517 [31merror[39m: [31m===app-error.middleware.ts===: "Transaction not found"[39m
+14-06-2023 23:46:24:4624 [31merror[39m: [31m===app-error.middleware.ts===: "Transaction Status is invalid"[39m
+14-06-2023 23:50:55:5055 [31merror[39m: [31m===app-error.middleware.ts===: "Only Waiting Payment transaction!"[39m
+14-06-2023 23:51:18:5118 [31merror[39m: [31m===app-error.middleware.ts===: "Only Waiting Payment transaction!"[39m
+14-06-2023 23:52:41:5241 [31merror[39m: [31m===app-error.middleware.ts===: "Only Waiting Payment transaction!"[39m
+14-06-2023 23:58:55:5855 [31merror[39m: [31m===app-error.middleware.ts===: "jwt expired"[39m
+14-06-2023 23:58:59:5859 [31merror[39m: [31m===app-error.middleware.ts===: "Only Waiting Payment transaction!"[39m
+14-06-2023 23:59:11:5911 [31merror[39m: [31m===app-error.middleware.ts===: "Transaction Payment not found"[39m

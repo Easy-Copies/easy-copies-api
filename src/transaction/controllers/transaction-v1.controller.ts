@@ -55,14 +55,17 @@ export class TransactionControllerV1 implements ITransactionControllerV1 {
 		config: async (req: Request, res: Response) => {
 			// Common State
 			const { status } = req.query
-			let _status: TransactionApprovalStatus
+			let _status: TransactionApprovalStatus | undefined
 
 			// Set default status
-			if (!status) _status = TransactionApprovalStatus.WaitingPayment
+			if (!status) _status = undefined
 			else _status = status as TransactionApprovalStatus
 
 			// Check if status is mismatch from enum TransactionApprovalStatus
-			if (!Object.values(TransactionApprovalStatus).includes(_status))
+			if (
+				_status &&
+				!Object.values(TransactionApprovalStatus).includes(_status)
+			)
 				throw new ErrorBadRequest('Transaction Status is invalid')
 
 			// Check if user have authorization to approve
@@ -285,6 +288,134 @@ export class TransactionControllerV1 implements ITransactionControllerV1 {
 
 			const { code, ...restResponse } = SuccessOk({
 				result: transactionDetail
+			})
+			return res.status(code).json(restResponse)
+		}
+	}
+
+	/**
+	 * @description Pay transaction
+	 *
+	 *
+	 */
+	pay = {
+		validateInput: [
+			body('senderName').not().isEmpty().withMessage('Sender Name is Required'),
+			body('bankName').not().isEmpty().withMessage('Bank Name is Required'),
+			body('accountNumber')
+				.not()
+				.isEmpty()
+				.withMessage('Account Number is Required'),
+			body('file').not().isEmpty().withMessage('File is Required')
+		],
+		permission: {
+			permissionCode: EAppPermission.TRANSACTION_MANAGEMENT,
+			permissionActions: EAppPermissionActions.UPDATE
+		},
+		config: async (req: Request, res: Response) => {
+			// Common State
+			const { transactionId } = req.params
+			const { senderName, bankName, accountNumber, file } = req.body
+
+			// Get transaction detail
+			const transactionDetail = await prisma.transaction.findFirst({
+				where: {
+					id: transactionId
+				}
+			})
+
+			// Check if transaction exists
+			if (!transactionDetail) throw new ErrorNotFound('Transaction not found')
+
+			// Get current approval of transaction
+			const currentTransactionStatus =
+				await transactionService.getCurrentStatusTransactionApproval(
+					transactionDetail.id
+				)
+
+			// Check if current status is waiting for payment
+			if (
+				currentTransactionStatus !== TransactionApprovalStatus.WaitingPayment
+			) {
+				throw new ErrorBadRequest('Only Waiting Payment transaction!')
+			}
+
+			// Check if user want to check other user transaction
+			// But, bypass if user is have authorization
+			if (transactionDetail.userId !== (req.currentUser?.id as string))
+				throw new ErrorBadRequest('You cannot do this action')
+
+			// Update transaction, and create new payment
+			const [transactionPayment] = await prisma.$transaction([
+				// Create new Payment Data
+				prisma.transactionPayment.create({
+					data: {
+						userId: req.currentUser?.id as string,
+						transactionId,
+						senderName,
+						bankName,
+						accountNumber,
+						file
+					}
+				}),
+
+				// Update transaction status
+				prisma.transaction.update({
+					where: { id: transactionId },
+					data: {
+						status: TransactionApprovalStatus.WaitingConfirmation,
+						transactionApprovals: {
+							create: {
+								status: TransactionApprovalStatus.WaitingConfirmation,
+								statusDescription:
+									transactionService.generateTransactionStatusApprovalDescription(
+										TransactionApprovalStatus.WaitingConfirmation
+									),
+								user: {
+									connect: {
+										id: req.currentUser?.id as string
+									}
+								}
+							}
+						}
+					}
+				})
+			])
+
+			const { code, ...restResponse } = SuccessOk({
+				result: transactionPayment
+			})
+			return res.status(code).json(restResponse)
+		}
+	}
+
+	/**
+	 * @description Payment detail
+	 *
+	 *
+	 */
+	paymentDetail = {
+		validateInput: [],
+		permission: {
+			permissionCode: EAppPermission.TRANSACTION_MANAGEMENT,
+			permissionActions: EAppPermissionActions.READ
+		},
+		config: async (req: Request, res: Response) => {
+			// Common State
+			const { transactionId } = req.params
+
+			// Get transaction payment detail
+			const transactionPaymentDetail =
+				await prisma.transactionPayment.findFirst({
+					where: { transactionId }
+				})
+
+			// Check if transaction exists
+			if (!transactionPaymentDetail)
+				throw new ErrorNotFound('Transaction Payment not found')
+
+			const { code, ...restResponse } = SuccessOk({
+				result: transactionPaymentDetail
 			})
 			return res.status(code).json(restResponse)
 		}
