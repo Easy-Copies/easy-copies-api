@@ -7,6 +7,9 @@ export type TTransactionServiceInclude = {
 }
 
 export type TTransactionService = {
+	getCurrentStatusTransactionApproval: (
+		transactionId: string
+	) => Promise<TransactionApprovalStatus>
 	isUserHaveApprovalAuthorization: (userId: string) => Promise<boolean>
 	generateTransactionStatusApprovalDescription: (
 		status: TransactionApprovalStatus

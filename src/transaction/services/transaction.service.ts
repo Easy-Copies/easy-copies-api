@@ -18,6 +18,31 @@ const prisma = new PrismaClient()
 
 export class TransactionService implements TTransactionService {
 	/**
+	 * @description Get current status transaction approval
+	 *
+	 * @param {string} transactionId
+	 *
+	 * @return {Promise<string>} Promise<string>
+	 */
+	getCurrentStatusTransactionApproval = async (
+		transactionId: string
+	): Promise<TransactionApprovalStatus> => {
+		const store = await prisma.transaction.findFirst({
+			where: { id: transactionId },
+			include: {
+				transactionApprovals: {
+					take: 1,
+					orderBy: {
+						createdAt: 'desc'
+					}
+				}
+			}
+		})
+
+		return store?.transactionApprovals?.[0]?.status as TransactionApprovalStatus
+	}
+
+	/**
 	 * @description Get active role and permission for approval store
 	 *
 	 * @param {string} userId
