@@ -78,11 +78,6 @@ export class StoreServiceControllerV1 implements IStoreServiceControllerV1 {
 	store = {
 		validateInput: [
 			body('name').not().isEmpty().withMessage('Name is required'),
-			body('price')
-				.not()
-				.isEmpty()
-				.isNumeric()
-				.withMessage('Price should be numeric'),
 			body('pricePerSheet')
 				.not()
 				.isEmpty()
@@ -96,7 +91,7 @@ export class StoreServiceControllerV1 implements IStoreServiceControllerV1 {
 		config: async (req: Request, res: Response) => {
 			// Common State
 			const { storeId } = req.params
-			const { name, price, pricePerSheet } = req.body
+			const { name, pricePerSheet } = req.body
 
 			// Get store detail
 			const storeDetail = await prisma.store.findFirst({
@@ -127,7 +122,6 @@ export class StoreServiceControllerV1 implements IStoreServiceControllerV1 {
 			const createdStoreService = await prisma.storeService.create({
 				data: {
 					name,
-					price,
 					pricePerSheet,
 					storeId
 				}
@@ -176,11 +170,6 @@ export class StoreServiceControllerV1 implements IStoreServiceControllerV1 {
 	update = {
 		validateInput: [
 			body('name').not().isEmpty().withMessage('Name is required'),
-			body('price')
-				.not()
-				.isEmpty()
-				.isNumeric()
-				.withMessage('Price should be numeric'),
 			body('pricePerSheet')
 				.not()
 				.isEmpty()
@@ -194,7 +183,7 @@ export class StoreServiceControllerV1 implements IStoreServiceControllerV1 {
 		config: async (req: Request, res: Response) => {
 			// Common State
 			const { serviceId } = req.params
-			const { name, price, pricePerSheet } = req.body
+			const { name, pricePerSheet } = req.body
 
 			// Get detail of store service
 			const serviceDetail = await prisma.storeService.findFirst({
@@ -235,7 +224,6 @@ export class StoreServiceControllerV1 implements IStoreServiceControllerV1 {
 				where: { id: serviceDetail.id },
 				data: {
 					name,
-					price,
 					pricePerSheet,
 					storeId: storeDetail.id
 				}

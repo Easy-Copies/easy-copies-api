@@ -185,8 +185,7 @@ model StoreService {
   name          StoreServiceName
   store         Store            @relation(fields: [storeId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   storeId       String
-  price         Float
-  pricePerSheet Float?
+  pricePerSheet Float
   bindingType   String?
   fotocopyType  String?
   createdAt     DateTime         @default(now())
@@ -197,18 +196,18 @@ model StoreService {
 
 enum StoreServiceName {
   Laminating
-  Priting
+  Printing
   Jilid
   Fotocopy
 }
 
 model Transaction {
   id                   String                    @id @default(uuid())
+  storeId              String
   storeName            String
   storePhoneNumber     String
   storeEmail           String
-  storePrice           Float
-  storePricePerSheet   Float?
+  storePricePerSheet   Float
   storeAddress         String
   storeAddressNote     String?
   storeProvince        Json?
@@ -219,9 +218,14 @@ model Transaction {
   storeLogo            String?
   storePhoto           String
   storeServiceType     StoreServiceName
+  paperType            PaperType
   inkType              InkType
   sheetLength          Int
-  files                Json?
+  pickupDate           DateTime
+  responsiblePerson    String
+  files                Json                      @default("[]")
+  description          String?                   @db.Text
+  totalPrice           Float
   status               TransactionApprovalStatus
   user                 User                      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId               String
@@ -235,6 +239,10 @@ model Transaction {
 enum InkType {
   BlackWhite
   Color
+}
+
+enum PaperType {
+  A4
 }
 
 model TransactionApprovalUser {
@@ -253,9 +261,11 @@ model TransactionApprovalUser {
 }
 
 enum TransactionApprovalStatus {
-  WaitingBeProcess
+  WaitingPayment
+  WaitingConfirmation
   OnProcess
-  Rejected
+  ReadyToPickup
   Canceled
+  Rejected
   Done
 }

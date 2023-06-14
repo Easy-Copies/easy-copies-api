@@ -4,4 +4,5 @@ import { IAppControllerConfigRestrictionReturn } from '@/app/types/app-controlle
 export interface ITransactionControllerV1 {
 	index: IAppControllerConfigRestrictionReturn
 	store: IAppControllerConfigRestrictionReturn
+	show: IAppControllerConfigRestrictionReturn
 }

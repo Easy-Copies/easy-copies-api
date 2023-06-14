@@ -2,12 +2,7 @@
 import { TTransactionService } from './transaction.service.type'
 
 // Prisma
-import {
-	Prisma,
-	PrismaClient,
-	StoreApprovalStatus,
-	TransactionApprovalStatus
-} from '@prisma/client'
+import { PrismaClient, TransactionApprovalStatus } from '@prisma/client'
 
 // Errors
 import { ErrorNotFound } from '@/app/errors'
@@ -22,52 +17,6 @@ import {
 const prisma = new PrismaClient()
 
 export class TransactionService implements TTransactionService {
-	/**
-	 * @description Common include for store model
-	 *
-	 * @param {object} options
-	 *
-	 * @return {Prisma.StoreInclude} Prisma.StoreInclude
-	 */
-	commonStoreInclude = (): Prisma.StoreInclude => {
-		return {
-			province: true,
-			district: true,
-			regency: true,
-			user: {
-				select: {
-					id: true,
-					name: true
-				}
-			}
-		}
-	}
-
-	/**
-	 * @description Get current status store approval
-	 *
-	 * @param {string} storeId
-	 *
-	 * @return {Promise<string>} Promise<string>
-	 */
-	getCurrentStatusStoreApproval = async (
-		storeId: string
-	): Promise<StoreApprovalStatus> => {
-		const store = await prisma.store.findFirst({
-			where: { id: storeId },
-			include: {
-				storeApprovals: {
-					take: 1,
-					orderBy: {
-						createdAt: 'desc'
-					}
-				}
-			}
-		})
-
-		return store?.storeApprovals?.[0]?.status as StoreApprovalStatus
-	}
-
 	/**
 	 * @description Get active role and permission for approval store
 	 *
@@ -116,14 +65,18 @@ export class TransactionService implements TTransactionService {
 		status: TransactionApprovalStatus
 	): string => {
 		switch (status) {
-			case TransactionApprovalStatus.WaitingBeProcess:
+			case TransactionApprovalStatus.WaitingPayment:
+				return 'Transaction awaiting payment'
+			case TransactionApprovalStatus.WaitingConfirmation:
 				return 'Transaction has been delivered to Admin, please wait'
-			case TransactionApprovalStatus.Rejected:
-				return 'Transaction has been rejected by Admin'
-			case TransactionApprovalStatus.Canceled:
-				return 'Transaction has been canceled'
 			case TransactionApprovalStatus.OnProcess:
 				return 'Transaction has been processed by Admin'
+			case TransactionApprovalStatus.ReadyToPickup:
+				return 'Transaction has been ready to get picked up'
+			case TransactionApprovalStatus.Canceled:
+				return 'Transaction has been canceled'
+			case TransactionApprovalStatus.Rejected:
+				return 'Transaction has been rejected by Admin'
 			case TransactionApprovalStatus.Done:
 				return 'Transaction has been done'
 			default:
