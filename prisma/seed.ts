@@ -2,7 +2,13 @@
 import { appLogger } from '../src/app/logger/app-logger'
 
 // Prisma
-import { PrismaClient } from '@prisma/client'
+import {
+	PrismaClient,
+	Store,
+	StoreApprovalStatus,
+	StoreServiceName,
+	User
+} from '@prisma/client'
 
 // Bcrypt
 import bcrypt from 'bcryptjs'
@@ -14,6 +20,7 @@ import { districts } from './seeders/seed-district'
 import { users } from './seeders/seed-user'
 import { roles } from './seeders/seed-role'
 import { permissions } from './seeders/seed-permission'
+import { store } from './seeders/seed-store'
 
 // Init Prisma
 const prisma = new PrismaClient()
@@ -156,6 +163,84 @@ const indonesiaRegionsSeeder = async () => {
 	])
 }
 
+/**
+ * @description seed store
+ *
+ *
+ */
+const storeSeeder = async () => {
+	const hudaUser = (await prisma.user.findFirst({
+		where: { name: 'Huda Prasetyo' }
+	})) as User
+
+	return prisma.$transaction([
+		prisma.store.create({
+			data: {
+				...store,
+				userId: hudaUser.id as string,
+				email: hudaUser.email as string,
+				status: StoreApprovalStatus.Approved,
+				storeApprovals: {
+					create: {
+						status: StoreApprovalStatus.Approved,
+						statusDescription: 'Already Approved',
+						user: {
+							connect: {
+								id: hudaUser.id as string
+							}
+						}
+					}
+				}
+			}
+		})
+	])
+}
+
+/**
+ * @description Store service seeder
+ *
+ *
+ */
+const storeServiceSeeder = async () => {
+	const hudaUser = (await prisma.user.findFirst({
+		where: { name: 'Huda Prasetyo' }
+	})) as User
+	const store = (await prisma.store.findFirst({
+		where: { userId: hudaUser.id }
+	})) as Store
+
+	return prisma.$transaction([
+		prisma.storeService.create({
+			data: {
+				name: StoreServiceName.Laminating,
+				pricePerSheet: 1000,
+				storeId: store.id
+			}
+		}),
+		prisma.storeService.create({
+			data: {
+				name: StoreServiceName.Printing,
+				pricePerSheet: 800,
+				storeId: store.id
+			}
+		}),
+		prisma.storeService.create({
+			data: {
+				name: StoreServiceName.Jilid,
+				pricePerSheet: 4000,
+				storeId: store.id
+			}
+		}),
+		prisma.storeService.create({
+			data: {
+				name: StoreServiceName.Fotocopy,
+				pricePerSheet: 500,
+				storeId: store.id
+			}
+		})
+	])
+}
+
 async function main() {
 	await roleSeeder()
 	await userSeeder()
@@ -163,6 +248,8 @@ async function main() {
 	await permissionSeeder()
 	await assignRoleToPermissions()
 	await indonesiaRegionsSeeder()
+	await storeSeeder()
+	await storeServiceSeeder()
 }
 main()
 	.then(async () => {

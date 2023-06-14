@@ -8,7 +8,7 @@ import { Request, Response } from 'express'
 import { SuccessCreated, SuccessOk } from '@/app/success/success'
 
 // Prisma
-import { PrismaClient, StoreApprovalStatus } from '@prisma/client'
+import { PrismaClient, Prisma, StoreApprovalStatus } from '@prisma/client'
 import {
 	EAppPermission,
 	EAppPermissionActions
@@ -60,20 +60,23 @@ export class StoreControllerV1 implements IStoreControllerV1 {
 					req.currentUser?.id as string
 				)
 
+			// Where Clause for store
+			const where: Prisma.StoreFindManyArgs['where'] = {
+				userId: isUserHaveApprovalAuthorization
+					? undefined
+					: (req.currentUser?.id as string),
+				status: { equals: _storeStatus }
+			}
+
 			const storeList = await prisma.store.findMany({
 				...appCommonService.paginateArgs(req.query),
 				include: {
 					...storeService.commonStoreInclude()
 				},
-				where: {
-					userId: isUserHaveApprovalAuthorization
-						? undefined
-						: (req.currentUser?.id as string),
-					status: { equals: _storeStatus }
-				}
+				where
 			})
 			const storeListPaginated = appCommonService.paginate(
-				{ result: storeList, total: await prisma.store.count() },
+				{ result: storeList, total: await prisma.store.count({ where }) },
 				req.query
 			)
 
