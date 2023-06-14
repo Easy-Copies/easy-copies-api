@@ -8,17 +8,20 @@ datasource db {
 }
 
 model User {
-  id             String              @id @default(uuid())
-  name           String              @db.VarChar(255)
-  email          String              @unique @db.VarChar(255)
-  isUserVerified Boolean             @default(false)
-  password       String              @db.VarChar(255)
-  createdAt      DateTime            @default(now())
-  updatedAt      DateTime            @updatedAt
-  tokens         Token[]
-  roles          RoleUser[]
-  stores         Store[]
-  storeApprovals StoreApprovalUser[]
+  id                   String                    @id @default(uuid())
+  name                 String                    @db.VarChar(255)
+  email                String                    @unique @db.VarChar(255)
+  isUserVerified       Boolean                   @default(false)
+  password             String                    @db.VarChar(255)
+  createdAt            DateTime                  @default(now())
+  updatedAt            DateTime                  @updatedAt
+  tokens               Token[]
+  roles                RoleUser[]
+  stores               Store[]
+  storeApprovals       StoreApprovalUser[]
+  transactions         Transaction[]
+  transactionApprovals TransactionApprovalUser[]
+  transactionPayments  TransactionPayment[]
 
   @@map("users")
 }
@@ -183,8 +186,7 @@ model StoreService {
   name          StoreServiceName
   store         Store            @relation(fields: [storeId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   storeId       String
-  price         Float
-  pricePerSheet Float?
+  pricePerSheet Float
   bindingType   String?
   fotocopyType  String?
   createdAt     DateTime         @default(now())
@@ -195,7 +197,92 @@ model StoreService {
 
 enum StoreServiceName {
   Laminating
-  Priting
+  Printing
   Jilid
   Fotocopy
+}
+
+model Transaction {
+  id                   String                    @id @default(uuid())
+  storeId              String
+  storeName            String
+  storePhoneNumber     String
+  storeEmail           String
+  storePricePerSheet   Float
+  storeAddress         String
+  storeAddressNote     String?
+  storeProvince        Json?
+  storeRegency         Json?
+  storeDistrict        Json?
+  storePostalCode      String
+  storeMapCoordinate   Json?
+  storeLogo            String?
+  storePhoto           String
+  storeServiceType     StoreServiceName
+  paperType            PaperType
+  inkType              InkType
+  sheetLength          Int
+  pickupDate           DateTime
+  responsiblePerson    String
+  files                Json                      @default("[]")
+  description          String?                   @db.Text
+  totalPrice           Float
+  status               TransactionApprovalStatus
+  user                 User                      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId               String
+  createdAt            DateTime                  @default(now())
+  updatedAt            DateTime                  @updatedAt
+  transactionApprovals TransactionApprovalUser[]
+  transactionPayments  TransactionPayment[]
+
+  @@map("transactions")
+}
+
+enum InkType {
+  BlackWhite
+  Color
+}
+
+enum PaperType {
+  A4
+}
+
+model TransactionApprovalUser {
+  id                String                    @id @default(uuid())
+  user              User                      @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId            String
+  transaction       Transaction               @relation(fields: [transactionId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  transactionId     String
+  status            TransactionApprovalStatus
+  statusDescription String                    @db.Text
+  cancelReason      String?
+  rejectReason      String?
+  createdAt         DateTime                  @default(now())
+
+  @@map("transaction_approval_users")
+}
+
+enum TransactionApprovalStatus {
+  WaitingPayment
+  WaitingConfirmation
+  OnProcess
+  ReadyToPickup
+  Canceled
+  Rejected
+  Done
+}
+
+model TransactionPayment {
+  id            String      @id @default(uuid())
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId        String
+  transaction   Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  transactionId String
+  senderName    String
+  bankName      String
+  accountNumber String
+  file          Json
+  createdAt     DateTime    @default(now())
+
+  @@map("transaction_payments")
 }
