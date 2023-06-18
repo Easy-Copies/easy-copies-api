@@ -34,6 +34,9 @@ import {
 	EAppPermissionActions
 } from '@/app/types/app-permission.type'
 
+// Lodash
+import omit from 'lodash.omit'
+
 // Init Prisma
 const prisma = new PrismaClient()
 
@@ -93,9 +96,13 @@ export class TransactionControllerV1 implements ITransactionControllerV1 {
 				},
 				req.query
 			)
+			const mapTransactionList = {
+				...transactionListPaginated,
+				rows: transactionListPaginated.rows.map(row => omit(row, ['files']))
+			}
 
 			const { code, ...restResponse } = SuccessOk({
-				result: transactionListPaginated
+				result: mapTransactionList
 			})
 			return res.status(code).json(restResponse)
 		}
