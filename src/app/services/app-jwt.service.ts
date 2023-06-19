@@ -24,7 +24,7 @@ export class AppJwtService implements TAppJwtService {
 			case EAppJwtServiceSignType.LOGIN:
 				return {
 					jwtSignKey: process.env.JWT_KEY as string,
-					expiresIn: '1h'
+					expiresIn: '30d'
 				}
 			case EAppJwtServiceSignType.REFRESH_TOKEN:
 				return {
