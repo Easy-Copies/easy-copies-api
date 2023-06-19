@@ -201,6 +201,10 @@ export class RoleControllerV1 implements IRoleControllerV1 {
 		config: async (req: Request, res: Response) => {
 			const { roleId } = req.params
 
+			// Check for role
+			const roleDetail = await prisma.role.findFirst({ where: { id: roleId } })
+			if (!roleDetail) throw new ErrorNotFound('Role not found')
+
 			// Get all permissions
 			const permissions = await prisma.permission.findMany({
 				orderBy: { code: 'asc' }
