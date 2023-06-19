@@ -5,11 +5,7 @@ import { Request, Response, NextFunction } from 'express'
 import jwt from 'jsonwebtoken'
 
 // Utils
-import {
-	ErrorBadRequest,
-	ErrorForbidden,
-	ErrorUnauthorized
-} from '@/app/errors'
+import { ErrorForbidden, ErrorUnauthorized } from '@/app/errors'
 
 // Types
 import { TUserJwtPayload } from '@/auth/types/auth.type'
@@ -38,11 +34,11 @@ const appAuthMiddleware =
 			const authorizationHeader = req.headers?.authorization
 
 			if (!authorizationHeader) {
-				throw new ErrorBadRequest('Authorization header should be exists')
+				throw new ErrorUnauthorized('Authorization header should be exists')
 			}
 			const token = authorizationHeader.split(' ')?.[1]
 			if ([false, null, 'null'].includes(token)) {
-				throw new ErrorBadRequest(
+				throw new ErrorUnauthorized(
 					'Authorization header should have token, or maybe your token is null'
 				)
 			}

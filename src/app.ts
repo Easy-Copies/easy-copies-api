@@ -27,7 +27,7 @@ const app = express()
 app.use(cors())
 
 // Accept JSON request from user
-app.use(express.json())
+app.use(express.json({ limit: '100mb' }))
 
 // Init Logger
 app.use(appLoggerMiddleware)
