@@ -20,7 +20,7 @@ import { districts } from './seeders/seed-district'
 import { users } from './seeders/seed-user'
 import { roles } from './seeders/seed-role'
 import { permissions } from './seeders/seed-permission'
-import { store } from './seeders/seed-store'
+import { store, storeThree, storeTwo } from './seeders/seed-store'
 
 // Init Prisma
 const prisma = new PrismaClient()
@@ -177,6 +177,44 @@ const storeSeeder = async () => {
 		prisma.store.create({
 			data: {
 				...store,
+				userId: hudaUser.id as string,
+				email: hudaUser.email as string,
+				status: StoreApprovalStatus.Approved,
+				storeApprovals: {
+					create: {
+						status: StoreApprovalStatus.Approved,
+						statusDescription: 'Already Approved',
+						user: {
+							connect: {
+								id: hudaUser.id as string
+							}
+						}
+					}
+				}
+			}
+		}),
+		prisma.store.create({
+			data: {
+				...storeTwo,
+				userId: hudaUser.id as string,
+				email: hudaUser.email as string,
+				status: StoreApprovalStatus.Approved,
+				storeApprovals: {
+					create: {
+						status: StoreApprovalStatus.Approved,
+						statusDescription: 'Already Approved',
+						user: {
+							connect: {
+								id: hudaUser.id as string
+							}
+						}
+					}
+				}
+			}
+		}),
+		prisma.store.create({
+			data: {
+				...storeThree,
 				userId: hudaUser.id as string,
 				email: hudaUser.email as string,
 				status: StoreApprovalStatus.Approved,
